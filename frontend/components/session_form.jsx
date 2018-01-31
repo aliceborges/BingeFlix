@@ -12,7 +12,6 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
-    console.log("hello");
     this.props.clearErrors();
   }
 
@@ -47,7 +46,6 @@ class SessionForm extends React.Component {
   render() {
     const currentForm = this.props.formType;
     let formTitle;
-
     let toOtherForm1;
     let toOtherForm2;
     let otherPath;

@@ -26,9 +26,13 @@ class Greeting extends React.Component {
           <div className="inner-page">
             <ul className="home-navbar">
               <li>{ this.title() }</li>
-              <li><button className="logout-button" onClick={ (e) => this.handleSubmit(e) }>Logout</button></li>
+              <li><button className="logout-button"
+                        onClick={ (e) => this.handleSubmit(e) }>Logout</button>
+              </li>
             </ul>
-            <h2>Welcome, {this.props.currentUser.email}</h2>
+            <h2 className="user-welcome-msg">
+              Welcome, {this.props.currentUser.email}
+            </h2>
           </div>
         </div>
       );

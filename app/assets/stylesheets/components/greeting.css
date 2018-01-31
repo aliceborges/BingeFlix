@@ -60,6 +60,10 @@
   background: rgb(206, 0, 0);
 }
 
+.user-welcome-msg {
+  color: white;
+}
+
 .login-button, .logout-button {
   background-color: rgb(250, 0, 0);
   padding: 9px 12px;
