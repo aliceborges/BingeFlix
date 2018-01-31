@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import MoviesIndexContainer from './movies_index_container';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.logout();
   }
 
   title() {
@@ -22,19 +18,10 @@ class Greeting extends React.Component {
 
     if(this.props.loggedIn){
       return(
-        <div className="login-home">
-          <div className="inner-page">
-            <ul className="home-navbar">
-              <li>{ this.title() }</li>
-              <li><button className="logout-button"
-                        onClick={ (e) => this.handleSubmit(e) }>Logout</button>
-              </li>
-            </ul>
-            <h2 className="user-welcome-msg">
-              Welcome, {this.props.currentUser.email.split("@")[0]}!
-            </h2>
-          </div>
+        <div>
+            <Redirect to="/browse" />
         </div>
+
       );
     } else {
       return (

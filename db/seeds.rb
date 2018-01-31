@@ -8,3 +8,59 @@
 
 users = User.create([{email: "Demo User", password: 'goodpassword'},
                   {email: 'avocadotheblackcat', password:'avocado'}])
+
+
+movies = Movie.create([{
+  title: "The Mighty Avocado",
+  year: 2017,
+  blurb: "Learn about the history and the healing powers of this green super food",
+  image_url: "/assets/images/avocado.jpg"},
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # },
+  # {
+  #   title: "The Mighty Avocado",
+  #   year: 2017,
+  #   blurb: "Learn about the history and the healing powers of this green super food",
+  #   image_url: "/assets/images/avocado.jpg"
+  # }
+])
