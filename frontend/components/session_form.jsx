@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import * as AppUtil from '../util/app_util';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -10,9 +11,10 @@ class SessionForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps() {
-    
-  }
+  // componentWillReceiveProps() {
+  //   this.props.clearErrors();
+  // }
+
 
   updateField(field) {
     return (e) => {
@@ -24,7 +26,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm({ user });
     this.setState({email: "", password: ""});
   }
 
@@ -50,33 +52,41 @@ class SessionForm extends React.Component {
 
     return (
       <div>
+          <h1>{ formTitle }</h1>
 
-        <h1>{ formTitle }</h1>
+          <div className="session-errors">
+            <ul>
+              { this.props.errors.map((error, idx) => (
+                     <li key={ AppUtil.uniqueKey(idx) }>{ error }</li>)
+                   ) }
+            </ul>
+          </div>
 
-        <form>
+          <form>
 
-          <label>
-            Email
-            <input type="email"
-                    value={ this.state.email }
-                    onChange= { this.updateField("email") }/>
-          </label>
+            <label>
+              Email
+              <input type="email"
+                      value={ this.state.email }
+                      onChange= { this.updateField("email") }/>
+            </label>
 
-          <label>
-            Password
-            <input type="password"
-                    value={ this.state.password }
-                    onChange= { this.updateField("password") }/>
-          </label>
+            <label>
+              Password
+              <input type="password"
+                      value={ this.state.password }
+                      onChange= { this.updateField("password") }/>
+            </label>
 
-          <input onClick={ () => this.handleSubmit }
-                  type="submit">{ formTitle }</input>
+            <input type="submit"
+                   onClick={ (e) => this.handleSubmit(e) }
+                   value={ formTitle }/>
 
-        </form>
+          </form>
 
-        <div className="session-form-bottom">
-          { toOtherForm1 }<Link to={ otherPath }>{ toOtherForm2 }</Link>
-        </div>
+          <div className="session-form-bottom">
+            { toOtherForm1 }<Link to={ otherPath }>{ toOtherForm2 }</Link>
+          </div>
 
       </div>
     );
