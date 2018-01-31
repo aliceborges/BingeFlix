@@ -31,7 +31,7 @@ class Greeting extends React.Component {
               </li>
             </ul>
             <h2 className="user-welcome-msg">
-              Welcome, {this.props.currentUser.email}
+              Welcome, {this.props.currentUser.email.split("@")[0]}!
             </h2>
           </div>
         </div>
