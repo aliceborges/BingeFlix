@@ -32,10 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # gem 'jquery-rails'
 gem 'pry-rails'
-gem 'jquery-rails', '2.1.4'
-gem 'jquery-ui-rails', '4.2.1'
+gem 'jquery-rails'
 gem 'bcrypt'
-gem 'yarn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
