@@ -9,6 +9,15 @@
   top: 0;
 }
 
+.login-home {
+  background: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
 .home-navbar {
   display: flex;
   align-items: center;
@@ -32,7 +41,7 @@
   margin-bottom: 23px;
 }
 
-.signup-button, .login-button {
+.signup-button, .login-button, .logout-button{
   color: white;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
@@ -47,16 +56,16 @@
   letter-spacing: 3px;
 }
 
-.signup-button:active {
+.signup-button:hover {
   background: rgb(206, 0, 0);
 }
 
-.login-button {
+.login-button, .logout-button {
   background-color: rgb(250, 0, 0);
   padding: 9px 12px;
   letter-spacing: 2px;
 }
 
-.login-button:hover {
-  background: rgb(255, 0, 0);
+a.login-button:hover, button.logout-button:hover {
+  background-color: rgb(206, 0, 0);
 }

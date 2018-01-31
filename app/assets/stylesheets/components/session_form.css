@@ -28,6 +28,7 @@
 .session-errors {
   margin-top: 15px;
   color: rgb(194, 0, 0);
+  font-size: 13px;
 }
 
 .session-error {
@@ -54,11 +55,13 @@
   margin-top: 15px;
 }
 
-.session-form input[type="submit"]:first-of-type {
+.session-form input[type="submit"]:first-of-type, .home-navbar button  {
   margin-top: 30px;
   background-color: rgb(252, 0, 0);
   color: white;
+  border: 1px solid rgb(252, 0, 0)
 }
+
 
 .session-form-bottom {
   margin-top: 10px;

@@ -12,8 +12,8 @@ const mapStateToProps = (state, ownProps) => {
     errors,
     demoUser: {
       user: {
-        email: "avocadotheblackcat",
-        password: "avocado"
+        email: "Demo User",
+        password: "goodpassword"
       }
     },
     formType

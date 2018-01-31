@@ -22,11 +22,13 @@ class Greeting extends React.Component {
 
     if(this.props.loggedIn){
       return(
-        <div>
+        <div className="login-home">
           <div className="inner-page">
-            { this.title() }
+            <ul className="home-navbar">
+              <li>{ this.title() }</li>
+              <li><button className="logout-button" onClick={ (e) => this.handleSubmit(e) }>Logout</button></li>
+            </ul>
             <h2>Welcome, {this.props.currentUser.email}</h2>
-            <button onClick={ (e) => this.handleSubmit(e) }>Logout</button>
           </div>
         </div>
       );
