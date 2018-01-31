@@ -11,9 +11,10 @@ class SessionForm extends React.Component {
     };
   }
 
-  // componentWillReceiveProps() {
-  //   this.props.clearErrors();
-  // }
+  componentDidMount() {
+    console.log("hello");
+    this.props.clearErrors();
+  }
 
 
   updateField(field) {
@@ -30,6 +31,19 @@ class SessionForm extends React.Component {
     this.setState({email: "", password: ""});
   }
 
+  loginDemo(e) {
+    e.preventDefault();
+    const demo = this.props.demoUser;
+    this.props.login(demo);
+    this.setState({email: "", password: ""});
+  }
+
+  title() {
+    return (
+      <Link to="/"><h1 className="site-name">BingeFlix</h1></Link>
+    );
+  }
+
   render() {
     const currentForm = this.props.formType;
     let formTitle;
@@ -42,37 +56,40 @@ class SessionForm extends React.Component {
       formTitle = 'Sign In';
       toOtherForm1 = "New to BingeFlix? ";
       toOtherForm2 = "Sign up now";
-      otherPath = '/#/signup';
+      otherPath = '/signup';
     } else {
       formTitle = 'Sign Up';
       toOtherForm1 = "Already have an account? ";
       toOtherForm2 = "Sign in now";
-      otherPath = '/#/login';
+      otherPath = '/login';
     }
 
     return (
-      <div>
-          <h1>{ formTitle }</h1>
+      <div className="session-form-page">
+        <div className="inner-page">
+          { this.title() }
 
-          <div className="session-errors">
-            <ul>
+          <form className="session-form">
+            <h1>{ formTitle }</h1>
+
+            <ul className="session-errors">
               { this.props.errors.map((error, idx) => (
-                     <li key={ AppUtil.uniqueKey(idx) }>{ error }</li>)
+                     <li className="session-error"
+                         key={ AppUtil.uniqueKey(idx) }>{ error }</li>)
                    ) }
             </ul>
-          </div>
-
-          <form>
 
             <label>
               Email
+              <br />
               <input type="email"
                       value={ this.state.email }
-                      onChange= { this.updateField("email") }/>
+                      onChange= { this.updateField("email") } autoFocus/>
             </label>
 
             <label>
               Password
+              <br />
               <input type="password"
                       value={ this.state.password }
                       onChange= { this.updateField("password") }/>
@@ -82,12 +99,16 @@ class SessionForm extends React.Component {
                    onClick={ (e) => this.handleSubmit(e) }
                    value={ formTitle }/>
 
+            <input type="submit"
+                   onClick={ (e) => this.loginDemo(e) }
+                   value="Demo Sign In"/>
+
+            <div className="session-form-bottom">
+              { toOtherForm1 }<Link to={ otherPath }>{ toOtherForm2 }.</Link>
+            </div>
           </form>
 
-          <div className="session-form-bottom">
-            { toOtherForm1 }<Link to={ otherPath }>{ toOtherForm2 }</Link>
-          </div>
-
+        </div>
       </div>
     );
   }

@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.inner-page {
+  margin: 15px 40px;
+}
+
+a:hover, input[type="submit"]:hover, button:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+.session-form-page {
+  background: url('https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg');
+  background-size: cover ;
+  position: fixed;
+  background-position: top;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 1.5;
+}
+
+.session-form {
+  background: rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  margin: 25px auto;
+  padding: 40px 35px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.session-form h1 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.session-errors {
+  margin-top: 15px;
+  color: rgb(194, 0, 0);
+}
+
+.session-error {
+  margin-top: 5px;
+}
+
+.session-form label {
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.session-form input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid rgb(179, 179, 179);
+}
+
+.session-form input[type="submit"] {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 15px;
+}
+
+.session-form input[type="submit"]:first-of-type {
+  margin-top: 30px;
+  background-color: rgb(252, 0, 0);
+  color: white;
+}
+
+.session-form-bottom {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.session-form a:visited {
+  color: rgb(0, 113, 255);
+}

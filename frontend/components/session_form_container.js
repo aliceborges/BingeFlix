@@ -10,6 +10,12 @@ const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors,
+    demoUser: {
+      user: {
+        email: "avocadotheblackcat",
+        password: "avocado"
+      }
+    },
     formType
   };
 };
@@ -19,6 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const action = (currentPath === '/login') ? login : signup;
   return {
     processForm: user => dispatch(action(user)),
+    login: user => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors())
   };
 };

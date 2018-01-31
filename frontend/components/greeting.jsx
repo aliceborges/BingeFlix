@@ -6,15 +6,48 @@ class Greeting extends React.Component {
     super(props);
   }
 
-  render() {
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
+
+  title() {
     return (
-      <div>
-        <Link to="/signup">Sign Up</Link>
-        &nbsp; &nbsp;
-        <Link to="/login">Sign In</Link>
-      </div>
+      <Link to="/"><h1 className="site-name">BingeFlix</h1></Link>
     );
   }
+
+
+  render() {
+
+    if(this.props.loggedIn){
+      return(
+        <div>
+          <div className="inner-page">
+            { this.title() }
+            <h2>Welcome, {this.props.currentUser.email}</h2>
+            <button onClick={ (e) => this.handleSubmit(e) }>Logout</button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="home-page">
+          <div className="inner-page">
+            <ul className="home-navbar">
+              <li>{ this.title() }</li>
+              <li><Link className="login-button" to="/login">Sign In</Link></li>
+            </ul>
+
+            <h1 className="splash-title">See what's next.</h1>
+            <h2 className="splash-subtitle">WATCH ANYWHERE. CANCEL ANYTIME.</h2>
+            <Link className="signup-button" to="/signup">Sign Up</Link>
+          </div>
+        </div>
+      );
+    }
+  }
+
 }
 
 export default Greeting;
