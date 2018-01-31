@@ -6,7 +6,7 @@ import GreetingContainer from './greeting_container';
 
 const App = () => (
   <div>
-    <Route exact path="/" component={GreetingContainer} />
+    <Route path="/" component={GreetingContainer} />
 
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <AuthRoute path="/login" component={SessionFormContainer} />
