@@ -15,12 +15,6 @@
   justify-content: space-between;
 }
 
-.site-name {
-  font-size: 50px;
-  color: rgb(252, 0, 0);
-  font-family: 'Ramabhadra', sans-serif;
-}
-
 .splash-title, .splash-subtitle {
   font-family: 'Ramabhadra', sans-serif;
   color: white;
@@ -57,12 +51,12 @@
   background: rgb(206, 0, 0);
 }
 
-.login-button:hover {
-  background: rgb(255, 0, 0)
-}
-
 .login-button {
   background-color: rgb(250, 0, 0);
   padding: 9px 12px;
   letter-spacing: 2px;
+}
+
+.login-button:hover {
+  background: rgb(255, 0, 0);
 }

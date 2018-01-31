@@ -18,6 +18,13 @@
   margin: 15px 40px;
 }
 
+.site-name {
+  font-size: 50px;
+  color: rgb(252, 0, 0);
+  font-family: 'Ramabhadra', sans-serif;
+  display: inline-block;
+}
+
 a:hover, input[type="submit"]:hover, button:hover {
   cursor: pointer;
 }
