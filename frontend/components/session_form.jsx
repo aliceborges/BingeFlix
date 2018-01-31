@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
     } else {
       formTitle = 'Sign Up';
       toOtherForm1 = "Already have an account? ";
-      toOtherForm2 = "Sign in now";
+      toOtherForm2 = "Sign in";
       otherPath = '/login';
     }
 
