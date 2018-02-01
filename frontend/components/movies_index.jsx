@@ -47,9 +47,8 @@ class MoviesIndex extends React.Component {
 
           <ul className="movie-index-container">
             { this.props.movies.map(movie => (
-            <li key={movie.id}>
-              <MovieIndexItem />
-            </li>)) }
+              <MovieIndexItem movie={ movie }/>
+          )) }
           </ul>
 
         </div>

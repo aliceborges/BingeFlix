@@ -35,7 +35,7 @@
 .year-genre-container {
   display: flex;
   letter-spacing: 2px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .year-genre-container li:first-of-type {
@@ -91,4 +91,7 @@
 
 #plus-sign {
   font-size: 24px;
+}
+
+.movie-index-conatiner {
 }

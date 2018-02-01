@@ -1,11 +1,13 @@
 import React from 'react';
 
-const MovieIndexItem = ({ idx }) => {
+const MovieIndexItem = (movie) => {
 
   return (
-    <span className="movie-index-item">
-      I'm a movie index item :)
-    </span>
+    <li className="movie-index-item">
+      {/* <ul>
+        <li>{movie.title}</li>
+      </ul> */}
+    </li>
 
   );
 };
