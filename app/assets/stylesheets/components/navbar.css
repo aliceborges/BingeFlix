@@ -63,9 +63,10 @@
 #down-arrow {
   color: white;
   position: fixed;
+  padding: 0 0 20px;
 }
 
-.pop-up-navbar {
+.pop-up-notifications {
   display: none;
   position: absolute;
   z-index: 9999;
@@ -75,18 +76,19 @@
   padding: 10px 20px;
   border: .5px solid gray;
   width: 150px;
-  right: 40px;
+  right: 30px;
+  top: 45px;
 }
 
-.profile-picture:hover, #down-arrow:hover {
-  cursor: pointer;
-}
-
-#down-arrow:hover~.pop-up-navbar {
+.pop-up-notifications:hover {
   display: block;
 }
 
-.profile-picture:hover~.pop-up-navbar {
+.profile-picture-down-arrow {
+  cursor: pointer;
+}
+
+.profile-picture-down-arrow:hover~.pop-up-notifications {
   display: block;
 }
 

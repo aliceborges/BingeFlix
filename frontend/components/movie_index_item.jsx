@@ -1,14 +1,13 @@
 import React from 'react';
+import * as AppUtil from '../util/app_util';
 
-const MovieIndexItem = (movie) => {
+const MovieIndexItem = (props) => {
 
   return (
-    <li className="movie-index-item">
-      {/* <ul>
-        <li>{movie.title}</li>
-      </ul> */}
-    </li>
-
+    <div className="movie-index-item">
+      {props.movie.title}
+      {props.movie.year}
+    </div>
   );
 };
 

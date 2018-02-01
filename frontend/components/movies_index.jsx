@@ -15,10 +15,11 @@ class MoviesIndex extends React.Component {
     return (
       <div className="browse-page">
         <div className="inner-page">
-
-
           <Navbar logout={this.props.logout}
-                  currentUserEmail={this.props.currentUserEmail}/>
+            currentUserEmail={this.props.currentUserEmail}/>
+        </div>
+
+
           <section className="featured-movie">
             <div className="title-blurb-container">
               <h1 className="featured-title">
@@ -29,8 +30,8 @@ class MoviesIndex extends React.Component {
               </h1>
               <br/>
               <ul className="year-genre-container">
-                <li className="feature-year">2017</li>
-                <li className="feature-genre">documentary</li>
+                <li className="featured-year">2017</li>
+                <li className="featured-genre">documentary</li>
               </ul>
               <p className="featured-blurb">
                 Learn about the healing powers
@@ -50,12 +51,12 @@ class MoviesIndex extends React.Component {
             </div>
           </section>
 
+        <div className="inner-page">
           <ul className="movie-index-container">
             { this.props.movies.map(movie => (
-              <MovieIndexItem movie={ movie }/>
-          )) }
+              <li key={movie.id}><MovieIndexItem movie={ movie }/></li>
+            )) }
           </ul>
-
         </div>
       </div>
     );

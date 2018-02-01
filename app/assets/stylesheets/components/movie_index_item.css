@@ -1,6 +1,9 @@
 .movie-index-item {
   color: white;
-  /* height: 100px;
-  width: 300px; */
-  background: orange;
+  height: 100px;
+  width: 300px;
+  background: white;
+  border: 1px solid gray;
+  color: black;
+  font-size: 20px;
 }

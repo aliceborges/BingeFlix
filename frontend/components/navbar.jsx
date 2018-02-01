@@ -35,11 +35,13 @@ class Navbar extends React.Component {
             </section>
 
             <section className="notifications">
-              <img className="profile-picture"
-                    src="https://assets.nflxext.com/ffe/profiles/avatars_v2/32x32/PICON_025.png"/>
+              <div className="profile-picture-down-arrow">
+                <img className="profile-picture"
+                      src="https://assets.nflxext.com/ffe/profiles/avatars_v2/32x32/PICON_025.png"/>
 
-              <span id="down-arrow"> <i class="fas fa-sort-down"></i></span>
-              <div className="pop-up-navbar">
+                <span id="down-arrow"> <i className="fas fa-sort-down"></i></span>
+              </div>
+              <div className="pop-up-notifications">
                 <ul>
                   <li className="user-info">
                     <img className="profile-picture"
