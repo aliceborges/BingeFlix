@@ -21,6 +21,6 @@ export const fetchMovies = () => dispatch => (
 );
 
 export const fetchMovie = id => dispatch => (
-  MoviesAPIUtil.fetchMovie()
+  MoviesAPIUtil.fetchMovie(id)
         .then(serverMovie => (dispatch(receiveMovie(serverMovie))))
 );

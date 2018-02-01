@@ -1,0 +1,22 @@
+.search-bar {
+  color: white;
+}
+
+input.search-bar {
+  background: black;
+  border: 1px solid white;
+  padding: 4px 10px;
+}
+
+.font-awesome-search {
+  color: white;
+}
+
+.search-bar-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.fa-search {
+  margin-left: 10px;
+}

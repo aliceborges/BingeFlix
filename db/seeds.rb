@@ -14,7 +14,7 @@ movies = Movie.create([{
   title: "The Mighty Avocado",
   year: 2017,
   blurb: "Learn about the history and the healing powers of this green super food",
-  image_url: "/assets/images/avocado.jpg"},
+  image_url: "https://i.imgur.com/8YXXp42.jpg"},
   # {
   #   title: "The Mighty Avocado",
   #   year: 2017,

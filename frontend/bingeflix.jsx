@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchMovie, fetchMovies } from './actions/movie_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -17,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   ///testing
-
+  window.fetchMovie = fetchMovie;
+  window.fetchMovies = fetchMovies;
+  
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;

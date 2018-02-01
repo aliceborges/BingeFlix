@@ -1,0 +1,41 @@
+.navbar-container {
+  background: black;
+  background-size: 100%;
+  position: fixed;
+  background-position: center;
+  width: 90%;
+  left: 0;
+  top: 0;
+  padding: 5px 5% 5px 5%;
+}
+
+.home-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#site-name-small {
+    font-size: 35px;
+}
+
+.home-navbar a {
+  color: white
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-buttons li {
+  margin: 0 10px;
+}
+
+.navbar-buttons li a {
+  color: rgb(177, 177, 177)
+}
+
+.navbar-buttons a:active {
+  color: white;
+}

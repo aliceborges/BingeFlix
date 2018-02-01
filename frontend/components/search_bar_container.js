@@ -1,11 +1,11 @@
-import { connect } from 'react-redux';
 import React from 'react';
-import NavbarButton from './navbar_button';
+import { connect } from 'react-redux';
+import SearchBar from './search_bar';
 
 const mapStateToProps = (state, ownProps) => {
 
   return {
-    
+
   };
 };
 
@@ -16,5 +16,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavbarButton);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

@@ -1,6 +1,8 @@
 import React from 'react';
-import NavbarButtonsContainer from './navbar_buttons_container';
+import NavbarButtons from './navbar_buttons';
 import { Link } from 'react-router-dom';
+import SearchBarContainer from './search_bar_container';
+
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -14,16 +16,22 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar-container">
         <ul className="home-navbar">
           <li><Link to="/browse">
-              <h1 className="site-name">BingeFlix</h1>
+              <h1 className="site-name" id="site-name-small">BingeFlix</h1>
               </Link>
           </li>
+          <li>
+            <NavbarButtons />
+          </li>
+          <li>
+            <SearchBarContainer />
+          </li>
+
           <li><button className="logout-button"
             onClick={ (e) => this.handleSubmit(e) }>Logout</button>
           </li>
-          <NavbarButtonsContainer />
         </ul>
       </div>
     );

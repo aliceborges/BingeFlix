@@ -18,12 +18,6 @@
   top: 0;
 }
 
-.home-navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .splash-title, .splash-subtitle {
   font-family: 'Ramabhadra', sans-serif;
   color: white;
@@ -49,6 +43,10 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
 }
 
+.signup-button, .login-button {
+  margin-top:30px;
+}
+
 .signup-button {
   background-color: rgb(252, 0, 0);
   padding: 13px 80px;
@@ -65,12 +63,6 @@ h2.user-welcome-msg {
   margin: 20px 20px;
   font-size: 30px;
   font-weight: 200;
-}
-
-.login-button, .logout-button {
-  background-color: rgb(250, 0, 0);
-  padding: 9px 12px;
-  letter-spacing: 2px;
 }
 
 a.login-button:hover, button.logout-button:hover {
