@@ -1,12 +1,13 @@
 import React from 'react';
 import * as AppUtil from '../util/app_util';
 
-const MovieIndexItem = (props) => {
+const MovieIndexItem = ({movie}) => {
 
   return (
     <div className="movie-index-item">
-      {props.movie.title}
-      {props.movie.year}
+      <img src={movie.image_url}/>
+      <p className="movie-title">{movie.title}</p>
+      <p className="movie-year">{movie.year}</p>
     </div>
   );
 };

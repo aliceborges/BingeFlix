@@ -1,9 +1,24 @@
 .movie-index-item {
   color: white;
   height: 100px;
-  width: 300px;
+  width: 200px;
   background: white;
   border: 1px solid gray;
   color: black;
-  font-size: 20px;
+  font-size: 16px;
+  position: relative;
 }
+
+.movie-title {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 100%;
+ }
+
+ .movie-year {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+ }

@@ -5,6 +5,7 @@
   width: 100%;
   left: 0;
   top: 0;
+  padding-bottom: 50px;
 }
 
 .featured-movie {
@@ -92,5 +93,14 @@
 }
 
 .movie-index-container {
-  /* margin-top: 600px; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.genre-name {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 40px;
 }

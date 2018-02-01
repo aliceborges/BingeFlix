@@ -52,8 +52,9 @@ class MoviesIndex extends React.Component {
           </section>
 
         <div className="inner-page">
+          <h2 className="genre-name" >TV Shows</h2>
           <ul className="movie-index-container">
-            { this.props.movies.map(movie => (
+            { this.props.movies.slice(0, 6).map(movie => (
               <li key={movie.id}><MovieIndexItem movie={ movie }/></li>
             )) }
           </ul>
