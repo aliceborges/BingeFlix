@@ -18,7 +18,22 @@ class MoviesIndex extends React.Component {
         <div className="inner-page">
           <Navbar logout={this.props.logout}/>
 
-          <section className="featured-image">
+          <section className="featured-movie">
+            <div className="title-blurb-container">
+              <h1 className="featured-title">
+                The
+                <br/>
+                Mighty<br/>
+                Avocado
+              </h1>
+              <p className="featured-blurb">
+                Learn about the healing powers
+                <br/>
+                of this tasty superfood
+              </p>
+              <button>Play</button>
+              <button>+ My List</button>
+            </div>
           </section>
 
           <ul className="movie-index-container">

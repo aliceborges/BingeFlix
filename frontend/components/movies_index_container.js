@@ -5,6 +5,7 @@ import { fetchMovies, fetchMovie } from '../actions/movie_actions';
 import { logout } from '../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  
   return {
     movies: Object.values(state.entities.movies)
   };
