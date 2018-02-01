@@ -14,12 +14,13 @@
   height: 530px;
   background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.98), rgba(0, 0, 0, .1), transparent), url('https://i.imgur.com/8YXXp42.jpg');
   background-size: contain;
-  position: fixed;
+  position: absolute;
   background-position: right;
   width: 100%;
   left: 0;
   color: white;
   font-family: 'Poppins', sans-serif;
+  z-index: -1;
 }
 
 .title-blurb-container {
@@ -93,5 +94,5 @@
   font-size: 24px;
 }
 
-.movie-index-conatiner {
+.movie-index-container {
 }

@@ -15,7 +15,10 @@ class MoviesIndex extends React.Component {
     return (
       <div className="browse-page">
         <div className="inner-page">
-          <Navbar logout={this.props.logout}/>
+
+
+          <Navbar logout={this.props.logout}
+                  currentUserEmail={this.props.currentUserEmail}/>
           <section className="featured-movie">
             <div className="title-blurb-container">
               <h1 className="featured-title">
@@ -41,6 +44,8 @@ class MoviesIndex extends React.Component {
                   &nbsp;
                 <button className="my-list-button"><span id="plus-sign">+</span>
                 &nbsp; My List</button>
+
+
               </div>
             </div>
           </section>

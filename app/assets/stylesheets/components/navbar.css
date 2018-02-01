@@ -9,6 +9,19 @@
   padding: 5px 5% 5px 5%;
 }
 
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  font-family: 'Ramabhadra', sans-serif;
+}
+
+.navbar-right {
+    font-size: 14px;
+}
+
 .home-navbar {
   display: flex;
   align-items: center;
@@ -26,6 +39,7 @@
 .navbar-buttons {
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 
 .navbar-buttons li {
@@ -38,4 +52,56 @@
 
 .navbar-buttons a:active {
   color: white;
+}
+
+.profile-picture {
+  position: relative;
+  width: auto;
+  margin-right: 10px;
+}
+
+#down-arrow {
+  color: white;
+  position: fixed;
+}
+
+.pop-up-navbar {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  background: black;
+  color: white;
+  font-weight: 300;
+  padding: 10px 20px;
+  border: .5px solid gray;
+  width: 150px;
+  right: 40px;
+}
+
+.profile-picture:hover, #down-arrow:hover {
+  cursor: pointer;
+}
+
+#down-arrow:hover~.pop-up-navbar {
+  display: block;
+}
+
+.profile-picture:hover~.pop-up-navbar {
+  display: block;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+#pop-up-logout-btn {
+  border-top: .5px solid gray;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+#pop-up-logout-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

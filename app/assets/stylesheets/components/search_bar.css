@@ -8,11 +8,12 @@ input.search-bar {
   padding: 4px 10px;
 }
 
-.font-awesome-search {
+.font-awesome-search-icon {
   color: white;
+  margin-right: 20px;
 }
 
-.search-bar-icon-container {
+.search-bar-container {
   display: flex;
   align-items: center;
 }

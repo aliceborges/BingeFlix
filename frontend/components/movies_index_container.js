@@ -5,9 +5,10 @@ import { fetchMovies, fetchMovie } from '../actions/movie_actions';
 import { logout } from '../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  
+  const currentUserEmail = state.session.currentUser.email.split("@")[0];
   return {
-    movies: Object.values(state.entities.movies)
+    movies: Object.values(state.entities.movies),
+    currentUserEmail
   };
 };
 

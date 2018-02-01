@@ -8,14 +8,17 @@ class SearchBar extends React.Component {
   render() {
     return(
       <div>
-        <ul className="search-bar-icon-container">
+        <ul className="search-bar-container">
+
           <li><input className="search-bar"
                 type="text"
                 placeholder="Titles, genres"/>
           </li>
-          <li className="font-awesome-search">
+
+          <li className="font-awesome-search-icon">
             <i className="fas fa-search"></i>
           </li>
+
         </ul>
       </div>
     );
