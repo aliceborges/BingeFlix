@@ -22,7 +22,7 @@
   font-family: 'Poppins', sans-serif;
 }
 .title-blurb-container {
-  margin: 70px 70px;
+  margin: 90px 80px;
 }
 
 .featured-title {
@@ -34,4 +34,21 @@
 .featured-blurb {
   font-size: 20px;
   font-weight: 300;
+}
+
+.play-button {
+  background-color: rgb(206, 0, 0);
+  border: 1px solid rgb(206, 0, 0);
+}
+
+.my-list-button {
+  background-color: #000;
+}
+
+.play-button, .my-list-button {
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 2px;
+  padding: 8px 30px;
 }
