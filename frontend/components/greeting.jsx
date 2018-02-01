@@ -18,10 +18,7 @@ class Greeting extends React.Component {
 
     if(this.props.loggedIn){
       return(
-        <div>
-            <Redirect to="/browse" />
-        </div>
-
+        <Redirect to="/browse" />
       );
     } else {
       return (

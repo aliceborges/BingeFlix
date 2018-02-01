@@ -24,15 +24,24 @@ class MoviesIndex extends React.Component {
                 Mighty<br/>
                 Avocado
               </h1>
+              <br/>
+              <ul className="year-genre-container">
+                <li className="feature-year">2017</li>
+                <li className="feature-genre">documentary</li>
+              </ul>
               <p className="featured-blurb">
                 Learn about the healing powers
                 <br/>
                 of this tasty superfood
               </p>
-              <button className="play-button">PLAY</button>
-              &nbsp;
-              &nbsp;
-              <button className="my-list-button">+ MY LIST</button>
+              <br/>
+              <div className="feature-buttons">
+                <button className="play-button">Play</button>
+                  &nbsp;
+                  &nbsp;
+                <button className="my-list-button"><span id="plus-sign">+</span>
+                &nbsp; My List</button>
+              </div>
             </div>
           </section>
 
