@@ -6,223 +6,47 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([{email: "Demo User", password: 'goodpassword'},
-                  {email: 'avocadotheblackcat', password:'avocado'}])
-
+users = User.create([{email: "Demo User", password: 'goodpassword'}])
 
 movies = Movie.create([{
-  title: "The Mighty Avocado89510",
+  title: "Chopt",
   year: 2017,
-  blurb: "Learn about the healing powers of this tasty superfood",
-  image_url: "https://i.imgur.com/8YXXp42.jpg"},
+  blurb: "The best cooking competition in America",
+  image_url: "https://i.imgur.com/8YXXp42.jpg",
+  video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517522776/chopping_food_da8avs.mp4"},
   {
-    title: "The Mighty Avocado8952",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
+    title: "Best Friend",
+    year: 2015,
+    blurb: "How did our four-legged bestie evolve from the savage wolf?",
+    image_url: "",
+    video_url: ""
   },
   {
-    title: "The Mighty Avocado8953",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
+    title: "Your Brain",
+    year: 2011,
+    blurb: "An in-depth look at the evolution of the human brain",
+    image_url: "",
+    video_url: ""
   },
   {
-    title: "The Mighty Avocado8954",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
+    title: "Puppet Show",
+    year: 2009,
+    blurb: "Hilarious puppets doing nothing but living and loving life",
+    image_url: "",
+    video_url: ""
   },
   {
-    title: "The Mighty Avocado8955",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
+    title: "Witch Town",
+    year: 2010,
+    blurb: "The award-winning drama about a town full of witches who lead double lives",
+    image_url: "",
+    video_url: ""
   },
   {
-    title: "The Mighty Avocado8956",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8957",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8958",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8959",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado89511",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado89512",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8952342",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8952343",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8954234",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado89523415",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado566",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado567",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado568",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado569",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado5611",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado5612",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado562",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado83",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado84",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado85",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado86",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8707",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8708",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado8709",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado87011",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado87012",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado87027",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado87028",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado87029",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado870121",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
-  },
-  {
-    title: "The Mighty Avocado870212",
-    year: 2017,
-    blurb: "Learn about the healing powers of this tasty superfood",
-    image_url: "https://i.imgur.com/8YXXp42.jpg"
+    title: "Seeking Soulmate",
+    year: 2013,
+    blurb: "Young people attempt to find love off the web",
+    image_url: "",
+    video_url: ""
   }
-])
+  ])

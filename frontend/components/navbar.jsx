@@ -50,7 +50,7 @@ class Navbar extends React.Component {
                   </li>
                   <li id="pop-up-logout-btn"
                       onClick={ (e) => this.handleSubmit(e) }>
-                    Sign out of Bingeflix
+                    Sign out of BingeFlix
                   </li>
 
                 </ul>
