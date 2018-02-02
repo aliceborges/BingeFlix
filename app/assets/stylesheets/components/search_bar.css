@@ -1,5 +1,6 @@
 .search-bar {
   color: white;
+  display: none;
 }
 
 input.search-bar {
@@ -20,4 +21,9 @@ input.search-bar {
 
 .fa-search {
   margin-left: 10px;
+  width: 50px;
+}
+
+.fa-search:hover {
+  cursor: pointer;
 }

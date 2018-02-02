@@ -13,10 +13,6 @@ class MoviesIndex extends React.Component {
     this.props.fetchMovies();
   }
 
-  componentWillReceiveProps(nextProps) {
-    // this.props.fetchMovie(1);
-  }
-
   genres() {
     return ["TV SHOWS", "MOVIES", "ORIGINALS", "COMEDY",
             "DRAMA", "ANIMALS", "HORROR", "ROMANCE"];
@@ -28,14 +24,22 @@ class MoviesIndex extends React.Component {
     let movieYear;
     let movieGenre;
     let movieBlurb;
+    let movieImage;
+    let backgroundStyle;
+    let backgroundImage;
 
     if(this.props.movies[0]) {
       featuredMovie = this.props.movies[0];
       movieTitle = featuredMovie.title;
       movieYear = featuredMovie.year;
-      movieBlurb = featuredMovie.blurb; ///don't have right now
+      movieBlurb = featuredMovie.blurb;
+      movieImage = featuredMovie.image_url;
+      backgroundStyle ={ background: `linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.98), rgba(0, 0, 0, .1), transparent), url(${movieImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'left',
+      backgroundRepeat: 'no-repeat'};
     } else {
-      movieTitle ="nothing to see here";
+      movieTitle = "";
     }
 
 
@@ -46,7 +50,7 @@ class MoviesIndex extends React.Component {
             currentUserEmail={this.props.currentUserEmail}/>
         </div>
 
-          <section className="featured-movie">
+          <section className="featured-movie" style={ backgroundStyle }>
             <div className="title-blurb-container">
               <h1 className="featured-title">
                 { movieTitle }
@@ -84,7 +88,6 @@ class MoviesIndex extends React.Component {
               </li>
           )) }
         </ul>
-        {/* </div> */}
       </div>
     );
   }
