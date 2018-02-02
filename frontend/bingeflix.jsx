@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchMovie, fetchMovies } from './actions/movie_actions';
+import { fetchGenres, fetchGenre } from './util/genres_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   ///testing
-  window.fetchMovie = fetchMovie;
-  window.fetchMovies = fetchMovies;
-  
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+
+  window.fetchGenre = fetchGenre;
+  window.fetchGenres = fetchGenres;
 
   ///end of testing
 

@@ -105,3 +105,29 @@ movies = Movie.create([{
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517558090/postmodern-family_fjbais.mp4"
   }
   ])
+
+genres = Genre.create([{
+  name: "tv shows"
+},
+  {
+    name: "originals"
+  },
+  {
+    name: "movies"
+  },
+  {
+    name: "comedy"
+  },
+  {
+    name: "drama"
+  },
+  {
+    name: "animals"
+  },
+  {
+    name: "horror"
+  },
+  {
+    name: "romance"
+  }
+  ])

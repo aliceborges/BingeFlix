@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  image_url  :string           not null
+#  video_url  :string           not null
 #
 
 require 'test_helper'

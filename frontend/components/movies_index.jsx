@@ -18,7 +18,6 @@ class MoviesIndex extends React.Component {
             "DRAMA", "ANIMALS", "HORROR", "ROMANCE"];
   }
 
-
   render() {
     let featuredMovie;
     let movieTitle;
@@ -31,13 +30,14 @@ class MoviesIndex extends React.Component {
     let backgroundImage;
     let handlePlayButton;
 
-    if(this.props.movies[0]) {
+    if(this.props.movies.length > 0) {
       featuredMovie = this.props.movies[0];
       movieTitle = featuredMovie.title;
       movieYear = featuredMovie.year;
       movieBlurb = featuredMovie.blurb;
       movieImage = featuredMovie.image_url;
       movieVideo = featuredMovie.video_url;
+      console.warn(featuredMovie);
       backgroundStyle = {
         background: `linear-gradient(to right,
                       rgba(0,0,0,1), rgba(0,0,0,.98),
@@ -45,11 +45,11 @@ class MoviesIndex extends React.Component {
                       url(${movieImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'left',
-        backgroundRepeat: 'no-repeat'};
+        backgroundRepeat: 'no-repeat'
+        };
     } else {
       movieTitle = "";
     }
-
 
 
     return (
@@ -76,7 +76,7 @@ class MoviesIndex extends React.Component {
               </p>
               <br/>
               <div className="feature-buttons">
-                <a href={ movieVideo }>
+                <a href={movieVideo}>
                   <button className="play-button">Play</button>
                 </a>
                   &nbsp;
@@ -89,7 +89,6 @@ class MoviesIndex extends React.Component {
             </div>
           </section>
 
-        {/* <div className="inner-page"> */}
           <ul>
           { this.genres().map((genre, idx) => (
               <li key={AppUtil.uniqueKey(idx)}>
