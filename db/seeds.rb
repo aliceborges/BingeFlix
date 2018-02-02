@@ -11,7 +11,7 @@ users = User.create([{email: "Demo User", password: 'goodpassword'}])
 movies = Movie.create([{
     title: "The Mighty Avocado",
     year: 2017,
-    blurb: "Learn about the history and the healing powers of this green super food",
+    blurb: "Learn about the healing powers of this tasty superfood",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517562206/the_mighty_avocado_fgjkrw.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517559820/the_mighty_avocado_h4dd5r.mp4"
   },

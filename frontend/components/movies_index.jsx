@@ -18,6 +18,7 @@ class MoviesIndex extends React.Component {
             "DRAMA", "ANIMALS", "HORROR", "ROMANCE"];
   }
 
+
   render() {
     let featuredMovie;
     let movieTitle;
@@ -25,8 +26,10 @@ class MoviesIndex extends React.Component {
     let movieGenre;
     let movieBlurb;
     let movieImage;
+    let movieVideo;
     let backgroundStyle;
     let backgroundImage;
+    let handlePlayButton;
 
     if(this.props.movies[0]) {
       featuredMovie = this.props.movies[0];
@@ -34,13 +37,19 @@ class MoviesIndex extends React.Component {
       movieYear = featuredMovie.year;
       movieBlurb = featuredMovie.blurb;
       movieImage = featuredMovie.image_url;
-      backgroundStyle ={ background: `linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.98), rgba(0, 0, 0, .1), transparent), url(${movieImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'left',
-      backgroundRepeat: 'no-repeat'};
+      movieVideo = featuredMovie.video_url;
+      backgroundStyle = {
+        background: `linear-gradient(to right,
+                      rgba(0,0,0,1), rgba(0,0,0,.98),
+                      rgba(0, 0, 0, .1), transparent),
+                      url(${movieImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'left',
+        backgroundRepeat: 'no-repeat'};
     } else {
       movieTitle = "";
     }
+
 
 
     return (
@@ -67,7 +76,9 @@ class MoviesIndex extends React.Component {
               </p>
               <br/>
               <div className="feature-buttons">
-                <button className="play-button">Play</button>
+                <a href={ movieVideo }>
+                  <button className="play-button">Play</button>
+                </a>
                   &nbsp;
                   &nbsp;
                 <button className="my-list-button"><span id="plus-sign">+</span>
