@@ -6,6 +6,7 @@
   left: 0;
   top: 0;
   padding-bottom: 50px;
+  z-index: -2;
 }
 
 .featured-movie {
@@ -21,11 +22,12 @@
 }
 
 .title-blurb-container {
-  margin: 90px 80px;
+  margin: 90px 80px ;
+  width: 30%;
 }
 
 .featured-title {
-  padding-top: 50px;
+  padding-top: 80px;
   font-size: 60px;
   font-weight: 600;
   line-height: 1;
@@ -96,11 +98,4 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.genre-name {
-  color: white;
-  font-size: 30px;
-  font-weight: 600;
-  margin: 10px 40px;
 }

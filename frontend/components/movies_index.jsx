@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from './navbar';
-import MovieIndexItem from './movie_index_item';
+import GenreList from './genre-list';
+import * as AppUtil from '../util/app_util';
+import { Player } from 'video-react';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
@@ -11,7 +13,32 @@ class MoviesIndex extends React.Component {
     this.props.fetchMovies();
   }
 
+  componentWillReceiveProps(nextProps) {
+    // this.props.fetchMovie(1);
+  }
+
+  genres() {
+    return ["TV SHOWS", "MOVIES", "ORIGINALS", "COMEDY",
+            "DRAMA", "ANIMALS", "HORROR", "ROMANCE"];
+  }
+
   render() {
+    let featuredMovie;
+    let movieTitle;
+    let movieYear;
+    let movieGenre;
+    let movieBlurb;
+
+    if(this.props.movies[0]) {
+      featuredMovie = this.props.movies[0];
+      movieTitle = featuredMovie.title;
+      movieYear = featuredMovie.year;
+      movieBlurb = featuredMovie.blurb; ///don't have right now
+    } else {
+      movieTitle ="nothing to see here";
+    }
+
+
     return (
       <div className="browse-page">
         <div className="inner-page">
@@ -19,24 +46,20 @@ class MoviesIndex extends React.Component {
             currentUserEmail={this.props.currentUserEmail}/>
         </div>
 
-
           <section className="featured-movie">
             <div className="title-blurb-container">
               <h1 className="featured-title">
-                The
-                <br/>
-                Mighty<br/>
-                Avocado
+                { movieTitle }
               </h1>
               <br/>
               <ul className="year-genre-container">
-                <li className="featured-year">2017</li>
+                <li className="featured-year">
+                  { movieYear }
+                </li>
                 <li className="featured-genre">documentary</li>
               </ul>
               <p className="featured-blurb">
-                Learn about the healing powers
-                <br/>
-                of this tasty superfood
+                { movieBlurb }
               </p>
               <br/>
               <div className="feature-buttons">
@@ -51,14 +74,17 @@ class MoviesIndex extends React.Component {
             </div>
           </section>
 
-        <div className="inner-page">
-          <h2 className="genre-name" >TV Shows</h2>
-          <ul className="movie-index-container">
-            { this.props.movies.slice(0, 6).map(movie => (
-              <li key={movie.id}><MovieIndexItem movie={ movie }/></li>
-            )) }
-          </ul>
-        </div>
+        {/* <div className="inner-page"> */}
+          <ul>
+          { this.genres().map((genre, idx) => (
+              <li key={AppUtil.uniqueKey(idx)}>
+                <GenreList key={AppUtil.uniqueKey(idx)}
+                          movies={ this.props.movies }
+                          genre={genre}/>
+              </li>
+          )) }
+        </ul>
+        {/* </div> */}
       </div>
     );
   }

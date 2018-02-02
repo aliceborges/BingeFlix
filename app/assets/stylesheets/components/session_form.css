@@ -21,8 +21,9 @@
 }
 
 .session-form h1 {
-  font-weight: 600;
-  font-size: 28px;
+  font-weight: 300;
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .session-errors {
@@ -47,6 +48,10 @@
   padding: 0 0 0 10px;
 }
 
+.session-form input:focus {
+  border: 1px solid gray;
+}
+
 .session-form input[type="submit"] {
   width: 100%;
   height: 45px;
@@ -54,6 +59,19 @@
   font-weight: 100;
   font-family: 'Roboto', sans-serif;
   margin-top: 15px;
+}
+
+.session-form input[type="submit"]:first-of-type:hover {
+  background: rgb(180, 0, 0);
+}
+
+.session-form input[type="submit"]:last-of-type:hover {
+  background: #eee;
+  color: black;
+}
+
+.session-form input[type="submit"]:last-of-type {
+  color: #444;
 }
 
 .session-form input[type="submit"]:first-of-type, .home-navbar button  {
@@ -71,7 +89,6 @@
   padding: 9px 12px;
   letter-spacing: 2px;
 }
-
 
 .session-form-bottom {
   margin-top: 15px;
