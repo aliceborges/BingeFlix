@@ -98,3 +98,7 @@
 .session-form a:visited {
   color: rgb(0, 113, 255);
 }
+
+.session-form-bottom a:hover {
+  text-decoration: underline;
+}
