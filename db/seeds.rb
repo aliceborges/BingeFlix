@@ -57,7 +57,7 @@ movies = Movie.create([{
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517542215/seeking_soulmate_g3oswu.mp4"
   },
   {
-    title: "Puss in Boot",
+    title: "Puss in Boots",
     year: 2013,
     blurb: "A litte cat takes on a big adventure",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/e_auto_contrast/v1517558024/puss_in_boots_ao0aqc.jpg",
@@ -106,28 +106,202 @@ movies = Movie.create([{
   }
   ])
 
-genres = Genre.create([{
-  name: "tv shows"
-},
+genres = Genre.create([
   {
-    name: "originals"
+    name: "TV Shows"
   },
   {
-    name: "movies"
+    name: "Originals"
   },
   {
-    name: "comedy"
+    name: "Movies"
   },
   {
-    name: "drama"
+    name: "Comedy"
   },
   {
-    name: "animals"
+    name: "Drama"
   },
   {
-    name: "horror"
+    name: "Animals"
   },
   {
-    name: "romance"
+    name: "Horror"
+  },
+  {
+    name: "Romance"
+  },
+  {
+    name: "Documentary"
   }
+  ])
+
+  movie_genres = MovieGenre.create([
+    {
+      movie_id: 1,
+      genre_id: 2
+
+    },
+    {
+      movie_id: 1,
+      genre_id: 3
+
+    },
+    {
+      movie_id: 1,
+      genre_id: 8
+
+    },
+    {
+      movie_id: 2,
+      genre_id: 5
+    },
+    {
+      movie_id: 3,
+      genre_id: 3
+    },
+    {
+      movie_id: 3,
+      genre_id: 6
+    },
+    {
+      movie_id: 3,
+      genre_id: 9
+    },
+    {
+      movie_id: 4,
+      genre_id: 3
+    },
+    {
+      movie_id: 4,
+      genre_id: 9
+    },
+    {
+      movie_id: 5,
+      genre_id: 1
+    },
+    {
+      movie_id: 5,
+      genre_id: 2
+    },
+    {
+      movie_id: 5,
+      genre_id: 4
+    },
+    {
+      movie_id: 6,
+      genre_id: 1
+    },
+    {
+      movie_id: 6,
+      genre_id: 5
+    },
+    {
+      movie_id: 6,
+      genre_id: 7
+    },
+    {
+      movie_id: 7,
+      genre_id: 1
+    },
+    {
+      movie_id: 7,
+      genre_id: 5
+    },
+    {
+      movie_id: 7,
+      genre_id: 8
+    },
+    {
+      movie_id: 8,
+      genre_id: 3
+    },
+    {
+      movie_id: 8,
+      genre_id: 4
+    },
+    {
+      movie_id: 8,
+      genre_id: 5
+    },
+    {
+      movie_id: 8,
+      genre_id: 6
+    },
+    {
+      movie_id: 9,
+      genre_id: 1
+    },
+    {
+      movie_id: 9,
+      genre_id: 2
+    },
+    {
+      movie_id: 9,
+      genre_id: 9
+    },
+    {
+      movie_id: 10,
+      genre_id: 1
+    },
+    {
+      movie_id: 10,
+      genre_id: 5
+    },
+    {
+      movie_id: 11,
+      genre_id: 1
+    },
+    {
+      movie_id: 11,
+      genre_id: 4
+    },
+    {
+      movie_id: 11,
+      genre_id: 5
+    },
+    {
+      movie_id: 12,
+      genre_id: 1
+    },
+    {
+      movie_id: 12,
+      genre_id: 4
+    },
+    {
+      movie_id: 13,
+      genre_id: 1
+    },
+    {
+      movie_id: 13,
+      genre_id: 2
+    },
+    {
+      movie_id: 13,
+      genre_id: 7
+    },
+    {
+      movie_id: 13,
+      genre_id: 5
+    },
+    {
+      movie_id: 13,
+      genre_id: 8
+    },
+    {
+      movie_id: 14,
+      genre_id: 1
+    },
+    {
+      movie_id: 14,
+      genre_id: 4
+    },
+    {
+      movie_id: 14,
+      genre_id: 5
+    },
+    {
+      movie_id: 14,
+      genre_id: 8
+    },
   ])
