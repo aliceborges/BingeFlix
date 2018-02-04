@@ -21,6 +21,7 @@ body {
 
 .inner-page {
   margin: 15px 40px;
+  /* z-index: -1; */
 }
 
 .site-name {
@@ -32,4 +33,12 @@ body {
 
 a:hover, input[type="submit"]:hover, button:hover {
   cursor: pointer;
+}
+
+.show-element {
+  display: block;
+}
+
+.hide-element {
+  display: none;
 }

@@ -29,13 +29,11 @@ class MoviesIndex extends React.Component {
           { genres.length === 0 ? <LoadingIcon />  :
             <div>
               <FeaturedMovie movie = { movies[0] }/>
-              <ul>
-                { genres.map((genre, idx) => (
-                  <Carousel key={idx} genre={ genre }/>
-                ))
-                }
+              { genres.map((genre, idx) => (
+                <Carousel key={idx} genre={ genre }/>
+              ))
+              }
 
-              </ul>
             </div>
           }
         </div>
@@ -44,13 +42,3 @@ class MoviesIndex extends React.Component {
 }
 
 export default MoviesIndex;
-
-
-{/* <ul>
-  { genres.map((genre, idx) => (
-    <li key={ AppUtil.uniqueKey(idx) }>
-      <GenreList key={genre.id}
-        genre={genre}/>
-      </li>
-    ))}
-</ul> */}
