@@ -132,7 +132,7 @@ genres = Genre.create([
     name: "Romance"
   },
   {
-    name: "Documentary"
+    name: "Documentaries"
   }
   ])
 
