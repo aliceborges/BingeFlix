@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './navbar';
-import GenreList from './genre-list';
 import * as AppUtil from '../util/app_util';
 import { Player } from 'video-react';
 import LoadingIcon from './loading_icon';
 import FeaturedMovie from './featured_movie';
+import Carousel from './carousel';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
@@ -31,11 +31,10 @@ class MoviesIndex extends React.Component {
               <FeaturedMovie movie = { movies[0] }/>
               <ul>
                 { genres.map((genre, idx) => (
-                  <li key={ AppUtil.uniqueKey(idx) }>
-                    <GenreList key={genre.id}
-                      genre={genre}/>
-                    </li>
-                  ))}
+                  <Carousel key={idx} genre={ genre }/>
+                ))
+                }
+
               </ul>
             </div>
           }
@@ -45,3 +44,13 @@ class MoviesIndex extends React.Component {
 }
 
 export default MoviesIndex;
+
+
+{/* <ul>
+  { genres.map((genre, idx) => (
+    <li key={ AppUtil.uniqueKey(idx) }>
+      <GenreList key={genre.id}
+        genre={genre}/>
+      </li>
+    ))}
+</ul> */}
