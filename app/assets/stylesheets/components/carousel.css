@@ -79,11 +79,12 @@ span[id^="next"] {
 
 div[id^="expanding-block"] {
   width: 100%;
-  height: 500px;
+  height: 450px;
   background: white;
 }
 
 .window-close-x {
   font-size: 50px;
   color: black;
+  text-align: right;
 }

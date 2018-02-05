@@ -39,7 +39,7 @@ class Carousel extends React.Component {
     const { genre } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     $(expandingBlock).addClass('hide-element');
-    const currentSlide = $(expandingBlock).parent().prev(".wrap").closest('.window').closest(`#carousel_${genre.id}`).closest('.slide');
+    const currentSlide = $(expandingBlock).parent(".carousel-component").children(".wrap").children('.window').children(`#carousel_${genre.id}`).children('.slide');
     $(currentSlide).css("border-width", "0");
   }
 
