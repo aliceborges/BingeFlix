@@ -1,7 +1,8 @@
 import React from 'react';
+import * as AppUtil from '../util/app_util';
 
-const FeaturedMovie = ({ movie }) => {
-
+const FeaturedMovie = ({ movies }) => {
+  const movie = movies[AppUtil.randomNumFromOneToFive()];
   return (
     <section className="featured-movie"
       style={ { background: `linear-gradient(to right,

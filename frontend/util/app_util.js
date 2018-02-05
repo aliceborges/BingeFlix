@@ -4,5 +4,5 @@ export const uniqueKey = (num = 1) => {
 };
 
 export const randomNumFromOneToFive = () => {
-  Math.floor(Math.random() * 5);
+  return Math.floor(Math.random() * 5);
 };
