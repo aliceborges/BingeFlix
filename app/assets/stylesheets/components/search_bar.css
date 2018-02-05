@@ -12,11 +12,9 @@
   align-items: center;
 }
 
-#search-bar {
-  color: white;
-}
-
 input#search-bar {
+  color: white;
+  position: relative;
   background: black;
   border: 1px solid white;
   padding: 4px 10px;
@@ -24,9 +22,21 @@ input#search-bar {
 
 #search-results {
   position: absolute;
+  right: 140px;
   top: 50px;
-  padding 10px;
-  background: white;
+  padding: 0 10px;
+  background: black;
+  color: white;
+  width: 200px;
+}
+
+.search-result {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.search-result:first-of-type {
+  border-top: 0;
 }
 
 #search-icon {

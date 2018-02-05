@@ -65,24 +65,32 @@ class SearchBar extends React.Component {
   }
 
 
+  moveCursorToEnd(e) {
+    let tempValue = e.target.value;
+    e.target.value = '';
+    e.target.value = tempValue;
+  }
+
 
   render() {
      let results = this.matches().map((result, i) => {
       return (
-        <li key={i} onClick={this.selectName}>{result}</li>
+        <li className="search-result" key={i} onClick={this.selectName}>{result}</li>
       );
     });
 
-    // const inputField = <input key={ AppUtil.uniqueKey(1) }
-    //                           id="search-bar"
-    //                           type="text"
-    //                           placeholder="Titles, genres"
-    //                           onChange={ this.updateSearch }
-    //                           value={ this.state.inputVal }/>;
+    const inputField = <input key={ AppUtil.uniqueKey(1) }
+                              autoFocus
+                              onFocus = {(e) => this.moveCursorToEnd(e)}
+                              id="search-bar"
+                              type="text"
+                              placeholder= "Titles,genres"
+                              onChange={ this.updateSearch }
+                              value={ this.state.inputVal }/>;
 
     return(
         <div className="search-bar-container">
-          {/* {!this.state.isHidden &&
+          {!this.state.isHidden &&
             <ReactCSSTransitionGroup
               transitionName="search"
               transitionAppear={true}
@@ -91,21 +99,9 @@ class SearchBar extends React.Component {
               transitionLeave={false}>
               { inputField }
             </ReactCSSTransitionGroup>
-            } */}
-
-            <input key={ AppUtil.uniqueKey(1) }
-                                      id="search-bar"
-                                      type="text"
-                                      placeholder="Titles, genres"
-                                      onChange={ (e) => this.updateSearch(e) }
-                                      value={ this.state.inputVal }/>
+            }
             <ul id="search-results">
-              {/* <ReactCSSTransitionGroup
-                transitionName='auto'
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={500}> */}
                 {results}
-              {/* </ReactCSSTransitionGroup> */}
             </ul>
             <FaSearch onClick={() => this.toggleHidden()} id="search-icon"/>
           </div>
