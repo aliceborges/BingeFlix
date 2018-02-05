@@ -45,7 +45,7 @@ class MoviesIndex extends React.Component {
                     genres={ genres }/>
           </div>
             <div>
-              <FeaturedMovie movies = { movies }/>
+              <FeaturedMovie movies = { movies } numOfMovies = { movies.length }/>
               { genres.map((genre, idx) => (
                 <Carousel key={idx} genre={ genre }/>
               ))

@@ -41,6 +41,10 @@ class Slide extends React.Component {
                 </div>
             </div>`
     );
+     $('html, body').animate({
+        scrollTop: $(currentSlide).offset().top
+    }, 400);
+
   }
 
   render() {
