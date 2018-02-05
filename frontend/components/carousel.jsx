@@ -39,6 +39,8 @@ class Carousel extends React.Component {
     const { genre } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     $(expandingBlock).addClass('hide-element');
+    const currentSlide = $(expandingBlock).closest('.slide');
+    $(currentSlide).css("border", "none");
   }
 
   render() {
@@ -55,7 +57,7 @@ class Carousel extends React.Component {
             </span>
             <div id={"carousel_" + genre.id}>
               { genre.movies.map((movie, idx) => (
-                  <Slide key={AppUtil.uniqueKey(idx)} genre={genre} movie={ movie }/>
+                  <Slide key={idx} genre={genre} movie={ movie }/>
               ))}
             </div>
             <span id={"next_" + genre.id}

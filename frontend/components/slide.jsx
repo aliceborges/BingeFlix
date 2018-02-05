@@ -10,20 +10,22 @@ class Slide extends React.Component {
   }
 
   openExpandingBlock() {
-    const { genre } = this.props;
+    const { genre, key } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     $(expandingBlock).removeClass('hide-element');
+    const currentSlide = document.getElementById(`slide-${key}`);
+    $(currentSlide).css("border", "1px solid white");
   }
 
   render() {
-    const { movie } = this.props;
+    const { movie, key } = this.props;
 
     const movieBackground = {
       backgroundImage: `url(${movie.image_url})`,
     };
 
     return (
-      <span className="slide" style={movieBackground}>
+      <span className="slide" id={"slide-" + key} style={movieBackground}>
         <FaPlayCircleO className="slide-play-btn"/>
         <h2>{ movie.title }</h2>
         <div className="bottom-of-slide">
