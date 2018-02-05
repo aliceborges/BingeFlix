@@ -6,15 +6,15 @@ class FeaturedMovie extends React.Component {
     super(props);
   }
 
-  randomNumFromOneTo() {
-    const { numOfMovies } = this.props;
-    return Math.floor(Math.random() * numOfMovies);
-  }
+  // randomNumFromOneTo() {
+  //   const { numOfMovies } = this.props;
+  //   return Math.floor(Math.random() * numOfMovies);
+  // }
 
   render() {
     const { movies } = this.props;
-    const idx = this.randomNumFromOneTo();
-    const movie = movies[idx];
+    // const idx = this.randomNumFromOneTo();
+    const movie = movies[19];
     return (
       movie ?
         <section className="featured-movie"
