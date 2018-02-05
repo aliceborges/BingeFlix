@@ -17,8 +17,25 @@ class MoviesIndex extends React.Component {
 
 
   render() {
-    const { movies, loading, currentUserEmail, logout, genres } = this.props;
+    const { movies, moviesLoading, currentUserEmail, logout, genres } = this.props;
 
+    if(moviesLoading) {
+      return (
+        <div className="browse-page">
+          <div className="inner-page">
+            <Navbar logout={ logout }
+                    currentUserEmail={ currentUserEmail }
+                    movies={ movies }
+                    genres={ genres }/>
+          </div>
+          <LoadingIcon />;
+        </div>
+      );
+    }
+
+    if(!movies) {
+      return null;
+    }
     return (
         <div className="browse-page">
           <div className="inner-page">
@@ -27,16 +44,14 @@ class MoviesIndex extends React.Component {
                     movies={ movies }
                     genres={ genres }/>
           </div>
-          { genres.length === 0 ? <LoadingIcon />  :
             <div>
-              <FeaturedMovie movie = { movies[19] }/>
+              <FeaturedMovie movies = { movies }/>
               { genres.map((genre, idx) => (
                 <Carousel key={idx} genre={ genre }/>
               ))
               }
 
             </div>
-          }
         </div>
     );
   }

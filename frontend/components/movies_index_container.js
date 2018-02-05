@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     movies: Object.values(state.entities.movies),
     genres: Object.values(state.entities.genres),
-    loading: state.ui.loading,
+    moviesLoading: state.ui.loading.moviesLoading,
+    genresLoading: state.ui.loading.genresLoading,
     currentUserEmail
   };
 };
