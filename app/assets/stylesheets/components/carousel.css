@@ -92,6 +92,7 @@ div[id^="expanding-block"] {
   height: 450px;
   justify-content: space-between;
   flex-direction: row-reverse;
+  margin-top: -40px;
 }
 
 .window-close-x {
