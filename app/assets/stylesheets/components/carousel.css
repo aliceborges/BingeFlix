@@ -4,10 +4,11 @@
   text-align: center;
   letter-spacing: 0.15px;
   position: relative;
+  margin-top: -5px;
 }
 
 .carousel-component:first-of-type {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 
@@ -17,7 +18,7 @@
   font-weight: 600;
   text-transform: uppercase;
   font-size: 16px;
-  /* margin-bottom: -40px; */
+  margin-bottom: -40px;
   text-shadow: 2px 2px 5px black;
   font-family: 'Ramabhadra', sans-serif;
 }

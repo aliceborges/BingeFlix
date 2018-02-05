@@ -94,7 +94,7 @@ class SearchBar extends React.Component {
             <ReactCSSTransitionGroup
               transitionName="search"
               transitionAppear={true}
-              transitionAppearTimeout={500}
+              transitionAppearTimeout={100}
               transitionEnter={false}
               transitionLeave={false}>
               { inputField }
