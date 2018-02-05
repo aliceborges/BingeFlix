@@ -64,7 +64,8 @@
 #down-arrow {
   color: white;
   position: fixed;
-  padding: 0 0 20px;
+  margin-top: 10px;
+  padding-bottom: 20px;
 }
 
 .pop-up-notifications {

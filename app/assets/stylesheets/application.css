@@ -42,3 +42,7 @@ a:hover, input[type="submit"]:hover, button:hover {
 .hide-element {
   display: none;
 }
+
+.display-flex {
+  display: flex;
+}

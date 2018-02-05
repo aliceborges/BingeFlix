@@ -10,6 +10,25 @@
   background-size: cover;
 }
 
+.slide > h2 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.slide > h2, .slide > div {
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 5px 2px 20px #000,
+               6px 3px 20px #000,
+               3px 1px 20px #000,
+               2px 2px 20px #000,
+               9px 2px 20px #000;
+}
+
+.slide > div {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
 .slide:hover {
   width: 350px;
   height: 250px;
@@ -37,6 +56,9 @@
 .slide:hover .bottom-of-slide {
   opacity: 1;
   display: block;
+  background: linear-gradient(to top,
+              rgba(0,0,0,1),
+        rgba(0, 0, 0, .9), rgba(0, 0, 0, .8), transparent)
 }
 
 
@@ -44,7 +66,6 @@
   display: none;
   opacity: 0;
   padding: 0 10px;
-  font-size: 14px;
   transition: .3s;
 }
 
@@ -57,4 +78,49 @@
 .expand-arrow:hover {
   color: rgb(255, 0, 0);
   opacity: .8;
+}
+
+.expanding-block {
+  margin-top: -10px;
+}
+
+.expanding-block-left {
+  margin: 80px 60px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.expanding-block-left > h2 {
+  font-size: 60px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+.expanding-block > div {
+  font-size: 18px;
+}
+
+.circle-plus {
+  display: block;
+  border: 2px solid white;
+  opacity: .7;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  height: 28px;
+  width: 30px;
+  text-align: center;
+}
+
+.circle-plus:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.expanding-block-my-list {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }

@@ -18,18 +18,12 @@ const FeaturedMovie = ({ movies }) => {
           { movie.title }
         </h1>
         <br/>
-        <ul className="year-genre-container">
-          <li className="featured-year">
-            { movie.year }
-          </li>
-          <li className="featured-genre">documentary</li>
-        </ul>
         <p className="featured-blurb">
           { movie.blurb }
         </p>
         <br/>
         <div className="feature-buttons">
-          <a href={movie.video_url}>
+          <a href="#">
             <button className="play-button">Play</button>
           </a>
           &nbsp; &nbsp;

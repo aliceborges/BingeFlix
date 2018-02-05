@@ -13,25 +13,10 @@
 }
 
 .featured-title {
-  padding-top: 80px;
+  padding-top: 100px;
   font-size: 60px;
   font-weight: 600;
   line-height: 1;
-}
-
-.year-genre-container {
-  display: flex;
-  letter-spacing: 2px;
-  font-size: 14px;
-}
-
-.year-genre-container li:first-of-type {
-  padding-right: 20px;
-  border-right: 1px solid white;
-}
-
-.year-genre-container li:last-of-type {
-  margin-left: 20px;
 }
 
 .featured-blurb {

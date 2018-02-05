@@ -10,13 +10,37 @@ class Slide extends React.Component {
   }
 
   openExpandingBlock() {
-    const { genre, specialId } = this.props;
+    const { genre, specialId, movie } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
-    $(expandingBlock).removeClass('hide-element');
     const currentSlide = document.getElementById(`slide-${specialId}`);
+    const allSlides = document.getElementsByClassName('slide');
+
+    $(allSlides).css("border", "none");
+
+    $(".expanding-block").removeClass("display-flex").addClass("hide-element");
+
+    $(expandingBlock).removeClass('hide-element').addClass("display-flex");
     $(currentSlide).css({"border-color": "#FFF",
-                         "border-width":"5px",
-                         "border-style":"solid"});
+                         "border-width": "5px",
+                         "border-style": "solid"});
+    $('.expanding-block-left').remove();
+    $(expandingBlock).css({"background": `linear-gradient(to right,
+                            rgba(0,0,0,1), rgba(0,0,0,.8),
+                            rgba(0, 0, 0, .1), transparent),
+                            url('${movie.image_url}')`,
+                          "background-size": "cover",
+                          "background-position": "left"});
+    $(expandingBlock).append(
+            `<div class='expanding-block-left'>
+                <h2>${movie.title}</h2>
+                <div>${movie.year}</div>
+                <p>${movie.blurb}</p>
+                <div class="expanding-block-my-list">
+                  <span class="circle-plus"> + </span>
+                   &nbsp; MY LIST
+                </div>
+            </div>`
+    );
   }
 
   render() {
@@ -29,12 +53,11 @@ class Slide extends React.Component {
     return (
       <span className="slide" id={"slide-" + specialId} style={movieBackground}>
         <FaPlayCircleO className="slide-play-btn"/>
-        <h2>{ movie.title }</h2>
-        <div className="bottom-of-slide">
+        <h2 onClick={ () => this.openExpandingBlock()}>{ movie.title }</h2>
+        <div className="bottom-of-slide" onClick={ () => this.openExpandingBlock()}>
           { movie.blurb }
           <br/>
-          <FaAngleDown onClick={ () => this.openExpandingBlock()}
-                       className="expand-arrow"/>
+          <FaAngleDown className="expand-arrow"/>
         </div>
       </span>
     );

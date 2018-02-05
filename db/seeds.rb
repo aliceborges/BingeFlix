@@ -45,14 +45,14 @@ movies = Movie.create([{
   {
     title: "Witch Town",
     year: 2010,
-    blurb: "The award-winning drama about a town full of witches who lead double lives",
+    blurb: "The award-winning drama about a town full of witches with double lives",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517542229/witch_town_u0bugl.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517542174/witch_town_ozeygy.mp4"
   },
   {
     title: "Seeking Soulmate",
     year: 2013,
-    blurb: "Young people attempt to find love off the web",
+    blurb: "Young people attempt to find love OFF the web",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/e_auto_contrast/v1517558025/seeking-soulmate_baob0s.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517542215/seeking_soulmate_g3oswu.mp4"
   },
@@ -100,7 +100,7 @@ movies = Movie.create([{
   {
     title: "Postmodern Family",
     year: 2011,
-    blurb: "A family of French postmodernists just living life the only way they know how",
+    blurb: "A family of French postmodernists living life the only way they know how",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517558023/postmodern-family_lreu5j.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517558090/postmodern-family_fjbais.mp4"
   },
@@ -164,22 +164,22 @@ movies = Movie.create([{
 
 genres = Genre.create([
   {
-    name: "TV Shows"
+    name: "Binge-worthy TV Shows"
   },
   {
-    name: "Originals"
+    name: "BingeFlix Originals"
   },
   {
     name: "Movies"
   },
   {
-    name: "Comedy"
+    name: "Best cult comedies"
   },
   {
-    name: "Drama"
+    name: "Best new fall dramas"
   },
   {
-    name: "Horror"
+    name: "Classic horror"
   }
   ])
 

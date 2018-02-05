@@ -6,6 +6,7 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right';
 import * as AppUtil from '../util/app_util';
 import ExpandingBlock from './expanding_block';
 import FaClose from 'react-icons/lib/fa/close';
+import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 
 class Carousel extends React.Component {
   constructor(props){
@@ -38,8 +39,10 @@ class Carousel extends React.Component {
   closeExpandingBlock() {
     const { genre } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
-    $(expandingBlock).addClass('hide-element');
-    const currentSlide = $(expandingBlock).parent(".carousel-component").children(".wrap").children('.window').children(`#carousel_${genre.id}`).children('.slide');
+    $(expandingBlock).addClass('hide-element').removeClass("display-flex");
+    const currentSlide = $(expandingBlock).parent(".carousel-component")
+                                          .children(".wrap").children('.window')
+                                          .children(`#carousel_${genre.id}`).children('.slide');
     $(currentSlide).css("border-width", "0");
   }
 
@@ -66,8 +69,9 @@ class Carousel extends React.Component {
             </span>
           </div>
         </div>
-        <div className="hide-element" id={"expanding-block-" + genre.id}>
+        <div className="hide-element expanding-block" id={"expanding-block-" + genre.id}>
           <FaClose onClick={() => this.closeExpandingBlock()} className="window-close-x"/>
+          <FaPlayCircleO className="expanding-block-play-btn"/>
         </div>
       </div>
     );
