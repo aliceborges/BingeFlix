@@ -5,7 +5,7 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
   transition: .3s;
   background-size: cover;
 }
@@ -13,4 +13,43 @@
 .slide:hover {
   width: 350px;
   height: 250px;
+}
+
+.slide-play-btn {
+  display: none;
+  font-size: 80px;
+  color: rgb(252, 0, 0);
+  transition: .3s;
+  font-weight: 300;
+  margin: auto;
+  border: none;
+  opacity: .5;
+}
+
+.slide:hover .slide-play-btn {
+  display: block;
+}
+
+.slide-play-btn:hover {
+  opacity: 1;
+}
+
+.slide:hover .bottom-of-slide {
+  opacity: 1;
+  display: block;
+}
+
+
+.bottom-of-slide {
+  display: none;
+  opacity: 0;
+  padding: 0 10px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.expand-arrow {
+  color: rgb(252, 0, 0);
+  font-weight: bold;
+  font-size: 50px;
 }
