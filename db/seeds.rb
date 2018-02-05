@@ -108,36 +108,57 @@ movies = Movie.create([{
     title: "2018",
     year: 2018,
     blurb: "It's the end of the world as we know it. Or is it a new beginning?",
-    image_url: "",
-    video_url: ""
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517803970/2018_ob6d5f.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517804063/2018_g4ip6h.mp4"
   },
   {
     title: "Ghost Town",
     year: 2017,
-    blurb: "",
-    image_url: "",
-    video_url: "Learn about Casper's backstory and how he got the big part."
+    blurb: "Learn about Casper's backstory and how he got the big part.",
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517803977/ghost-town_q39thq.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517804074/ghost-town_ehrhj2.mp4"
   },
   {
     title: "It's a Snoopy Halloween",
     year: 2012,
     blurb: "Come trick-or-treating with the whole Peanuts gang. Hold on to your socks.",
-    image_url: "",
-    video_url: ""
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517803971/its-a-snoopy-halloween_sftrnt.png",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517804077/It_s_a_Snoopy_Halloween_lliftb.mp4"
   },
   {
     title: "Manhattan Medium",
     blurb: "Communicating with the dead of the Upper East Side",
     year: 2009,
-    image_url: "",
-    video_url: ""
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517803975/manhattan-medium_xpthf1.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517804083/manhattan-medium_ufy51f.mp4"
   },
   {
     title: "Super Moon",
-    blurb: "Bill Nye the Science Guy stars in his first horror film."
+    blurb: "Bill Nye the Science Guy stars in his first horror film.",
     year: 2008,
-    image_url: "",
-    video_url: ""
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517803970/super-moon_dmskb6.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517804099/super-moon_dum5nv.mp4"
+  },
+  {
+    title: "Two Rich Girls",
+    blurb: "It's not all a cakewalk. Follow the immense struggles of the top 1%;",
+    year: 2006,
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517805735/two-rich-girls_cceaqk.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517805517/two-rich-girls_ienc1h.mp4"
+  },
+  {
+    title: "The Song That Changed the World",
+    blurb: "The title says it all",
+    year: 2016,
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517805734/the-song-that-changed-the-world_enlqr3.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517805577/the-song-that-changed-the-world_wozpqi.mp4"
+  },
+  {
+    title: "23 Minutes in Santorini",
+    blurb: "Contestants are placed in beautiful Santorini with 23 minutes to find a spouse",
+    year: 2018,
+    image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517805734/23-minutes-in-santorini_bsbcai.jpg",
+    video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517805547/23-minutes-in-santorini_fsxhao.mp4"
   }
   ])
 
@@ -384,7 +405,53 @@ genres = Genre.create([
     {
       movie_id: 19,
       genre_id: 6
+    },
+    {
+      movie_id: 20, #Two Rich Girls
+      genre_id: 1
+    },
+    {
+      movie_id: 20,
+      genre_id: 2
+    },
+    {
+      movie_id: 20,
+      genre_id: 4
+    },
+    {
+      movie_id: 21, #The Song that Changed the World
+      genre_id: 2
+    },
+    {
+      movie_id: 21,
+      genre_id: 3
+    },
+    {
+      movie_id: 21,
+      genre_id: 4
+    },
+    {
+      movie_id: 21,
+      genre_id: 5
+    },
+    {
+      movie_id: 21,
+      genre_id: 6
+    },
+    {
+      movie_id: 22, # 23 Minutes in Santorini
+      genre_id: 1
+    },
+    {
+      movie_id: 22,
+      genre_id: 2
+    },
+    {
+      movie_id: 22,
+      genre_id: 4
+    },
+    {
+      movie_id: 22,
+      genre_id: 5
     }
-
-
   ])
