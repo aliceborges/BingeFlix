@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarButtons from './navbar_buttons';
 import { Link } from 'react-router-dom';
-import SearchBarContainer from './search_bar_container';
+import SearchBar from './search_bar';
 
 
 class Navbar extends React.Component {
@@ -31,7 +31,7 @@ class Navbar extends React.Component {
 
           <li className="navbar-right">
             <section>
-              <SearchBarContainer />
+              <SearchBar movies={this.props.movies} genres={this.props.genres} />
             </section>
 
             <section className="notifications">

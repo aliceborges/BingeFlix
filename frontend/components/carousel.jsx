@@ -3,6 +3,7 @@ import Slide from './slide';
 import $ from 'jquery';
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
+import * as AppUtil from '../util/app_util';
 
 class Carousel extends React.Component {
   constructor(props){
@@ -16,57 +17,41 @@ class Carousel extends React.Component {
     if(carousel.classList.contains('transition')) return;
     carousel.classList.add('transition');
     carousel.style.transform = `translateX(${direction * slideWidth}px)`;
+
     setTimeout(() => {
       if (direction === 1) {
-        $(carousel).children('.slide:first').before($(carousel).children('.slide:last'));
+        $(carousel).children('.slide:first')
+                   .before($(carousel)
+                   .children('.slide:last'));
       } else if (direction === -1) {
-          $(carousel).children('.slide:last').after($(carousel).children('.slide:first'));
+          $(carousel).children('.slide:last')
+                     .after($(carousel)
+                     .children('.slide:first'));
       }
       carousel.classList.remove('transition');
       carousel.style.transform = 'translateX(0px)';
     }, 700);
   }
 
-  showArrows() {
-    const { genre } = this.props;
-    const rightArrow = document.getElementById(`prev_${genre.id}`);
-    const leftArrow = document.getElementById(`next_${genre.id}`);
-    rightArrow.classList.add('show-element');
-    leftArrow.classList.add('show-element');
-  }
-
-  hideArrows() {
-    const { genre } = this.props;
-    const rightArrow = document.getElementById(`prev_${genre.id}`);
-    const leftArrow = document.getElementById(`next_${genre.id}`);
-    rightArrow.classList.remove('show-element');
-    leftArrow.classList.remove('show-element');
-  }
-
-
   render() {
     const { genre } = this.props;
 
     return (
-      <div onMouseEnter={() => this.showArrows()}
-           onMouseLeave={() => this.hideArrows()}
-           className="carousel-component">
+      <div className="carousel-component">
         <h2>{ genre.name }</h2>
         <div className="wrap">
           <div className="window">
             <span id={"prev_" + genre.id}
-                  onClick={() => this.shiftSlide(-1)}
-                  className="hide-element">
+                  onClick={() => this.shiftSlide(-1)}>
                   <FaAngleLeft className="scroll-arrow"/>
             </span>
             <div id={"carousel_" + genre.id}>
-              { genre.movies.map(movie => (
-                <Slide movie={ movie }/>
+              { genre.movies.map((movie, idx) => (
+                <Slide key={AppUtil.uniqueKey(idx)} movie={ movie }/>
               ))}
             </div>
             <span id={"next_" + genre.id}
-                  onClick={() => this.shiftSlide(1)}
-                  className="hide-element">
+                  onClick={() => this.shiftSlide(1)}>
                   <FaAngleRight className="scroll-arrow"/>
             </span>
           </div>
