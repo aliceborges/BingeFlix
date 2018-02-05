@@ -141,7 +141,7 @@ movies = Movie.create([{
   },
   {
     title: "Two Rich Girls",
-    blurb: "It's not all a cakewalk. Follow the immense struggles of the top 1%;",
+    blurb: "It's not all a cakewalk. Follow the immense struggles of the top 1%",
     year: 2006,
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517805735/two-rich-girls_cceaqk.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517805517/two-rich-girls_ienc1h.mp4"

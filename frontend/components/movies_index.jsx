@@ -29,7 +29,7 @@ class MoviesIndex extends React.Component {
           </div>
           { genres.length === 0 ? <LoadingIcon />  :
             <div>
-              <FeaturedMovie movies = { movies.slice(5) }/>
+              <FeaturedMovie movie = { movies[18] }/>
               { genres.map((genre, idx) => (
                 <Carousel key={idx} genre={ genre }/>
               ))
