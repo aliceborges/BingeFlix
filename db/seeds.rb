@@ -65,7 +65,8 @@ movies = Movie.create([{
   },
   {
     title: "Happy Feet",
-    year: "The world of professional power walkers",
+    year: 2006,
+    blurb: "The world of professional power walkers",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/e_auto_contrast/v1517558024/happy_feet_xdlirp.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517558112/happy_feet_bb6ifj.mp4"
   },
@@ -185,7 +186,7 @@ genres = Genre.create([
 
   movie_genres = MovieGenre.create([
     {
-      movie_id: 1,
+      movie_id: 1, # The Mighty Avocado
       genre_id: 2
 
     },
@@ -199,11 +200,11 @@ genres = Genre.create([
       genre_id: 8
     },
     {
-      movie_id: 2,
+      movie_id: 2, # Chopt
       genre_id: 5
     },
     {
-      movie_id: 3,
+      movie_id: 3, #Best Friend
       genre_id: 3
     },
     {
@@ -213,17 +214,17 @@ genres = Genre.create([
     {
       movie_id: 3,
       genre_id: 9
+    },
+    {
+      movie_id: 4, #Your Brain
+      genre_id: 3
     },
     {
       movie_id: 4,
-      genre_id: 3
-    },
-    {
-      movie_id: 4,
       genre_id: 9
     },
     {
-      movie_id: 5,
+      movie_id: 5, #Puppet Show
       genre_id: 1
     },
     {
@@ -235,7 +236,7 @@ genres = Genre.create([
       genre_id: 4
     },
     {
-      movie_id: 6,
+      movie_id: 6, #Witch Town
       genre_id: 1
     },
     {
@@ -247,7 +248,7 @@ genres = Genre.create([
       genre_id: 6
     },
     {
-      movie_id: 7,
+      movie_id: 7, #Seeking Soulmate
       genre_id: 1
     },
     {
@@ -259,7 +260,7 @@ genres = Genre.create([
       genre_id: 8
     },
     {
-      movie_id: 8,
+      movie_id: 8, #Puss in Boots
       genre_id: 3
     },
     {
@@ -275,7 +276,7 @@ genres = Genre.create([
       genre_id: 2
     },
     {
-      movie_id: 9,
+      movie_id: 9, #Happy Feet
       genre_id: 1
     },
     {
@@ -287,52 +288,48 @@ genres = Genre.create([
       genre_id: 9
     },
     {
-      movie_id: 10,
+      movie_id: 10, #Baking Bread
       genre_id: 1
     },
     {
       movie_id: 10,
-      genre_id: 5
-    },
-    {
-      movie_id: 11,
-      genre_id: 1
-    },
-    {
-      movie_id: 11,
-      genre_id: 4
-    },
-    {
-      movie_id: 11,
-      genre_id: 5
-    },
-    {
-      movie_id: 12,
-      genre_id: 1
-    },
-    {
-      movie_id: 12,
-      genre_id: 4
-    },
-    {
-      movie_id: 13,
-      genre_id: 1
-    },
-    {
-      movie_id: 13,
       genre_id: 2
     },
     {
-      movie_id: 13,
-      genre_id: 6
+      movie_id: 10,
+      genre_id: 9
     },
     {
-      movie_id: 13,
+      movie_id: 11, #20/20 Rock
+      genre_id: 1
+    },
+    {
+      movie_id: 11,
       genre_id: 5
     },
     {
+      movie_id: 12, # The Fresh Prince
+      genre_id: 1
+    },
+    {
+      movie_id: 12,
+      genre_id: 4
+    },
+    {
+      movie_id: 12,
+      genre_id: 5
+    },
+    {
+      movie_id: 13, #Sabrina
+      genre_id: 1
+    },
+    {
       movie_id: 13,
-      genre_id: 8
+      genre_id: 1
+    },
+    {
+      movie_id: 13,
+      genre_id: 4
     },
     {
       movie_id: 14,
@@ -340,7 +337,11 @@ genres = Genre.create([
     },
     {
       movie_id: 14,
-      genre_id: 4
+      genre_id: 2
+    },
+    {
+      movie_id: 14, #Postmodern Family
+      genre_id: 6
     },
     {
       movie_id: 14,
@@ -348,27 +349,31 @@ genres = Genre.create([
     },
     {
       movie_id: 14,
+      genre_id: 5
+    },
+    {
+      movie_id: 15, #2018
+      genre_id: 1
+    },
+    {
+      movie_id: 15,
+      genre_id: 4
+    },
+    {
+      movie_id: 15,
+      genre_id: 5
+    },
+    {
+      movie_id: 15,
       genre_id: 8
-    },
-    {
-      movie_id: 15,
-      genre_id: 2
-    },
-    {
-      movie_id: 15,
-      genre_id: 3
-    },
-    {
-      movie_id: 15,
-      genre_id: 6
     },
     {
       movie_id: 16, #Ghost Town
-      genre_id: 3
+      genre_id: 2
     },
     {
       movie_id: 16,
-      genre_id: 4
+      genre_id: 3
     },
     {
       movie_id: 16,
@@ -380,71 +385,63 @@ genres = Genre.create([
     },
     {
       movie_id: 17,
+      genre_id: 4
+    },
+    {
+      movie_id: 17,
       genre_id: 6
     },
     {
       movie_id: 18, # Manhattan Medium
-      genre_id: 1
-    },
-    {
-      movie_id: 18,
-      genre_id: 5
+      genre_id: 3
     },
     {
       movie_id: 18,
       genre_id: 6
+    },
+    {
+      movie_id: 19,
+      genre_id: 1
     },
     {
       movie_id: 19, # Super Moon
-      genre_id: 2
-    },
-    {
-      movie_id: 19,
-      genre_id: 3
-    },
-    {
-      movie_id: 19,
-      genre_id: 6
-    },
-    {
-      movie_id: 20, #Two Rich Girls
-      genre_id: 1
-    },
-    {
-      movie_id: 20,
-      genre_id: 2
-    },
-    {
-      movie_id: 20,
-      genre_id: 4
-    },
-    {
-      movie_id: 21, #The Song that Changed the World
-      genre_id: 2
-    },
-    {
-      movie_id: 21,
-      genre_id: 3
-    },
-    {
-      movie_id: 21,
-      genre_id: 4
-    },
-    {
-      movie_id: 21,
       genre_id: 5
     },
     {
-      movie_id: 21,
+      movie_id: 19,
       genre_id: 6
     },
     {
-      movie_id: 22, # 23 Minutes in Santorini
+      movie_id: 20,
+      genre_id: 2
+    },
+    {
+      movie_id: 20, #Two Rich Girls
+      genre_id: 3
+    },
+    {
+      movie_id: 20,
+      genre_id: 6
+    },
+    {
+      movie_id: 21, #The Song that Changed the World
       genre_id: 1
     },
     {
-      movie_id: 22,
+      movie_id: 21,
       genre_id: 2
+    },
+    {
+      movie_id: 21,
+      genre_id: 4
+    },
+    {
+      movie_id: 22, # 23 Minutes in Santorini
+      genre_id: 2
+    },
+    {
+      movie_id: 22,
+      genre_id: 3
     },
     {
       movie_id: 22,
@@ -452,6 +449,26 @@ genres = Genre.create([
     },
     {
       movie_id: 22,
+      genre_id: 5
+    },
+    {
+      movie_id: 22,
+      genre_id: 6
+    },
+    {
+      movie_id: 23,
+      genre_id: 1
+    },
+    {
+      movie_id: 23,
+      genre_id: 2
+    },
+    {
+      movie_id: 23,
+      genre_id: 4
+    },
+    {
+      movie_id: 23,
       genre_id: 5
     }
   ])

@@ -20,7 +20,7 @@ class FeaturedMovie extends React.Component {
     // const { movies } = this.props;
     // const movie = movies[this.state.idx];
     const { movie } = this.props;
-    
+
     return (
       <section className="featured-movie"
         style={ { background: `linear-gradient(to right,
