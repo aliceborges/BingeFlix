@@ -103,6 +103,41 @@ movies = Movie.create([{
     blurb: "A family of French postmodernists just living life the only way they know how",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517558023/postmodern-family_lreu5j.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517558090/postmodern-family_fjbais.mp4"
+  },
+  {
+    title: "2018",
+    year: 2018,
+    blurb: "It's the end of the world as we know it. Or is it a new beginning?",
+    image_url: "",
+    video_url: ""
+  },
+  {
+    title: "Ghost Town",
+    year: 2017,
+    blurb: "",
+    image_url: "",
+    video_url: "Learn about Casper's backstory and how he got the big part."
+  },
+  {
+    title: "It's a Snoopy Halloween",
+    year: 2012,
+    blurb: "Come trick-or-treating with the whole Peanuts gang. Hold on to your socks.",
+    image_url: "",
+    video_url: ""
+  },
+  {
+    title: "Manhattan Medium",
+    blurb: "Communicating with the dead of the Upper East Side",
+    year: 2009,
+    image_url: "",
+    video_url: ""
+  },
+  {
+    title: "Super Moon",
+    blurb: "Bill Nye the Science Guy stars in his first horror film."
+    year: 2008,
+    image_url: "",
+    video_url: ""
   }
   ])
 
@@ -123,16 +158,7 @@ genres = Genre.create([
     name: "Drama"
   },
   {
-    name: "Animals"
-  },
-  {
     name: "Horror"
-  },
-  {
-    name: "Romance"
-  },
-  {
-    name: "Documentaries"
   }
   ])
 
@@ -150,7 +176,6 @@ genres = Genre.create([
     {
       movie_id: 1,
       genre_id: 8
-
     },
     {
       movie_id: 2,
@@ -198,7 +223,7 @@ genres = Genre.create([
     },
     {
       movie_id: 6,
-      genre_id: 7
+      genre_id: 6
     },
     {
       movie_id: 7,
@@ -226,7 +251,7 @@ genres = Genre.create([
     },
     {
       movie_id: 8,
-      genre_id: 6
+      genre_id: 2
     },
     {
       movie_id: 9,
@@ -278,7 +303,7 @@ genres = Genre.create([
     },
     {
       movie_id: 13,
-      genre_id: 7
+      genre_id: 6
     },
     {
       movie_id: 13,
@@ -304,4 +329,62 @@ genres = Genre.create([
       movie_id: 14,
       genre_id: 8
     },
+    {
+      movie_id: 15,
+      genre_id: 2
+    },
+    {
+      movie_id: 15,
+      genre_id: 3
+    },
+    {
+      movie_id: 15,
+      genre_id: 6
+    },
+    {
+      movie_id: 16, #Ghost Town
+      genre_id: 3
+    },
+    {
+      movie_id: 16,
+      genre_id: 4
+    },
+    {
+      movie_id: 16,
+      genre_id: 6
+    },
+    {
+      movie_id: 17, # It's a Snoopy Halloween
+      genre_id: 3
+    },
+    {
+      movie_id: 17,
+      genre_id: 6
+    },
+    {
+      movie_id: 18, # Manhattan Medium
+      genre_id: 1
+    },
+    {
+      movie_id: 18,
+      genre_id: 5
+    },
+    {
+      movie_id: 18,
+      genre_id: 6
+    },
+    {
+      movie_id: 19, # Super Moon
+      genre_id: 2
+    },
+    {
+      movie_id: 19,
+      genre_id: 3
+    },
+    {
+      movie_id: 19,
+      genre_id: 6
+    }
+
+
   ])
