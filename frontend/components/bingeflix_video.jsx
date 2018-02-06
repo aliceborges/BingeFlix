@@ -1,5 +1,6 @@
 import React from 'react';
 import videojs from 'video.js';
+import $ from 'jquery';
 
 
 class BingeFlixVideo extends React.Component {
@@ -8,16 +9,19 @@ class BingeFlixVideo extends React.Component {
     this.player = videojs(this.videoNode, this.props, () => {
       console.log('onPlayerReady', this);
     });
-  }
 
-  showBackArrow() {
     const backArrow = document.getElementById("video-back-arrow");
-    backArrow.classList.remove("hide-element");
-  }
+    const backToBrowse = document.getElementById("back-to-browse");
 
-  hideBackArrow() {
-    const backArrow = document.getElementById("video-back-arrow");
-    setTimeout(() => backArrow.classList.add("hide-element"), 3000);
+    const showArrow = () => {
+      backArrow.classList.remove("hide-element");
+      setTimeout( () => {
+        backArrow.classList.add("hide-element");
+      }, 10000);
+    };
+
+    $(document).on("mousemove", showArrow);
+
   }
 
 
@@ -29,6 +33,7 @@ class BingeFlixVideo extends React.Component {
     return (
       <div data-vjs-player className="bingeflix-video-component">
         <video ref={ node => this.videoNode = node }
+               id="current-video"
                className="video-js vjs-default-skin"
                preload="none"
                controls
@@ -37,9 +42,7 @@ class BingeFlixVideo extends React.Component {
                             "preload": "auto",
                             "fluid": true,
                             "aspectRatio": "2:1"
-                          }'
-               onMouseOver={ () => this.showBackArrow()}
-               onMouseOut={ () => this.hideBackArrow()}>
+                          }'>
            <source src={ movie.video_url } type="video/mp4"/>
         </video>
       </div>

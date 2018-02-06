@@ -37,8 +37,3 @@
   opacity: .7;
   display: none;
 }
-
-#back-to-browse:hover {
-  cursor: pointer;
-  display: block;
-}
