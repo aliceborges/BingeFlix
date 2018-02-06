@@ -7,12 +7,14 @@ import { logout } from '../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUserEmail = state.session.currentUser.email.split("@")[0];
+
   return {
     movies: Object.values(state.entities.movies),
     genres: Object.values(state.entities.genres),
     moviesLoading: state.ui.loading.moviesLoading,
     genresLoading: state.ui.loading.genresLoading,
-    currentUserEmail
+    currentUserEmail,
+    ownProps: ownProps
   };
 };
 

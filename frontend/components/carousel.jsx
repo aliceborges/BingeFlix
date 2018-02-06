@@ -7,6 +7,7 @@ import * as AppUtil from '../util/app_util';
 import ExpandingBlock from './expanding_block';
 import FaClose from 'react-icons/lib/fa/close';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
+import { Redirect } from 'react-router-dom';
 
 class Carousel extends React.Component {
   constructor(props){
@@ -46,11 +47,24 @@ class Carousel extends React.Component {
     $(currentSlide).css("border-width", "0");
   }
 
-  // playSelectedMovie() {
-  //   const currentSlide = $(expandingBlock).parent(".carousel-component")
-  //                                         .children(".wrap").children('.window')
-  //                                         .children(`#carousel_${genre.id}`).children('.slide');
-  // }
+  linkToMovie() {
+    const { genre, ownProps } = this.props;
+    const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
+    const movieTitle = $(expandingBlock).find("h2").text();
+    let movieId;
+
+    for(let i=0; i<genre.movies.length; i++) {
+      if (genre.movies[i].title === movieTitle) {
+        movieId = genre.movies[i].id;
+        break;
+      }
+    }
+    console.warn();
+    return(
+      ownProps.history.push(`/play/${movieId}`)
+    );
+
+  }
 
   render() {
     const { genre } = this.props;
@@ -77,7 +91,7 @@ class Carousel extends React.Component {
         </div>
         <div className="hide-element expanding-block" id={"expanding-block-" + genre.id}>
           <FaClose onClick={() => this.closeExpandingBlock()} className="window-close-x"/>
-          <FaPlayCircleO className="expanding-block-play-btn"/>
+            <FaPlayCircleO onClick={() => this.linkToMovie()} className="expanding-block-play-btn"/>
         </div>
       </div>
     );

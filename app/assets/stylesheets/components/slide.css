@@ -29,9 +29,8 @@
 .slide > div {
   font-size: 16px;
   letter-spacing: 1px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  width: 95%;
+  margin-bottom: -15px;
 }
 
 .slide:hover {
@@ -41,11 +40,11 @@
 
 .slide-play-btn {
   display: none;
-  font-size: 80px;
+  font-size: 70px;
   color: rgb(252, 0, 0);
   transition: .3s;
   font-weight: 300;
-  margin: auto;
+  /* margin: auto; */
   border: none;
   opacity: .5;
 }

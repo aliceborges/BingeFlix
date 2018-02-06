@@ -19,7 +19,8 @@ class MoviesIndex extends React.Component {
 
 
   render() {
-    const { movies, moviesLoading, currentUserEmail, logout, genres } = this.props;
+    const { movies, moviesLoading, currentUserEmail,
+            logout, genres, ownProps } = this.props;
 
     if(moviesLoading) {
       return (
@@ -46,7 +47,7 @@ class MoviesIndex extends React.Component {
               <FeaturedMovie movies = { movies }
                              numOfMovies = { movies.length }/>
               { genres.map((genre, idx) => (
-                <Carousel key={idx} genre={ genre }/>
+                <Carousel key={idx} ownProps = { ownProps } genre={ genre }/>
               ))
               }
 
