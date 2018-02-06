@@ -7,13 +7,15 @@ import MoviesIndexContainer from './movies_index_container';
 import MoviePlayContainer from './movie_play_container';
 
 const App = () => (
+  <div>
     <Switch>
       <ProtectedRoute path="/play/:movieId" component={MoviePlayContainer} />
-      <ProtectedRoute path="/browse" component={MoviesIndexContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
+      <ProtectedRoute path="/browse" component={MoviesIndexContainer} />
       <Route path="/" component={GreetingContainer} />
     </Switch>
+  </div>
 );
 
 export default App;

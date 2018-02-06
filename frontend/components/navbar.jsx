@@ -17,7 +17,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <div className="navbar-container">
+      <div className="navbar">
         <ul className="home-navbar">
 
           <li className="navbar-left">

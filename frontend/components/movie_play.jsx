@@ -7,8 +7,10 @@ class MoviePlay extends React.Component {
 
   render() {
     return (
-      <div>
-        Hey there ;)
+      <div className="movie-play-component">
+        <video>
+          <source src="mov_bbb.mp4" type="video/mp4"/>
+        </video>
       </div>
     );
   }
