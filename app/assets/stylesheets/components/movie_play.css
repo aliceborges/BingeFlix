@@ -19,12 +19,26 @@
   cursor: pointer;
 }
 
+#video-back-arrow:hover~#back-to-browse {
+  display: block;
+}
+
+
 #back-to-browse {
   color: white;
   background: rgb(38, 38, 38);
+  position: absolute;
+  top: 65px;
+  left: 110px;
+  z-index: 200;
+  padding: 10px;
+  border: 1px solid rgb(38, 38, 38);
+  border-radius: 15px;
+  opacity: .7;
   display: none;
 }
 
-#video-back-arrow:hover~#back-to-browse {
+#back-to-browse:hover {
+  cursor: pointer;
   display: block;
 }

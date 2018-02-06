@@ -42,7 +42,10 @@ class MoviePlay extends React.Component {
         <FaArrowCircleOLeft id="video-back-arrow"
                             className="hide-element"
                             onClick={(e) => this.goBack(e)} />
-        <span id="back-to-browse">Back to Browse</span>
+        <span id="back-to-browse" className="hide-element"
+              onClick={(e) => this.goBack(e)}>
+          Back to Browse
+        </span>
         <BingeFlixVideo movie ={ movie }/>
       </div>
     );

@@ -46,6 +46,12 @@ class Carousel extends React.Component {
     $(currentSlide).css("border-width", "0");
   }
 
+  // playSelectedMovie() {
+  //   const currentSlide = $(expandingBlock).parent(".carousel-component")
+  //                                         .children(".wrap").children('.window')
+  //                                         .children(`#carousel_${genre.id}`).children('.slide');
+  // }
+
   render() {
     const { genre } = this.props;
 
