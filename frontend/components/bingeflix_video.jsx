@@ -30,11 +30,13 @@ class BingeFlixVideo extends React.Component {
       <div data-vjs-player className="bingeflix-video-component">
         <video ref={ node => this.videoNode = node }
                className="video-js vjs-default-skin"
-               preload="none" width="100%" height="100%"
+               preload="none"
+               controls
                data-setup='{
-                            "controls": true,
                             "autoplay": true,
-                            "preload": "auto"
+                            "preload": "auto",
+                            "fluid": true,
+                            "aspectRatio": "2:1"
                           }'
                onMouseOver={ () => this.showBackArrow()}
                onMouseOut={ () => this.hideBackArrow()}>
