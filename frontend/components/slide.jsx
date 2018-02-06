@@ -2,6 +2,7 @@ import React from 'react';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 
 class Slide extends React.Component {
@@ -57,8 +58,8 @@ class Slide extends React.Component {
     return (
       <span className="slide" onClick={ () => this.openExpandingBlock()}
             id={"slide-" + specialId} style={movieBackground}>
-        <FaPlayCircleO className="slide-play-btn"/>
-        <h2 onClick={ () => this.openExpandingBlock()}>{ movie.title }</h2>
+        <Link to={`/play/${movie.id}`}><FaPlayCircleO className="slide-play-btn"/></Link>
+        <h2>{ movie.title }</h2>
         <div className="bottom-of-slide">
           { movie.blurb }
           <br/>

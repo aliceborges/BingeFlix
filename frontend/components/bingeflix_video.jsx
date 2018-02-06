@@ -14,6 +14,7 @@ class BingeFlixVideo extends React.Component {
     const backToBrowse = document.getElementById("back-to-browse");
 
     const showArrow = () => {
+      $(document).off("mousemove");
       backArrow.classList.remove("hide-element");
       setTimeout( () => {
         backArrow.classList.add("hide-element");
