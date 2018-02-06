@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class FeaturedMovie extends React.Component {
@@ -36,9 +37,9 @@ class FeaturedMovie extends React.Component {
             </p>
             <br/>
             <div className="feature-buttons">
-              <a href="#">
+              <Link to={`/play/${movie.id}`}>
                 <button className="play-button">Play</button>
-              </a>
+              </Link>
               &nbsp; &nbsp;
               <button className="my-list-button">
                 <span id="plus-sign">+</span>
