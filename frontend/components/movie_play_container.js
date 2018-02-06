@@ -6,10 +6,10 @@ import { fetchGenres } from '../actions/genre_actions';
 import { logout } from '../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.warn(ownProps);
-  const movieId = ownProps.match.params.movieId;
+  const movie = state.entities.movies[ownProps.match.params.movieId];
   return {
-    movieId
+    movie,
+    loading: state.ui.loading.moviesLoading
   };
 };
 

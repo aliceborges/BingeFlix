@@ -1,0 +1,18 @@
+#footer {
+  color: rgb(128, 128, 128);
+  display: flex;
+  position: absolute;
+  bottom: -200;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  background: rgb(15, 15, 15);
+  justify-content: flex-start;
+  padding-left: 200px;
+  font-size: 14px;
+}
+
+#footer a {
+  font-size: 24px;
+  color: rgb(128, 128, 128);
+}

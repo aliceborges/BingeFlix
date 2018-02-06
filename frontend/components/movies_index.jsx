@@ -5,6 +5,7 @@ import LoadingIcon from './loading_icon';
 import FeaturedMovie from './featured_movie';
 import Carousel from './carousel';
 import { ProtectedRoute } from '../util/route_util';
+import Footer from './footer';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class MoviesIndex extends React.Component {
       return (
         <div className="browse-page">
           <div className="inner-page">
-            <Navbar/>
+            <Navbar logout={logout} currentUserEmail={currentUserEmail}/>
           </div>
           <LoadingIcon />;
         </div>
@@ -39,7 +40,7 @@ class MoviesIndex extends React.Component {
     return (
         <div className="browse-page">
           <div className="inner-page">
-            <Navbar/>
+            <Navbar logout={logout} currentUserEmail={currentUserEmail}/>
           </div>
             <div>
               <FeaturedMovie movies = { movies }
@@ -50,6 +51,7 @@ class MoviesIndex extends React.Component {
               }
 
             </div>
+            <Footer />
         </div>
     );
   }

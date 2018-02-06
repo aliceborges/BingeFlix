@@ -24,7 +24,7 @@ movies = Movie.create([{
   {
     title: "Best Friend",
     year: 2015,
-    blurb: "How did our four-legged bestie evolve from the savage wolf?",
+    blurb: "How did our four-legged bestie evolve from a savage wolf?",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517542228/best_friend_pqsepo.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517542097/best_friend_jzq8wh.mp4"
   },
@@ -45,7 +45,7 @@ movies = Movie.create([{
   {
     title: "Witch Town",
     year: 2010,
-    blurb: "The award-winning drama about a town full of witches with double lives",
+    blurb: "The award-winning drama about a town full of witches leading double lives",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517542229/witch_town_u0bugl.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517542174/witch_town_ozeygy.mp4"
   },
@@ -66,7 +66,7 @@ movies = Movie.create([{
   {
     title: "Happy Feet",
     year: 2006,
-    blurb: "The world of professional power walkers",
+    blurb: "Enter the world of professional power walkers",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/e_auto_contrast/v1517558024/happy_feet_xdlirp.jpg",
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517558112/happy_feet_bb6ifj.mp4"
   },
@@ -325,10 +325,6 @@ genres = Genre.create([
     },
     {
       movie_id: 13,
-      genre_id: 1
-    },
-    {
-      movie_id: 13,
       genre_id: 4
     },
     {
@@ -342,10 +338,6 @@ genres = Genre.create([
     {
       movie_id: 14, #Postmodern Family
       genre_id: 6
-    },
-    {
-      movie_id: 14,
-      genre_id: 5
     },
     {
       movie_id: 14,

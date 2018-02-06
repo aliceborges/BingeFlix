@@ -1,3 +1,30 @@
 .movie-play-component {
-  color: black;
+  color: white;
+  background: rgb(20, 20, 20);
+  position: absolute;
+  background-position: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+#video-back-arrow {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 30px;
+  font-size: 80px;
+  z-index: 100;
+}
+
+#video-back-arrow:hover {
+  cursor: pointer;
+}
+
+#back-to-browse {
+  color: white;
+  background: rgb(38, 38, 38);
+  display: none;
+}
+
+#video-back-arrow:hover~#back-to-browse {
+  display: block;
 }
