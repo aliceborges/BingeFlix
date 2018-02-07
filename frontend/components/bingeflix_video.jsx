@@ -36,7 +36,6 @@ class BingeFlixVideo extends React.Component {
                id="current-video"
                className="video-js vjs-default-skin"
                controls
-               autoplay
                data-setup='{"autoplay": true,
                             "preload": "auto",
                             "fluid": true,

@@ -1,4 +1,5 @@
 class Api::ListsController < ApplicationController
+
   def create
     @list = List.new(list_params)
     if @list.save
@@ -8,9 +9,11 @@ class Api::ListsController < ApplicationController
     end
   end
 
+
   def show
     @list = List.find_by(id: params[:id])
   end
+
 
   def destroy
     @list = List.find_by(id: params[:id])
@@ -21,12 +24,13 @@ class Api::ListsController < ApplicationController
         render json: "Couldn't detroy list", status: 422
       end
     else
-      render json: "Couldn't find so can't destroy", status: 404
+      render json: "Couldn't find so can't delete", status: 404
     end
   end
 
+
   private
   def list_params
-    params.require(:list).permit(:title)
+    params.require(:list).permit(:user_id)
   end
 end

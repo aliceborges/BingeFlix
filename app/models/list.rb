@@ -10,11 +10,15 @@
 #
 
 class List < ApplicationRecord
-  validates :title, :user_id, presence: true
+  validates :user_id, presence: true
 
   has_many :list_movies,
     primary_key: :id,
     foreign_key: :list_id,
     class_name: :ListMovie
+
+  has_many :movies,
+    through: :list_movies,
+    source: :movie
 
 end

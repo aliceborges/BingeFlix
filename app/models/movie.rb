@@ -28,4 +28,8 @@ class Movie < ApplicationRecord
     primary_key: :id,
     foreign_key: :movie_id,
     class_name: :ListMovie
+
+  has_many :lists,
+    through: :list_movies,
+    source: :list
 end

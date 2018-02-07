@@ -11,6 +11,7 @@
 
 class ListMovie < ApplicationRecord
   validates :list_id, :movie_id, presence: true
+  validates :list_id, uniqueness: { scope: :movie_id }
 
   belongs_to :list,
     primary_key: :id,

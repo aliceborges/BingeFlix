@@ -1,4 +1,6 @@
 import React from 'react';
+import Carousel from './carousel';
+
 
 class MyList extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class MyList extends React.Component {
   render() {
     return(
       <div className="my-list-component inner-page genre-page-setup">
-          Hello there :-)
+        Hey there ;-)
       </div>
     );
   }
