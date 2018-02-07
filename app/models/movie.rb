@@ -15,13 +15,13 @@
 class Movie < ApplicationRecord
   validates :title, :year, :blurb, :image_url, presence: true
 
-  has_many :genre_movies,
+  has_many :movie_genres,
     primary_key: :id,
     foreign_key: :movie_id,
-    class_name: :GenreMovie
+    class_name: :MovieGenre
 
   has_many :genres,
-    through: :genre_movies,
+    through: :movie_genres,
     source: :genre
 
   has_many :list_movies,

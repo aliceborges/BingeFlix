@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class GenreMovie < ApplicationRecord
+class MovieGenre < ApplicationRecord
   validates :movie_id, :genre_id, presence: true
 
   belongs_to :movie,

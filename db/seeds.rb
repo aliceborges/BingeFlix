@@ -184,7 +184,7 @@ genres = Genre.create([
   }
   ])
 
-  genre_movies = GenreMovie.create([
+  movie_genres = MovieGenre.create([
     {
       movie_id: 1, # The Mighty Avocado
       genre_id: 2
