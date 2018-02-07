@@ -16,6 +16,11 @@ class MoviesIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const { fetchList, currentUserId } = this.props;
+    fetchList(currentUserId);
+  }
+
   render() {
     const { currentUserEmail, logout } = this.props;
     return (
