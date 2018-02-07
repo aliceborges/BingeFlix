@@ -9,6 +9,7 @@ import Footer from './footer';
 import { Route, Switch } from 'react-router-dom';
 import MyListContainer from './my_list_container';
 import AllMoviesContainer from './all_movies_container';
+import GenrePageContainer from './genre_page_container';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
@@ -24,6 +25,9 @@ class MoviesIndex extends React.Component {
           </div>
           <Switch>
             <Route path="/browse/my-list" component={ MyListContainer }/>
+            <Route path="/browse/tv" component={ GenrePageContainer }/>
+            <Route path="/browse/movies" component={ GenrePageContainer }/>
+            <Route path="/browse/originals" component={ GenrePageContainer }/>
             <Route path="/browse" component={AllMoviesContainer}/>
           </Switch>
           <Footer />

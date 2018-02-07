@@ -7,7 +7,7 @@ class MyList extends React.Component {
 
   render() {
     return(
-      <div className="my-list-component inner-page">
+      <div className="my-list-component inner-page genre-page-setup">
           Hello there :-)
       </div>
     );
