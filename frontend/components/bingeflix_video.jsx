@@ -41,8 +41,7 @@ class BingeFlixVideo extends React.Component {
                data-setup='{
                             "autoplay": true,
                             "preload": "auto",
-                            "fluid": true,
-                            "aspectRatio": "2:1"
+                            "fluid": true
                           }'>
            <source src={ movie.video_url } type="video/mp4"/>
         </video>
