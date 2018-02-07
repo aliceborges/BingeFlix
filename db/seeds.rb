@@ -8,6 +8,8 @@
 
 users = User.create([{email: "Demo User", password: 'goodpassword'}])
 
+lists = List.create([{user_id: 1}])
+
 movies = Movie.create([{
     title: "The Mighty Avocado",
     year: 2017,
