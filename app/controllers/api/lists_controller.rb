@@ -11,7 +11,7 @@ class Api::ListsController < ApplicationController
 
 
   def show
-    @list = List.find_by(user_id: params[:user_id])
+    @list = List.find_by(id: params[:id])
   end
 
 
