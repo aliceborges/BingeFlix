@@ -11,21 +11,7 @@ class Api::ListsController < ApplicationController
 
 
   def show
-    @list = List.find_by(id: params[:id])
-  end
-
-
-  def destroy
-    @list = List.find_by(id: params[:id])
-    if @list
-      if @list.destroy
-        render json: {}
-      else
-        render json: "Couldn't detroy list", status: 422
-      end
-    else
-      render json: "Couldn't find so can't delete", status: 404
-    end
+    @list = List.find_by(user_id: params[:user_id])
   end
 
 

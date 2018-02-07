@@ -21,7 +21,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.session-form h1 {
+.session-form > h1 {
   font-weight: 300;
   font-size: 30px;
   font-family: 'Poppins', sans-serif;

@@ -18,6 +18,12 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_one :list,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :List,
+    dependent: :destroy
+
   attr_reader :password
 
   def password=(password)

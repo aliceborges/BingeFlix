@@ -9,6 +9,17 @@
   top: 0;
 }
 
+.home-navbar-1 {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: -456px;
+  margin-right: -350px;
+  margin-top: -10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .login-home {
   background: black;
   position: fixed;

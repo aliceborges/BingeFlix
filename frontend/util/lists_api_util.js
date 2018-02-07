@@ -1,20 +1,13 @@
-export const createList = (listData) => {
+export const createList = (userId) => {
   return $.ajax({
     url: '/api/lists',
     method: 'POST',
-    data: listData
+    data: userId
   });
 };
 
-export const fetchList = id => {
+export const fetchList = userId => {
   return $.ajax({
-    url: `/api/lists/${id}`
-  });
-};
-
-export const deleteList = id => {
-  return $.ajax({
-    url: `/api/lists/${id}`,
-    method: 'DELETE'
+    url: `/api/lists/${userId}`
   });
 };

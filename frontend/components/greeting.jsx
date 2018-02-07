@@ -24,7 +24,7 @@ class Greeting extends React.Component {
       return (
         <div className="home-page">
           <div className="inner-page">
-            <ul className="home-navbar">
+            <ul className="home-navbar-1">
               <li>{ this.title() }</li>
               <li><Link className="login-button" to="/login">Sign In</Link></li>
             </ul>
