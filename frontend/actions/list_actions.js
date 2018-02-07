@@ -8,7 +8,8 @@ export const RECEIVE_LIST = 'RECEIVE_LIST';
 /// created for them. When they log in, their list is fetched
 
 export const receiveList = list => ({
-  type: RECEIVE_LIST
+  type: RECEIVE_LIST,
+  list
 });
 
 export const fetchList = userId => dispatch => (
