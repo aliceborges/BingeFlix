@@ -11,7 +11,6 @@ class BingeFlixVideo extends React.Component {
     });
 
     const backArrow = document.getElementById("video-back-arrow");
-    const backToBrowse = document.getElementById("back-to-browse");
 
     const showArrow = () => {
       $(document).off("mousemove");
@@ -36,13 +35,12 @@ class BingeFlixVideo extends React.Component {
         <video ref={ node => this.videoNode = node }
                id="current-video"
                className="video-js vjs-default-skin"
-               preload="none"
                controls
-               data-setup='{
-                            "autoplay": true,
+               autoplay
+               data-setup='{"autoplay": true,
                             "preload": "auto",
-                            "fluid": true
-                          }'>
+                            "fluid": true,
+                            "aspect-ratio": "2:1"}'>
            <source src={ movie.video_url } type="video/mp4"/>
         </video>
       </div>
