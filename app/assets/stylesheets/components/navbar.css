@@ -1,6 +1,6 @@
 .navbar {
   background: black;
-  position: absolute;
+  position: fixed;
   background-position: center;
   width: 100%;
   left: 0;
