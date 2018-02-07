@@ -3,15 +3,22 @@ class Api::ListMoviesController < ApplicationController
   def create
     @listMovie = ListMovie.new(list_movie_params)
     if @listMovie.save
-      render :show
+      render json: "Successfully saved!", status: 200
     else
       render json: @listMovie.errors.full_messages, status: 422
     end
   end
 
+
   def show
     @listMovie = ListMovie.find_by(id: params[:id])
+    if @listMovie
+      render json: @listMovie
+    else
+      render json: "Sorry, but that listMovie was not found", status: 404
+    end
   end
+
 
   def destroy
     @listMovie = ListMovie.find_by(id: params[:id])
@@ -22,7 +29,7 @@ class Api::ListMoviesController < ApplicationController
         render json: "Couldn't detroy ListMovie", status: 422
       end
     else
-      render json: "Couldn't find so can't destroy", status: 404
+      render json: "Couldn't find so can't delete", status: 404
     end
   end
 
