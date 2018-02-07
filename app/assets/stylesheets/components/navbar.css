@@ -1,12 +1,11 @@
 .navbar {
   background: black;
-  background-size: 100%;
-  position: fixed ;
+  position: absolute;
   background-position: center;
-  width: 90%;
+  width: 100%;
   left: 0;
   top: 0;
-  padding: 5px 5% 5px 5%;
+  padding-right: 10px;
   z-index: 100;
 }
 
@@ -25,8 +24,12 @@
 
 .home-navbar {
   display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: -120px;
+  margin-right: -100px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #site-name-small {

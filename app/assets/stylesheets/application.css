@@ -17,10 +17,12 @@
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 .inner-page {
   margin: 15px 40px;
+  width: 100%;
   /* z-index: -1; */
 }
 
