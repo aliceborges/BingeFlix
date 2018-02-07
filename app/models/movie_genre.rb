@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: genre_movies
+# Table name: movie_genres
 #
 #  id         :integer          not null, primary key
 #  movie_id   :integer          not null
