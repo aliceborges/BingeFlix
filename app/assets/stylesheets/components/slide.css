@@ -40,12 +40,16 @@
 
 .slide-play-btn {
   display: none;
-  font-size: 70px;
+  font-size: 40px;
   color: rgb(252, 0, 0);
   transition: .3s;
   font-weight: 300;
-  /* margin: auto; */
-  border: none;
+  border: 2px solid white;
+  border-radius: 30px;
+  background: black;
+  padding: 10px;
+  padding-left: 12px;
+  margin-top: 6px;
   opacity: .5;
 }
 

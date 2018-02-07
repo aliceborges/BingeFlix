@@ -13,11 +13,10 @@ class BingeFlixVideo extends React.Component {
     const backArrow = document.getElementById("video-back-arrow");
 
     const showArrow = () => {
-      $(document).off("mousemove");
       backArrow.classList.remove("hide-element");
       setTimeout( () => {
         backArrow.classList.add("hide-element");
-      }, 10000);
+      }, 15000);
     };
 
     $(document).on("mousemove", showArrow);
