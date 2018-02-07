@@ -4,27 +4,36 @@ import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 import FaPlay from 'react-icons/lib/fa/play';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import FaCaretDown from 'react-icons/lib/fa/caret-down';
 
 
 class Slide extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //
+    // }
   }
 
   openExpandingBlock() {
-    const { genre, specialId, movie } = this.props;
+    const { genre, specialId, movie, listId, createListMovie } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     const currentSlide = document.getElementById(`slide-${specialId}`);
     const allSlides = document.getElementsByClassName('slide');
+    const addMovieToList = (movieId) => {
+      createListMovie({movie_id: movieId, list_id: listId});
+      this.forceUpdate();
+    };
 
     $(allSlides).css("border", "none");
-
+    $(".white-caret-down").css("display", "none");
     $(".expanding-block").removeClass("display-flex").addClass("hide-element");
 
     $(expandingBlock).removeClass('hide-element').addClass("display-flex");
     $(currentSlide).css({"border-color": "#FFF",
                          "border-width": "5px",
                          "border-style": "solid"});
+    $(currentSlide).find(".white-caret-down").css("display", "block");
     $('.expanding-block-left').remove();
     $(expandingBlock).css({"background": `linear-gradient(to right,
                             rgba(0,0,0,1), rgba(0,0,0,.8),
@@ -37,15 +46,15 @@ class Slide extends React.Component {
                 <h2>${movie.title}</h2>
                 <div>${movie.year}</div>
                 <p>${movie.blurb}</p>
-                <div class="expanding-block-my-list">
-                  <span class="circle-plus"> + </span>
-                   &nbsp; MY LIST
-                </div>
             </div>`
     );
      $('html, body').animate({
         scrollTop: $(currentSlide).offset().top
     }, 400);
+
+
+
+    $('.circle-plus').click(() => addMovieToList(movie.id));
 
   }
 
@@ -66,6 +75,7 @@ class Slide extends React.Component {
           <br/>
           <FaAngleDown className="expand-arrow"/>
         </div>
+        <span className="white-caret-down"><FaCaretDown /></span>
       </span>
     );
   }

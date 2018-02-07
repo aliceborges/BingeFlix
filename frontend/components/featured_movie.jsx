@@ -12,6 +12,13 @@ class FeaturedMovie extends React.Component {
   //   return Math.floor(Math.random() * numOfMovies);
   // }
 
+  addMovieToList() {
+    const { createListMovie, listId, movies } = this.props;
+    const movie = movies[19];
+    createListMovie({ list_id: listId, movie_id: movie.id });
+    console.warn("did it!");
+  }
+
   render() {
     const { movies } = this.props;
     // const idx = this.randomNumFromOneTo();
@@ -41,7 +48,7 @@ class FeaturedMovie extends React.Component {
                 <button className="play-button">Play</button>
               </Link>
               &nbsp; &nbsp;
-              <button className="my-list-button">
+              <button onClick = {() => this.addMovieToList()} className="my-list-button">
                 <span id="plus-sign">+</span>
                 &nbsp; My List
               </button>

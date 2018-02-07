@@ -2,7 +2,7 @@ export const createListMovie = (listMovieData) => {
   return $.ajax({
     url: '/api/list_movies',
     method: 'POST',
-    data: listMovieData
+    data: {list_movie : listMovieData}
   });
 };
 

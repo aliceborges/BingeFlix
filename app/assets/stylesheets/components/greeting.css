@@ -1,8 +1,9 @@
 .home-page {
   background: linear-gradient(to right, #000, transparent), url('https://assets.nflxext.com/ffe/siteui/vlv3/57515065-9183-4b4d-a101-c1c0c1c29dce/04d9e10b-a26e-4edb-8b4a-2263ebbd7d18/US-en-20180122-popsignuptwoweeks-perspective_alpha_website_large.jpg');
-  background-size: 115%;
+  background-size: cover;
   position: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   left: 0;

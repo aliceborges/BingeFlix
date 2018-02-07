@@ -14,7 +14,7 @@ class AllMovies extends React.Component {
   }
 
   render() {
-    const { movies, moviesLoading, genres, ownProps } = this.props;
+    const { movies, moviesLoading, genres, ownProps, listId, createListMovie } = this.props;
 
       if(moviesLoading) {
         return <LoadingIcon />;
@@ -27,9 +27,15 @@ class AllMovies extends React.Component {
       return (
         <div>
           <FeaturedMovie movies = { movies }
-                         numOfMovies = { movies.length }/>
+                         numOfMovies = { movies.length }
+                         listId ={ listId }
+                         createListMovie = { createListMovie }/>
           { genres.map((genre, idx) => (
-            <Carousel key={idx} ownProps = { ownProps } genre={ genre }/>
+            <Carousel key={idx}
+                         ownProps = { ownProps }
+                         genre={ genre }
+                         listId = { listId }
+                         createListMovie = { createListMovie }/>
           ))
           }
         </div>

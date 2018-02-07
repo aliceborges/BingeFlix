@@ -133,3 +133,15 @@
   align-items: center;
   margin-top: 10px;
 }
+
+.white-caret-down {
+  position: absolute;
+  font-size: 50px;
+  top: 100px;
+  display: none;
+  z-index: -1;
+}
+
+.slide:hover .white-caret-down {
+  display: none;
+}

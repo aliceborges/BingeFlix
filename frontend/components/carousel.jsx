@@ -45,6 +45,7 @@ class Carousel extends React.Component {
                                           .children(".wrap").children('.window')
                                           .children(`#carousel_${genre.id}`).children('.slide');
     $(currentSlide).css("border-width", "0");
+    $(currentSlide).find(".white-caret-down").css("display", "none");
   }
 
   linkToMovie() {
@@ -67,7 +68,7 @@ class Carousel extends React.Component {
   }
 
   render() {
-    const { genre } = this.props;
+    const { genre, listId, createListMovie } = this.props;
 
     return (
       <div className="carousel-component">
@@ -80,7 +81,11 @@ class Carousel extends React.Component {
             </span>
             <div id={"carousel_" + genre.id}>
               { genre.movies.map((movie, idx) => (
-                  <Slide key={AppUtil.uniqueKey(idx)} specialId={AppUtil.uniqueKey(idx)} genre={genre} movie={ movie }/>
+                  <Slide key={AppUtil.uniqueKey(idx)} listId = { listId }
+                         createListMovie = { createListMovie }
+                         specialId={AppUtil.uniqueKey(idx)}
+                         genre={genre}
+                         movie={ movie }/>
               ))}
             </div>
             <span id={"next_" + genre.id}
