@@ -5,24 +5,17 @@ import { fetchMovies } from '../actions/movie_actions';
 import { fetchGenres } from '../actions/genre_actions';
 import { logout } from '../actions/session_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   const currentUserEmail = state.session.currentUser.email.split("@")[0];
 
   return {
-    movies: Object.values(state.entities.movies),
-    genres: Object.values(state.entities.genres),
-    moviesLoading: state.ui.loading.moviesLoading,
-    genresLoading: state.ui.loading.genresLoading,
-    currentUserEmail,
-    ownProps: ownProps
+    currentUserEmail
   };
 };
 
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = dispatch => {
   return {
-    fetchMovies: () => dispatch(fetchMovies()),
-    fetchGenres: () => dispatch(fetchGenres()),
     logout: () => dispatch(logout())
   };
 };

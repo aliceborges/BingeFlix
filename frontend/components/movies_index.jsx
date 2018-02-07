@@ -6,53 +6,27 @@ import FeaturedMovie from './featured_movie';
 import Carousel from './carousel';
 import { ProtectedRoute } from '../util/route_util';
 import Footer from './footer';
+import { Route, Switch } from 'react-router-dom';
+import MyListContainer from './my_list_container';
+import AllMoviesContainer from './all_movies_container';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchMovies();
-    this.props.fetchGenres();
-  }
-
-
   render() {
-    const { movies, moviesLoading, currentUserEmail,
-            logout, genres, ownProps } = this.props;
-
-    if(moviesLoading) {
-      return (
-        <div className="browse-page">
-          <div className="inner-page">
-            <Navbar logout={logout} currentUserEmail={currentUserEmail}/>
-          </div>
-          <LoadingIcon />;
-        </div>
-      );
-    }
-
-    if(!movies) {
-      return null;
-    }
-
-
+    const { currentUserEmail, logout } = this.props;
     return (
         <div className="browse-page">
           <div className="inner-page">
-            <Navbar logout={logout} currentUserEmail={currentUserEmail}/>
+            <Navbar logout={ logout } currentUserEmail={ currentUserEmail }/>
           </div>
-            <div>
-              <FeaturedMovie movies = { movies }
-                             numOfMovies = { movies.length }/>
-              { genres.map((genre, idx) => (
-                <Carousel key={idx} ownProps = { ownProps } genre={ genre }/>
-              ))
-              }
-
-            </div>
-            <Footer />
+          <Switch>
+            <Route path="/browse/my-list" component={ MyListContainer }/>
+            <Route path="/browse" component={AllMoviesContainer}/>
+          </Switch>
+          <Footer />
         </div>
     );
   }

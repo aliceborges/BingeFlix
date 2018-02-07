@@ -2,7 +2,7 @@
   color: rgb(128, 128, 128);
   display: flex;
   position: absolute;
-  bottom: -200;
+  bottom: 0;
   height: 50px;
   width: 100%;
   align-items: center;
