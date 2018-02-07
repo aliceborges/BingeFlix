@@ -11,12 +11,12 @@
 class Genre < ApplicationRecord
   validates :name, presence: true
 
-  has_many :movie_genres,
+  has_many :genre_movies,
     primary_key: :id,
     foreign_key: :genre_id,
-    class_name: :MovieGenre
+    class_name: :GenreMovie
 
   has_many :movies,
-    through: :movie_genres,
+    through: :genre_movies,
     source: :movie
 end

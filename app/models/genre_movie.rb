@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: movie_genres
+# Table name: genre_movies
 #
 #  id         :integer          not null, primary key
 #  movie_id   :integer          not null
@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class MovieGenre < ApplicationRecord
+class GenreMovie < ApplicationRecord
   validates :movie_id, :genre_id, presence: true
 
   belongs_to :movie,
