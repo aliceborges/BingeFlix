@@ -1,13 +1,13 @@
 export const createList = (userId) => {
   return $.ajax({
-    url: '/api/lists',
+    url: `/api/users/${userId}/list`,
     method: 'POST',
-    data: userId
+    data: {list: {user_id: userId}}
   });
 };
 
 export const fetchList = userId => {
   return $.ajax({
-    url: `/api/lists/${userId}`
+    url: `/api/users/${userId}/list`
   });
 };

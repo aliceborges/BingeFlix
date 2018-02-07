@@ -1,5 +1,5 @@
 import * as SessionAPIUtil from '../util/session_api_util';
-import { createList, fetchList } from './list_actions';
+import { createList, fetchList, receiveList } from './list_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
@@ -24,14 +24,19 @@ export const signup = user => dispatch => (
    SessionAPIUtil.signup(user)
         .then(serverUser => dispatch(receiveCurrentUser(serverUser)),
               err => dispatch(receiveSessionErrors(err.responseJSON)))
-                .then(serverUser => dispatch(createList(serverUser.id)))
+        .then(({ currentUser }) => {
+          return dispatch(createList(currentUser.id));
+        })
 );
 
 export const login = user => dispatch => (
   SessionAPIUtil.login(user)
         .then(serverUser => dispatch(receiveCurrentUser(serverUser)),
-              err => dispatch(receiveSessionErrors(err.responseJSON)))
-                .then(serverUser => dispatch(fetchList(serverUser.id)))
+              err => dispatch(receiveSessionErrors(err.responseJSON))))
+        .then(({ currentUser }) => {
+          // console.warn(currentUser);
+          return dispatch(fetchList(currentUser.id));
+        }
 );
 
 export const logout = () => dispatch => (

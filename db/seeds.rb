@@ -87,7 +87,7 @@ movies = Movie.create([{
     video_url: "http://res.cloudinary.com/dnr7kz5ge/video/upload/v1517558060/20_20_rock_zezixn.mp4"
   },
   {
-    title: "The Fresh Prince of Bunckingham Palace",
+    title: "The Fresh Prince of Buckingham Palace",
     year: 2009,
     blurb: "He's a prince and didn't even know it. Watch him shake things up in Westminster",
     image_url: "http://res.cloudinary.com/dnr7kz5ge/image/upload/v1517558025/the_fresh_prince_of_buckingham_palace_qkgzap.jpg",
