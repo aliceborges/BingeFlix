@@ -15,7 +15,7 @@ class Carousel extends React.Component {
   }
 
   shiftSlide(direction) {
-    const slideWidth = 250;
+    const slideWidth = 254;
     const { genre } = this.props;
     const carousel = document.getElementById(`carousel_${genre.id}`);
     if(carousel.classList.contains('transition')) return;
