@@ -4,7 +4,7 @@ import AllMovies from './all_movies';
 import { fetchMovies } from '../actions/movie_actions';
 import { fetchGenres } from '../actions/genre_actions';
 import { logout } from '../actions/session_actions';
-import { createListMovie } from '../actions/list_movie_actions';
+import { fetchListMovies } from '../actions/list_movie_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUserEmail = state.session.currentUser.email.split("@")[0];
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchMovies: () => dispatch(fetchMovies()),
     fetchGenres: () => dispatch(fetchGenres()),
-    createListMovie: listMovieData => dispatch(createListMovie(listMovieData))
+    fetchListMovies: () => dispatch(fetchListMovies())
   };
 };
 

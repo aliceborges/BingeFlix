@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUserEmail = state.session.currentUser.email.split("@")[0];
   const currentUser = state.session.currentUser;
   const listId = state.session.list.id;
-  const allMyMovies = state.session.list.movies;
+  const listMovies = Object.values(state.entities.list_movies);
 
   return {
     movies: Object.values(state.entities.movies),
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     genresLoading: state.ui.loading.genresLoading,
     listId,
     currentUser,
-    allMyMovies,
+    listMovies,
     ownProps: ownProps
   };
 };
