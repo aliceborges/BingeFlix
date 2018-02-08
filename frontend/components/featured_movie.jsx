@@ -18,14 +18,18 @@ class FeaturedMovie extends React.Component {
   // }
 
   componentWillMount() {
+    this.props.fetchListMovies();
     const {movies, allMyMovies} = this.props;
-    const movie = movies[19];
-    console.warn(movie);
+    const movie = movies[20];
+    console.warn(allMyMovies);
+    if(allMyMovies.includes(movie)){
+      this.setState({buttonSign: "check"});
+    }
   }
 
   toggleAddMovieToList() {
     const { createListMovie, deleteListMovie, listId, movies, currentUser } = this.props;
-    const movie = movies[19];
+    const movie = movies[20];
     if(this.state.buttonSign === "plus") {
       createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
           .then(({listMovie}) => {
@@ -43,7 +47,7 @@ class FeaturedMovie extends React.Component {
   render() {
     const { movies } = this.props;
     // const idx = this.randomNumFromOneTo();
-    const movie = movies[19];
+    const movie = movies[20];
     return (
       movie ?
         <section className="featured-movie"

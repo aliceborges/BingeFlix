@@ -12,6 +12,12 @@ export const fetchListMovie = id => {
   });
 };
 
+export const fetchListMovies = () => {
+  return $.ajax({
+    url: '/api/list_movies'
+  });
+};
+
 export const deleteListMovie = id => {
   return $.ajax({
     url: `/api/list_movies/${id}`,

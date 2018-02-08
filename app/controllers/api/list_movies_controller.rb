@@ -1,6 +1,10 @@
 class Api::ListMoviesController < ApplicationController
   before_action :deny_access_if_not_logged_in
 
+  def index
+    @listMovies = ListMovie.all.where(user_id: current_user.id)
+  end
+
   def create
     @listMovie = ListMovie.new(list_movie_params)
     if @listMovie.save

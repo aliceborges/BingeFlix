@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     resources :movies, only:[:index, :show]
     resources :genres, only:[:index, :show]
-    resources :list_movies, only:[:create, :destroy, :show]
+    resources :list_movies, only:[:create, :destroy, :show, :index]
   end
 end
