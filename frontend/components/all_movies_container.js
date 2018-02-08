@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchGenres: () => dispatch(fetchGenres()),
     fetchListMovies: () => dispatch(fetchListMovies()),
     createListMovie: listMovieData => dispatch(createListMovie(listMovieData)),
-    deleteListMovie: () => dispatch(deleteListMovie())
+    deleteListMovie: (userId, movieId) => dispatch(deleteListMovie(userId, movieId))
   };
 };
 

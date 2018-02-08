@@ -15,9 +15,9 @@ import ButtonSign from './button_sign';
 class Carousel extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      listMovieId: null
-    };
+    // this.state = {
+    //   listMovieId: null
+    // };
   }
 
   componentWillMount() {
@@ -79,22 +79,24 @@ class Carousel extends React.Component {
       }
     }
 
+    let listMovieId;
+
     if(currentButtonText.includes("+")) {
       // console.warn("hello" + currentUser.id);
         createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
-            .then(({listMovie}) => {
-              this.setState({listMovieId: listMovie.id});
-            } )
+            // .then(({listMovie}) => {
+            //   // this.setState({listMovieId: listMovie.id});
+            // } )
             .then(res => {
               $(".added-or-not").html(
                 "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
               );
-              this.setState({buttonSign: "check"});
+              // this.setState({buttonSign: "check"});
               console.warn("added it!");
             }
           );
     } else {
-        deleteListMovie(this.state.listMovieId)
+        deleteListMovie(currentUser.id, movie.id)
             .then((response) => {
               $(".added-or-not").html(
                 "<span class='circle-plus'> + </span>&nbsp; MY LIST"
@@ -138,7 +140,6 @@ class Carousel extends React.Component {
                                           .children(`#carousel_${genre.id}`).children('.slide');
     $(currentSlide).css("border-width", "0");
     $(currentSlide).find(".white-caret-down").css("display", "none");
-    this.setState({buttonSign: null});
   }
 
   playMovie() {

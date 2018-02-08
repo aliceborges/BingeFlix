@@ -8,9 +8,10 @@ export const receiveListMovie = listMovie => ({
   listMovie
 });
 
-export const removeListMovie = listMovieId => ({
+export const removeListMovie = (userId, movieId) => ({
   type: REMOVE_LIST_MOVIE,
-  listMovieId
+  userId,
+  movieId
 });
 
 export const receiveListMovies = listMovies => ({
@@ -28,7 +29,7 @@ export const fetchListMovies = () => dispatch => {
     .then(serverListMovies => dispatch(receiveListMovies(serverListMovies)));
 };
 
-export const deleteListMovie = id => dispatch => {
-  return ListMoviesAPIUtil.deleteListMovie(id)
-    .then(serverResponse => dispatch(removeListMovie(id)));
+export const deleteListMovie = (userId, movieId) => dispatch => {
+  return ListMoviesAPIUtil.deleteListMovie(userId, movieId)
+    .then(serverResponse => dispatch(removeListMovie(userId, movieId)));
 };

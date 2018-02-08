@@ -18,9 +18,9 @@ export const fetchListMovies = () => {
   });
 };
 
-export const deleteListMovie = id => {
+export const deleteListMovie = (userId, movieId) => {
   return $.ajax({
-    url: `/api/list_movies/${id}`,
+    url: `/api/users/${userId}/movies/${movieId}/list_movies`,
     method: 'DELETE'
   });
 };

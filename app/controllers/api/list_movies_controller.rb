@@ -26,7 +26,7 @@ class Api::ListMoviesController < ApplicationController
 
 
   def destroy
-    @listMovie = ListMovie.find_by(id: params[:id])
+    @listMovie = ListMovie.find_by(user_id: params[:user_id], movie_id: params[:movie_id])
     if @listMovie
       if @listMovie.destroy
         render json: {}

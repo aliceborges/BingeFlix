@@ -12,7 +12,14 @@ const listMoviesReducer = (state = {}, action) => {
       return action.listMovies;
     case REMOVE_LIST_MOVIE:
       nextState = merge({}, state);
-      delete nextState[action.listMovieId];
+      let nextStateArray = Object.values(nextState);
+      let toRemoveId;
+      for(let i = 0; i < nextStateArray.length; i++) {
+        if(nextStateArray[i].movie_id === action.movieId && nextStateArray[i].user_id === action.userId){
+          toRemoveId = nextStateArray[i].id;
+        }
+      }
+      delete nextState[toRemoveId];
       return nextState;
     default:
       return state;

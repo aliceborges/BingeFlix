@@ -7,8 +7,7 @@ class FeaturedMovie extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      buttonSign: "plus",
-      listMovieId: null
+      buttonSign: "plus"
     };
   }
 
@@ -26,7 +25,7 @@ class FeaturedMovie extends React.Component {
     const movie = movies[21];
     for(let i = 0; i < listMovies.length; i++) {
       if (listMovies[i].movie_id === movie.id) {
-        this.setState({buttonSign: "check", listMovieId: listMovies[i].id});
+        this.setState({buttonSign: "check"});
       }
     }
   }
@@ -37,12 +36,12 @@ class FeaturedMovie extends React.Component {
     if(this.state.buttonSign === "plus") {
       createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
           .then(({listMovie}) => {
-            this.setState({listMovieId: listMovie.id});
+            // this.setState({listMovieId: listMovie.id});
           } );
       this.setState({buttonSign: "check"});
       console.warn("added it!");
     } else {
-      deleteListMovie(this.state.listMovieId);
+      deleteListMovie(currentUser.id, movie.id);
       this.setState({buttonSign: "plus"});
       console.warn("removed it!");
     }
