@@ -10,9 +10,6 @@ import FaCaretDown from 'react-icons/lib/fa/caret-down';
 class Slide extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //
-    // }
   }
 
   openExpandingBlock() {
@@ -34,19 +31,20 @@ class Slide extends React.Component {
                          "border-width": "5px",
                          "border-style": "solid"});
     $(currentSlide).find(".white-caret-down").css("display", "block");
-    $('.expanding-block-left').remove();
+    $('.expanding-block-left-text').remove();
     $(expandingBlock).css({"background": `linear-gradient(to right,
                             rgba(0,0,0,1), rgba(0,0,0,.8),
                             rgba(0, 0, 0, .1), transparent),
                             url('${movie.image_url}')`,
                           "background-size": "cover",
                           "background-position": "left"});
-    $(expandingBlock).append(
-            `<div class='expanding-block-left'>
-                <h2>${movie.title}</h2>
-                <div>${movie.year}</div>
-                <p>${movie.blurb}</p>
+    $('.expanding-block-left').prepend(
+            `<div class="expanding-block-left-text">
+              <h2>${movie.title}</h2>
+              <div>${movie.year}</div>
+              <p>${movie.blurb}</p>
             </div>`
+
     );
      $('html, body').animate({
         scrollTop: $(currentSlide).offset().top

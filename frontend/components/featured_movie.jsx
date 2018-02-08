@@ -19,15 +19,16 @@ class FeaturedMovie extends React.Component {
 
   componentWillMount() {
     this.props.fetchListMovies();
+  }
+
+  componentDidMount() {
     const {movies, listMovies} = this.props;
     const movie = movies[21];
-    console.warn(movie);
     for(let i = 0; i < listMovies.length; i++) {
       if (listMovies[i].movie_id === movie.id) {
         this.setState({buttonSign: "check", listMovieId: listMovies[i].id});
       }
     }
-
   }
 
   toggleAddMovieToList() {

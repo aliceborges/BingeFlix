@@ -123,3 +123,7 @@ div[id^="expanding-block"] {
   opacity: 1;
   cursor: pointer;
 }
+
+.expanding-block-left {
+  display: flex;
+}

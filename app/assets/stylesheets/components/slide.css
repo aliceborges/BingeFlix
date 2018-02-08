@@ -94,16 +94,16 @@
 
 .expanding-block-left {
   margin: 80px 60px;
-  width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.expanding-block-left > h2 {
-  font-size: 60px;
+.expanding-block-left-text > h2 {
+  font-size: 48px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.5;
   font-family: "Roboto", sans-serif;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .circle-plus {
-  display: block;
+  display: inline-block;
   border: 2px solid white;
   opacity: .7;
   border-radius:50%;

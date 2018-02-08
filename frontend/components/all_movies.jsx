@@ -15,7 +15,10 @@ class AllMovies extends React.Component {
   }
 
   render() {
-    const { movies, moviesLoading, genres, ownProps, listId, createListMovie } = this.props;
+    const { movies, moviesLoading, genres,
+            ownProps, listId, fetchListMovies,
+            createListMovie, listMovies, currentUser,
+            deleteListMovie } = this.props;
 
       if(moviesLoading) {
         return <LoadingIcon />;
@@ -33,7 +36,11 @@ class AllMovies extends React.Component {
                          ownProps = { ownProps }
                          genre={ genre }
                          listId = { listId }
-                         createListMovie = { createListMovie }/>
+                         currentUser = { currentUser }
+                         createListMovie = { createListMovie }
+                         fetchListMovies = { fetchListMovies }
+                         listMovies = { listMovies }
+                         deleteListMovie = { deleteListMovie }/>
           ))
           }
         </div>
