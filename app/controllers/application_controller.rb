@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token!
     session[:session_token] = nil
   end
+
+  def deny_access_if_not_logged_in
+    unless logged_in?
+      render json: ['You must be logged in to do that'], status: :unauthorized
+    end
+  end
 end

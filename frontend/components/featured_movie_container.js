@@ -4,17 +4,22 @@ import FeaturedMovie from './featured_movie';
 import { fetchMovies } from '../actions/movie_actions';
 import { fetchGenres } from '../actions/genre_actions';
 import { logout } from '../actions/session_actions';
-import { createListMovie } from '../actions/list_movie_actions';
+import { createListMovie, deleteListMovie } from '../actions/list_movie_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUserEmail = state.session.currentUser.email.split("@")[0];
+  const currentUser = state.session.currentUser;
   const listId = state.session.list.id;
+  const allMyMovies = state.session.list.movies;
+
   return {
     movies: Object.values(state.entities.movies),
     genres: Object.values(state.entities.genres),
     moviesLoading: state.ui.loading.moviesLoading,
     genresLoading: state.ui.loading.genresLoading,
     listId,
+    currentUser,
+    allMyMovies,
     ownProps: ownProps
   };
 };
@@ -24,7 +29,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchMovies: () => dispatch(fetchMovies()),
     fetchGenres: () => dispatch(fetchGenres()),
-    createListMovie: listMovieData => dispatch(createListMovie(listMovieData))
+    createListMovie: listMovieData => dispatch(createListMovie(listMovieData)),
+    deleteListMovie: id => dispatch(deleteListMovie(id))
   };
 };
 

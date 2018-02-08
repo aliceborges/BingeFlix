@@ -1,9 +1,10 @@
 class Api::ListMoviesController < ApplicationController
+  before_action :deny_access_if_not_logged_in
 
   def create
     @listMovie = ListMovie.new(list_movie_params)
     if @listMovie.save
-      render json: "Successfully saved!", status: 200
+      render :show
     else
       render json: @listMovie.errors.full_messages, status: 422
     end
@@ -13,7 +14,7 @@ class Api::ListMoviesController < ApplicationController
   def show
     @listMovie = ListMovie.find_by(id: params[:id])
     if @listMovie
-      render json: @listMovie
+      render :show
     else
       render json: "Sorry, but that listMovie was not found", status: 404
     end
@@ -37,7 +38,7 @@ class Api::ListMoviesController < ApplicationController
   private
 
   def list_movie_params
-    params.require(:list_movie).permit(:movie_id, :list_id)
+    params.require(:list_movie).permit(:movie_id, :list_id, :user_id)
   end
 
 end

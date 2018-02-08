@@ -1,4 +1,6 @@
 class Api::GenresController < ApplicationController
+  before_action :deny_access_if_not_logged_in
+
   def index
     @genres = Genre.all
   end

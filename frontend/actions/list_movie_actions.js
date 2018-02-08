@@ -7,9 +7,9 @@ export const receiveListMovie = listMovie => ({
   listMovie
 });
 
-export const removeListMovie = id => ({
+export const removeListMovie = listMovieId => ({
   type: REMOVE_LIST_MOVIE,
-  listMovieID: id
+  listMovieId
 });
 
 export const createListMovie = listMovieData => dispatch => {

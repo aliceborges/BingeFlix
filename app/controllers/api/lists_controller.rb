@@ -1,4 +1,5 @@
 class Api::ListsController < ApplicationController
+  before_action :deny_access_if_not_logged_in
 
   def create
     @list = List.new(list_params)
