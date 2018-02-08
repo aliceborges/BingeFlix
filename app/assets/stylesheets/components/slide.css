@@ -13,8 +13,10 @@
 }
 
 .slide > h2 {
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: 1px;
+  display: block;
+  width: 200px;
 }
 
 .slide > h2, .slide > div {
@@ -144,4 +146,10 @@
 
 .slide:hover .white-caret-down {
   display: none;
+}
+
+.slide-movie-blurb {
+  margin-top: 10px;
+  display: inline-block;
+  width: 300px;
 }

@@ -4,7 +4,7 @@ import MyList from './my_list';
 
 const mapStateToProps = state => {
   return {
-
+    
   };
 };
 

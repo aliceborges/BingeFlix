@@ -79,11 +79,11 @@ class Slide extends React.Component {
 
     return (
       <span className="slide" onClick={ () => this.openExpandingBlock()}
-            id={"slide-" + specialId} style={movieBackground}>
+            id={"slide-" + specialId} style={ movieBackground }>
         <Link to={`/play/${movie.id}`}><FaPlay className="slide-play-btn"/></Link>
         <h2>{ movie.title }</h2>
         <div className="bottom-of-slide">
-          { movie.blurb }
+          <span className="slide-movie-blurb">{ movie.blurb }</span>
           <br/>
           <FaAngleDown className="expand-arrow"/>
         </div>

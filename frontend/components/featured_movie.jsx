@@ -31,10 +31,10 @@ class FeaturedMovie extends React.Component {
   }
 
   toggleAddMovieToList() {
-    const { createListMovie, deleteListMovie, listId, movies, currentUser } = this.props;
+    const { createListMovie, deleteListMovie, movies, currentUser } = this.props;
     const movie = movies[21];
     if(this.state.buttonSign === "plus") {
-      createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
+      createListMovie({ list_id: currentUser.id, movie_id: movie.id, user_id: currentUser.id })
           .then(({listMovie}) => {
             // this.setState({listMovieId: listMovie.id});
           } );
