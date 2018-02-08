@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FaCheck from 'react-icons/lib/fa/check';
 
 
 class FeaturedMovie extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      buttonSign: "plus"
+    };
   }
 
   // randomNumFromOneTo() {
@@ -12,11 +16,16 @@ class FeaturedMovie extends React.Component {
   //   return Math.floor(Math.random() * numOfMovies);
   // }
 
-  addMovieToList() {
-    const { createListMovie, listId, movies } = this.props;
-    const movie = movies[19];
-    createListMovie({ list_id: listId, movie_id: movie.id });
-    console.warn("did it!");
+  toggleAddMovieToList() {
+    if(this.state.buttonSign === "plus") {
+      const { createListMovie, listId, movies } = this.props;
+      const movie = movies[19];
+      createListMovie({ list_id: listId, movie_id: movie.id });
+      this.setState({buttonSign: "check"});
+      console.warn("did it!");
+    } else {
+      this.setState({buttonSign: "plus"});
+    }
   }
 
   render() {
@@ -48,8 +57,12 @@ class FeaturedMovie extends React.Component {
                 <button className="play-button">Play</button>
               </Link>
               &nbsp; &nbsp;
-              <button onClick = {() => this.addMovieToList()} className="my-list-button">
-                <span id="plus-sign">+</span>
+              <button onClick = {() => this.toggleAddMovieToList()} className="my-list-button">
+                {this.state.buttonSign === "plus" ? (
+                  <span id="plus-sign">+</span>
+                ) : (
+                  <FaCheck />
+                )}
                 &nbsp; My List
               </button>
             </div>
