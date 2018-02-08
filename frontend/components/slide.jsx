@@ -13,15 +13,12 @@ class Slide extends React.Component {
   }
 
   openExpandingBlock() {
-    const { genre, specialId, movie, listId, createListMovie, listMovies } = this.props;
+    this.props.fetchListMovies();
+    const { genre, listMovies, movie, listId, specialId } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     const currentSlide = document.getElementById(`slide-${specialId}`);
     const allSlides = document.getElementsByClassName('slide');
-    const addMovieToList = (movieId) => {
-      createListMovie({movie_id: movieId, list_id: listId});
-      this.forceUpdate();
-    };
-
+    $(".added-or-not").empty();
     $(allSlides).css("border", "none");
     $(".white-caret-down").css("display", "none");
     $(".expanding-block").removeClass("display-flex").addClass("hide-element");
@@ -39,22 +36,38 @@ class Slide extends React.Component {
                           "background-size": "cover",
                           "background-position": "left"});
 
+    const movieInMovies = (movieId, myMovies) => {
+      for(let i = 0; i < myMovies.length; i++) {
+        console.warn(myMovies[i].movie_id);
+        console.warn(movieId);
+        if(myMovies[i].movie_id === movieId) {
+          console.warn("inside the equals!");
+          return (
+            "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
+          );
+        }
+      }
+      console.warn("inside the unequal!");
+      return (
+        "<span id='check' class='circle-plus'> + </span>&nbsp; MY LIST"
+      );
+    };
+
     $('.expanding-block-left').prepend(
             `<div class="expanding-block-left-text">
               <h2>${movie.title}</h2>
               <div>${movie.year}</div>
               <p>${movie.blurb}</p>
             </div>`
-
     );
+
+    $(".added-or-not").append(
+        `${movieInMovies(movie.id, listMovies)}`
+    );
+
      $('html, body').animate({
         scrollTop: $(currentSlide).offset().top
     }, 400);
-
-
-
-    $('.circle-plus').click(() => addMovieToList(movie.id));
-
   }
 
   render() {

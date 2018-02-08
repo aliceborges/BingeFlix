@@ -9,26 +9,25 @@ import FaClose from 'react-icons/lib/fa/close';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 import { Redirect } from 'react-router-dom';
 import FaCheck from 'react-icons/lib/fa/check';
+import ButtonSign from './button_sign';
 
 
 class Carousel extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   buttonSign: "plus",
-    //   listMovieId: null
-    // };
+    this.state = {
+      listMovieId: null
+    };
   }
 
-  // componentWillMount() {
-  //   this.props.fetchListMovies();
+  componentWillMount() {
+    this.props.fetchListMovies();
   //   // const movie = movies[21];
   //   // console.warn(movie);
   //   // const movie - $()
-  // }
+  }
   //
   // componentDidMount() {
-    // $(".expanding-block-left").appendTo(document);
   //   const { genre, listMovies, createListMovie,
   //           deleteListMovie, currentUser, listId } = this.props;
   //
@@ -59,41 +58,52 @@ class Carousel extends React.Component {
   //   });
   // }
 
-  // toggleAddMovieToList() {
-  //   const { genre, listMovies, createListMovie, deleteListMovie, currentUser, listId } = this.props;
-  //   const movies = genre.movies;
-  //
-  //   const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
-  //   const movieTitle =  $(expandingBlock).find("h2").text();
-  //   console.warn(movieTitle);
-  //
-  //   let movie;
-  //   for(let j = 0; j < genre.movies.length; j++) {
-  //     if(genre.movies[j].title === movieTitle) {
-  //       movie = genre.movies[j];
-  //       break;
-  //     }
-  //   }
-  //
-  //   for(let i = 0; i < listMovies.length; i++) {
-  //     if (listMovies[i].movie_id === movie.id) {
-  //       this.setState({buttonSign: "check", listMovieId: listMovies[i].id});
-  //     }
-  //   }
-  //
-  //   if(this.state.buttonSign === "plus") {
-  //     createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
-  //         .then(({listMovie}) => {
-  //           this.setState({listMovieId: listMovie.id});
-  //         } );
-  //     this.setState({buttonSign: "check"});
-  //     console.warn("added it!");
-  //   } else {
-  //     deleteListMovie(this.state.listMovieId);
-  //     this.setState({ buttonSign: "plus" });
-  //     console.warn("removed it!");
-  //   }
-  // }
+  toggleAddMovieToList() {
+    // this.props.fetchListMovies();
+    const { genre, listMovies, createListMovie, deleteListMovie, currentUser, listId } = this.props;
+    const movies = genre.movies;
+
+    const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
+    const movieTitle =  $(expandingBlock).find("h2").text();
+    console.warn(movieTitle);
+
+    const currentButtonText = $(".added-or-not").text();
+    console.warn(currentButtonText);
+
+    let movie;
+
+    for(let j = 0; j < genre.movies.length; j++) {
+      if(genre.movies[j].title === movieTitle) {
+        movie = genre.movies[j];
+        break;
+      }
+    }
+
+    if(currentButtonText.includes("+")) {
+      // console.warn("hello" + currentUser.id);
+        createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
+            .then(({listMovie}) => {
+              this.setState({listMovieId: listMovie.id});
+            } )
+            .then(res => {
+              $(".added-or-not").html(
+                "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
+              );
+              this.setState({buttonSign: "check"});
+              console.warn("added it!");
+            }
+          );
+    } else {
+        deleteListMovie(this.state.listMovieId)
+            .then((response) => {
+              $(".added-or-not").html(
+                "<span class='circle-plus'> + </span>&nbsp; MY LIST"
+              );
+              // this.setState({buttonSign: "plus"});
+              console.warn("removed it!");
+            });
+    }
+  }
 
   shiftSlide(direction) {
     const slideWidth = 254;
@@ -122,11 +132,13 @@ class Carousel extends React.Component {
     const { genre } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     $(expandingBlock).addClass('hide-element').removeClass("display-flex");
+    $(".added-or-not").empty();
     const currentSlide = $(expandingBlock).parent(".carousel-component")
                                           .children(".wrap").children('.window')
                                           .children(`#carousel_${genre.id}`).children('.slide');
     $(currentSlide).css("border-width", "0");
     $(currentSlide).find(".white-caret-down").css("display", "none");
+    this.setState({buttonSign: null});
   }
 
   playMovie() {
@@ -148,7 +160,16 @@ class Carousel extends React.Component {
   }
 
   render() {
-    const { genre, listId, createListMovie, listMovies } = this.props;
+    const { genre, listId, createListMovie, listMovies, fetchListMovies } = this.props;
+
+      // let buttonSignProp;
+      // if(this.state.buttonSign === "plus") {
+      //   buttonSignProp = "check";
+      // } else if(this.state.buttonSign === "check") {
+      //   buttonSignProp = "plus";
+      // } else {
+      //   buttonSignProp = "null";
+      // }
 
     return (
       <div className="carousel-component">
@@ -161,19 +182,12 @@ class Carousel extends React.Component {
             </span>
             <div id={ "carousel_" + genre.id }>
               { genre.movies.map((movie, idx) => (
-                  <div>
-                      <Slide key={ AppUtil.uniqueKey(idx) } listId = { listId }
-                           createListMovie = { createListMovie }
-                           specialId={ AppUtil.uniqueKey(idx) }
-                           genre={ genre }
-                           movie={ movie }
-                           listMovies ={ listMovies }/>
-                      <div className="my-list-add">
-                         <span className="circle-plus" onClick = {() => this.toggleAddMovieToList()}>
-                            +
-                         </span>&nbsp; MY LIST
-                      </div>
-                 </div>
+                  <Slide key={ AppUtil.uniqueKey(idx) } listId = { listId }
+                         specialId={ AppUtil.uniqueKey(idx) }
+                         genre={ genre }
+                         movie={ movie }
+                         listMovies = { listMovies }
+                         fetchListMovies = { fetchListMovies }/>
               ))}
             </div>
             <span id={"next_" + genre.id}
@@ -186,6 +200,9 @@ class Carousel extends React.Component {
           <FaClose onClick={ () => this.closeExpandingBlock() } className="window-close-x"/>
           <FaPlayCircleO onClick={ () => this.playMovie() } className="expanding-block-play-btn"/>
           <div className='expanding-block-left'>
+            <div className = "added-or-not" onClick={() => this.toggleAddMovieToList() }>
+              {/* <ButtonSign sign={buttonSignProp}/> */}
+            </div>
           </div>
         </div>
       </div>
