@@ -61,7 +61,7 @@ class FeaturedMovie extends React.Component {
                 {this.state.buttonSign === "plus" ? (
                   <span id="plus-sign">+</span>
                 ) : (
-                  <FaCheck />
+                  <span><FaCheck id="check"/></span>
                 )}
                 &nbsp; My List
               </button>
