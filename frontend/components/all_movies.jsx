@@ -16,7 +16,7 @@ class AllMovies extends React.Component {
 
   render() {
     const { movies, moviesLoading, genres,
-            ownProps, listId, fetchListMovies,
+            ownProps, fetchListMovies,
             createListMovie, listMovies, currentUser,
             deleteListMovie } = this.props;
 
@@ -35,7 +35,6 @@ class AllMovies extends React.Component {
             <Carousel key={idx}
                          ownProps = { ownProps }
                          genre={ genre }
-                         listId = { listId }
                          currentUser = { currentUser }
                          createListMovie = { createListMovie }
                          fetchListMovies = { fetchListMovies }

@@ -60,7 +60,7 @@ class Carousel extends React.Component {
 
   toggleAddMovieToList() {
     // this.props.fetchListMovies();
-    const { genre, listMovies, createListMovie, deleteListMovie, currentUser, listId } = this.props;
+    const { genre, listMovies, createListMovie, deleteListMovie, currentUser } = this.props;
     const movies = genre.movies;
 
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
@@ -83,7 +83,7 @@ class Carousel extends React.Component {
 
     if(currentButtonText.includes("+")) {
       // console.warn("hello" + currentUser.id);
-        createListMovie({ list_id: listId, movie_id: movie.id, user_id: currentUser.id })
+        createListMovie({ list_id: currentUser.id, movie_id: movie.id, user_id: currentUser.id })
             // .then(({listMovie}) => {
             //   // this.setState({listMovieId: listMovie.id});
             // } )
@@ -99,7 +99,7 @@ class Carousel extends React.Component {
         deleteListMovie(currentUser.id, movie.id)
             .then((response) => {
               $(".added-or-not").html(
-                "<span class='circle-plus'> + </span>&nbsp; MY LIST"
+                "<span class='circle-plus-2'> + </span>&nbsp; MY LIST"
               );
               // this.setState({buttonSign: "plus"});
               console.warn("removed it!");
@@ -161,7 +161,8 @@ class Carousel extends React.Component {
   }
 
   render() {
-    const { genre, listId, createListMovie, listMovies, fetchListMovies } = this.props;
+    const { genre, createListMovie, listMovies,
+            fetchListMovies, currentUser } = this.props;
 
       // let buttonSignProp;
       // if(this.state.buttonSign === "plus") {
@@ -183,7 +184,7 @@ class Carousel extends React.Component {
             </span>
             <div id={ "carousel_" + genre.id }>
               { genre.movies.map((movie, idx) => (
-                  <Slide key={ AppUtil.uniqueKey(idx) } listId = { listId }
+                  <Slide key={ AppUtil.uniqueKey(idx) } listId = { currentUser.id }
                          specialId={ AppUtil.uniqueKey(idx) }
                          genre={ genre }
                          movie={ movie }
@@ -202,7 +203,6 @@ class Carousel extends React.Component {
           <FaPlayCircleO onClick={ () => this.playMovie() } className="expanding-block-play-btn"/>
           <div className='expanding-block-left'>
             <div className = "added-or-not" onClick={() => this.toggleAddMovieToList() }>
-              {/* <ButtonSign sign={buttonSignProp}/> */}
             </div>
           </div>
         </div>

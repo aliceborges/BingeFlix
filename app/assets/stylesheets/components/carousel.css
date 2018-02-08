@@ -131,3 +131,20 @@ div[id^="expanding-block"] {
 .circle-check:hover {
   cursor: pointer;
 }
+
+.circle-plus-2 {
+  display: inline-block;
+  border: 2px solid white;
+  opacity: .7;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  height: 28px;
+  width: 30px;
+  text-align: center;
+}
+
+.circle-plus-2:hover {
+  opacity: 1;
+  cursor: pointer;
+}

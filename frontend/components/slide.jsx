@@ -14,7 +14,7 @@ class Slide extends React.Component {
 
   openExpandingBlock() {
     this.props.fetchListMovies();
-    const { genre, listMovies, movie, listId, specialId } = this.props;
+    const { genre, listMovies, movie, specialId } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     const currentSlide = document.getElementById(`slide-${specialId}`);
     const allSlides = document.getElementsByClassName('slide');
