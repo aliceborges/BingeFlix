@@ -13,7 +13,7 @@ class Slide extends React.Component {
   }
 
   openExpandingBlock() {
-    const { genre, specialId, movie, listId, createListMovie } = this.props;
+    const { genre, specialId, movie, listId, createListMovie, listMovies } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     const currentSlide = document.getElementById(`slide-${specialId}`);
     const allSlides = document.getElementsByClassName('slide');
@@ -38,6 +38,7 @@ class Slide extends React.Component {
                             url('${movie.image_url}')`,
                           "background-size": "cover",
                           "background-position": "left"});
+
     $('.expanding-block-left').prepend(
             `<div class="expanding-block-left-text">
               <h2>${movie.title}</h2>

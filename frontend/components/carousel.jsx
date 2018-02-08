@@ -28,6 +28,7 @@ class Carousel extends React.Component {
   // }
   //
   // componentDidMount() {
+    // $(".expanding-block-left").appendTo(document);
   //   const { genre, listMovies, createListMovie,
   //           deleteListMovie, currentUser, listId } = this.props;
   //
@@ -147,7 +148,7 @@ class Carousel extends React.Component {
   }
 
   render() {
-    const { genre, listId, createListMovie } = this.props;
+    const { genre, listId, createListMovie, listMovies } = this.props;
 
     return (
       <div className="carousel-component">
@@ -160,11 +161,19 @@ class Carousel extends React.Component {
             </span>
             <div id={ "carousel_" + genre.id }>
               { genre.movies.map((movie, idx) => (
-                  <Slide key={ AppUtil.uniqueKey(idx) } listId = { listId }
-                         createListMovie = { createListMovie }
-                         specialId={ AppUtil.uniqueKey(idx) }
-                         genre={ genre }
-                         movie={ movie }/>
+                  <div>
+                      <Slide key={ AppUtil.uniqueKey(idx) } listId = { listId }
+                           createListMovie = { createListMovie }
+                           specialId={ AppUtil.uniqueKey(idx) }
+                           genre={ genre }
+                           movie={ movie }
+                           listMovies ={ listMovies }/>
+                      <div className="my-list-add">
+                         <span className="circle-plus" onClick = {() => this.toggleAddMovieToList()}>
+                            +
+                         </span>&nbsp; MY LIST
+                      </div>
+                 </div>
               ))}
             </div>
             <span id={"next_" + genre.id}
@@ -177,9 +186,6 @@ class Carousel extends React.Component {
           <FaClose onClick={ () => this.closeExpandingBlock() } className="window-close-x"/>
           <FaPlayCircleO onClick={ () => this.playMovie() } className="expanding-block-play-btn"/>
           <div className='expanding-block-left'>
-            <div>
-              <span className="circle-plus" onClick = {() => this.toggleAddMovieToList()}> + </span>               &nbsp; MY LIST
-            </div>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   height: 280px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 div[id^="carousel"] {
