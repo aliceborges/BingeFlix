@@ -23,9 +23,11 @@ class FeaturedMovie extends React.Component {
   componentDidMount() {
     const {movies, listMovies} = this.props;
     const movie = movies[21];
-    for(let i = 0; i < listMovies.length; i++) {
-      if (listMovies[i].movie_id === movie.id) {
-        this.setState({buttonSign: "check"});
+    if(movie) {
+      for(let i = 0; i < listMovies.length; i++) {
+        if (listMovies[i].movie_id === movie.id) {
+          this.setState({buttonSign: "check"});
+        }
       }
     }
   }
@@ -36,7 +38,6 @@ class FeaturedMovie extends React.Component {
     if(this.state.buttonSign === "plus") {
       createListMovie({ list_id: currentUser.id, movie_id: movie.id, user_id: currentUser.id })
           .then(({listMovie}) => {
-            // this.setState({listMovieId: listMovie.id});
           } );
       this.setState({buttonSign: "check"});
       console.warn("added it!");

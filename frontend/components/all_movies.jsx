@@ -11,7 +11,6 @@ class AllMovies extends React.Component {
   componentWillMount() {
     this.props.fetchMovies();
     this.props.fetchGenres();
-    this.props.fetchListMovies();
   }
 
   render() {

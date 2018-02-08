@@ -4,12 +4,10 @@ import $ from 'jquery';
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
 import * as AppUtil from '../util/app_util';
-import ExpandingBlock from './expanding_block';
 import FaClose from 'react-icons/lib/fa/close';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 import { Redirect } from 'react-router-dom';
 import FaCheck from 'react-icons/lib/fa/check';
-import ButtonSign from './button_sign';
 
 
 class Carousel extends React.Component {
@@ -60,7 +58,7 @@ class Carousel extends React.Component {
 
   toggleAddMovieToList() {
     // this.props.fetchListMovies();
-    const { genre, listMovies, createListMovie, deleteListMovie, currentUser } = this.props;
+    const { genre, createListMovie, deleteListMovie, currentUser } = this.props;
     const movies = genre.movies;
 
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
