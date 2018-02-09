@@ -10,6 +10,7 @@ import { Route, Switch } from 'react-router-dom';
 import MyListContainer from './my_list_container';
 import AllMoviesContainer from './all_movies_container';
 import GenrePageContainer from './genre_page_container';
+import SearchBarContainer from './search_bar_container';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
@@ -33,7 +34,8 @@ class MoviesIndex extends React.Component {
             <Route path="/browse/tv" component={ GenrePageContainer }/>
             <Route path="/browse/movies" component={ GenrePageContainer }/>
             <Route path="/browse/originals" component={ GenrePageContainer }/>
-            <Route path="/browse" component={AllMoviesContainer}/>
+            <Route path="/search" component={ SearchBarContainer }/>
+            <Route path="/browse" component={ AllMoviesContainer }/>
           </Switch>
           <Footer />
         </div>

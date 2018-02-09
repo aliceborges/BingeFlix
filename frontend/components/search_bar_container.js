@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import SearchBar from './search_bar';
 import { fetchMovies } from '../actions/movie_actions';
 import { fetchGenres } from '../actions/genre_actions';
+import SearchBar from './search_bar';
 
 const mapStateToProps = state => {
   return {
