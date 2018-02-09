@@ -1,28 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchListMovies, createListMovie,
-         deleteListMovie } from '../actions/list_movie_actions';
-import { fetchList } from '../actions/list_actions';
+import { fetchMovies } from '../actions/movie_actions';
+import { fetchGenres } from '../actions/genre_actions';
 import GenrePage from './genre_page';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   const allMovies = Object.values(state.entities.movies);
   const allGenres = Object.values(state.entities.genres);
+
   return {
     currentUser,
     moviesLoading: state.ui.loading.moviesLoading,
-    ownProps: ownProps
+    ownProps: ownProps,
+    allMovies,
+    allGenres
   };
 };
 
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchList: (userId) => dispatch(fetchList(userId)),
-    fetchListMovies: () => dispatch(fetchListMovies()),
-    createListMovie: listMovieData => dispatch(createListMovie(listMovieData)),
-    deleteListMovie: (userId, movieId) => dispatch(deleteListMovie(userId, movieId))
+    fetchMovies: () => dispatch(fetchMovies()),
+    fetchGenres: () => dispatch(fetchGenres())
   };
 };
 
