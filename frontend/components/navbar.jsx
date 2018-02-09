@@ -1,7 +1,6 @@
 import React from 'react';
 import NavbarButtons from './navbar_buttons';
 import { Link } from 'react-router-dom';
-import SearchBar from './search_bar';
 import SearchBarContainer from './search_bar_container';
 import FaCaretDown from 'react-icons/lib/fa/caret-down';
 

@@ -10,7 +10,7 @@ import { Route, Switch } from 'react-router-dom';
 import MyListContainer from './my_list_container';
 import AllMoviesContainer from './all_movies_container';
 import GenrePageContainer from './genre_page_container';
-import SearchBarContainer from './search_bar_container';
+import SearchResults from './search_results';
 
 class MoviesIndex extends React.Component {
   constructor(props) {
@@ -30,11 +30,11 @@ class MoviesIndex extends React.Component {
             <Navbar logout={ logout } currentUserEmail={ currentUserEmail }/>
           </div>
           <Switch>
+            <Route path="/browse/search" component= { SearchResults } />
             <Route path="/browse/my-list" component={ MyListContainer }/>
             <Route path="/browse/tv" component={ GenrePageContainer }/>
             <Route path="/browse/movies" component={ GenrePageContainer }/>
             <Route path="/browse/originals" component={ GenrePageContainer }/>
-            <Route path="/search" component={ SearchBarContainer }/>
             <Route path="/browse" component={ AllMoviesContainer }/>
           </Switch>
           <Footer />

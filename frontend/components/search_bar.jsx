@@ -2,6 +2,8 @@ import React from 'react';
 import FaSearch from 'react-icons/lib/fa/search';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as AppUtil from '../util/app_util';
+import SearchResults from './search_results';
+import { withRouter } from 'react-router-dom';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -10,8 +12,9 @@ class SearchBar extends React.Component {
       inputVal: "",
       isHidden: true
     };
-    this.updateSearch = this.updateSearch.bind(this);
-    this.selectName = this.selectName.bind(this);
+  }
+  componentDidMount() {
+    this.props.fetchMovies();
   }
 
   toggleHidden() {
@@ -23,11 +26,12 @@ class SearchBar extends React.Component {
 
   updateSearch(e) {
     this.setState({ inputVal: e.target.value });
+    this.props.history.push(`/browse/search/${this.state.inputVal}`);
   }
 
 
   matches() {
-    const { movies, genres } = this.props;
+    const { movies } = this.props;
     const matches = [];
     if (this.state.inputVal.length === 0) {
       return matches;
@@ -39,24 +43,16 @@ class SearchBar extends React.Component {
     movies.forEach(movie => {
       movieTitle = movie.title.slice(0, this.state.inputVal.length);
       if (movieTitle.toLowerCase() === this.state.inputVal.toLowerCase()) {
-        matches.push(movie.title);
-      }
-    });
-
-    genres.forEach(genre => {
-      genreName = genre.name.slice(0, this.state.inputVal.length);
-      if (genreName.toLowerCase() === this.state.inputVal.toLowerCase()) {
-        matches.push(genre.name);
+        matches.push(movie);
       }
     });
 
     if (matches.length === 0) {
       matches.push('No matches');
     }
-
+    console.warn(matches);
     return matches;
   }
-
 
 
   selectName(event) {
@@ -75,7 +71,7 @@ class SearchBar extends React.Component {
   render() {
      let results = this.matches().map((result, i) => {
       return (
-        <li className="search-result" key={i} onClick={this.selectName}>{result}</li>
+        <li className="search-result" key={i} onClick={() => this.selectName()}>{result}</li>
       );
     });
 
@@ -84,8 +80,8 @@ class SearchBar extends React.Component {
                               onFocus = {(e) => this.moveCursorToEnd(e)}
                               id="search-bar"
                               type="text"
-                              placeholder= "Titles,genres"
-                              onChange={ this.updateSearch }
+                              placeholder= "Search for titles..."
+                              onChange={(e) => this.updateSearch(e) }
                               value={ this.state.inputVal }/>;
 
     return(
@@ -100,9 +96,7 @@ class SearchBar extends React.Component {
               { inputField }
             </ReactCSSTransitionGroup>
             }
-            <ul id="search-results">
-                {results}
-            </ul>
+            <SearchResults results={results}/>
             <FaSearch onClick={() => this.toggleHidden()} id="search-icon"/>
           </div>
     );
@@ -110,4 +104,4 @@ class SearchBar extends React.Component {
 
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

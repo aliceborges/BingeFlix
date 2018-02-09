@@ -20,28 +20,28 @@ class MyListCarousel extends React.Component {
     this.props.fetchListMovies();
   }
 
-  // shiftSlide(direction) {
-  //   const {listMovies} = this.props;
-  //   const slideWidth = 254;
-  //   const carousel = document.getElementById(`carousel_my_list`);
-  //   if(carousel.classList.contains('transition')) return;
-  //   carousel.classList.add('transition');
-  //   carousel.style.transform = `translateX(${direction * slideWidth}px)`;
-  //
-  //   setTimeout(() => {
-  //     if (direction === 1) {
-  //       $(carousel).children('.slide:first')
-  //                  .before($(carousel)
-  //                  .children('.slide:last'));
-  //     } else if (direction === -1) {
-  //         $(carousel).children('.slide:last')
-  //                    .after($(carousel)
-  //                    .children('.slide:first'));
-  //     }
-  //     carousel.classList.remove('transition');
-  //     carousel.style.transform = 'translateX(0px)';
-  //   }, 700);
-  // }
+  shiftSlide(direction) {
+    const {listMovies} = this.props;
+    const slideWidth = 254;
+    const carousel = document.getElementById(`carousel_my_list`);
+    if(carousel.classList.contains('transition')) return;
+    carousel.classList.add('transition');
+    carousel.style.transform = `translateX(${direction * slideWidth}px)`;
+
+    setTimeout(() => {
+      if (direction === 1) {
+        $(carousel).children('.slide:first')
+                   .before($(carousel)
+                   .children('.slide:last'));
+      } else if (direction === -1) {
+          $(carousel).children('.slide:last')
+                     .after($(carousel)
+                     .children('.slide:first'));
+      }
+      carousel.classList.remove('transition');
+      carousel.style.transform = 'translateX(0px)';
+    }, 700);
+  }
 
   closeExpandingBlock() {
     const expandingBlock = document.getElementById(`expanding-block-my-list`);
@@ -59,18 +59,20 @@ class MyListCarousel extends React.Component {
     const movieTitle = $(expandingBlock).find("h2").text();
 
     let movieId;
-
+    console.warn(listMovies);
     for(let i=0; i<listMovies.length; i++) {
       if (listMovies[i].title === movieTitle) {
-        movieId = listMovies[i].id;
+        movieId = listMovies[i].movie_id;
         break;
       }
     }
+    console.warn(movieId);
     return(
       ownProps.history.push(`/play/${movieId}`)
     );
 
   }
+
 
 
   removeMovieFromList() {
@@ -93,7 +95,6 @@ class MyListCarousel extends React.Component {
         .then((response) => {
           console.warn("removed it!");
           this.closeExpandingBlock();
-          // this.refreshPage();
         });
   }
 
@@ -103,7 +104,7 @@ class MyListCarousel extends React.Component {
     if(listMovies.length === 0) {
       return(
         <div className="carousel-component">
-          <h2>MY LIST</h2>
+          <h2>My List</h2>
           <span className="no-movies-message">
             There are no movies in your list.
           </span>
@@ -112,10 +113,13 @@ class MyListCarousel extends React.Component {
     }
     return (
         <div className="carousel-component">
-          <h2>MY LIST</h2>
+          <h2>My List</h2>
           <div className="wrap">
-            <div className="window">
-
+            <div className="window-my-list">
+              <span id={ "prev_my_list" }
+                onClick={ () => this.shiftSlide(1) }>
+                <FaAngleLeft className="scroll-arrow"/>
+              </span>
               <div id={ "carousel_my_list" }>
                 { listMovies.map((movie, idx) => (
                   <MyListSlide key={ AppUtil.uniqueKey(idx) }
@@ -126,7 +130,10 @@ class MyListCarousel extends React.Component {
                     fetchListMovies = { fetchListMovies }/>
                   ))}
                 </div>
-                
+                <span id={"next_my_list"}
+                  onClick={() => this.shiftSlide(-1)}>
+                  <FaAngleRight className="scroll-arrow"/>
+                </span>
               </div>
             </div>
             <div className="hide-element expanding-block" id={ "expanding-block-my-list" }>

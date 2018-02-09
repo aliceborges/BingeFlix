@@ -12,8 +12,6 @@ class MyListSlide extends React.Component {
     super(props);
   }
 
-
-
   openExpandingBlock() {
     this.props.fetchListMovies();
     const { movie, specialId } = this.props;
@@ -61,7 +59,7 @@ class MyListSlide extends React.Component {
     return (
       <span className="slide" onClick={ () => this.openExpandingBlock()}
             id={"slide-" + specialId} style={ movieBackground }>
-        <Link to={`/play/${movie.id}`}><FaPlay className="slide-play-btn"/></Link>
+        <Link to={`/play/${movie.movie_id}`}><FaPlay className="slide-play-btn"/></Link>
         <h2>{ movie.title }</h2>
         <div className="bottom-of-slide">
           <span className="slide-movie-blurb">{ movie.blurb }</span>
@@ -73,10 +71,5 @@ class MyListSlide extends React.Component {
     );
   }
 }
-
-
-
-
-
 
 export default MyListSlide;

@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchMovies } from '../actions/movie_actions';
-import { fetchGenres } from '../actions/genre_actions';
 import SearchBar from './search_bar';
+import { fetchMovies } from '../actions/movie_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     movies: Object.values(state.entities.movies),
-    genres: Object.values(state.entities.genres)
+    genres: Object.values(state.entities.genres),
+    ownProps: ownProps
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchMovies: () => dispatch(fetchMovies()),
-    fetchGenres: () => dispatch(fetchGenres())
+    fetchMovies: () => dispatch(fetchMovies())
   };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchBar));
