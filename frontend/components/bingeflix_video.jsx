@@ -6,9 +6,7 @@ import $ from 'jquery';
 class BingeFlixVideo extends React.Component {
   componentDidMount() {
     // instantiate Video.js
-    this.player = videojs(this.videoNode, this.props, () => {
-      console.log('onPlayerReady', this);
-    });
+    this.player = videojs(this.videoNode, this.props);
 
     const backArrow = document.getElementById("video-back-arrow");
 

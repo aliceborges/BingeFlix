@@ -10,11 +10,10 @@ class SearchResults extends React.Component {
 
 
   render() {
-    console.log(this.props.results);
     const { ownProps, currentUser, createListMovie, fetchListMovies,
             movies, deleteListMovie, listMovies } = this.props;
 
-    if(this.props.results === null || this.props.results.length === 0 ) {
+    if( this.props.results === null || this.props.results.length === 0 ) {
       return (
         <div className = "my-list-component genre-page-setup">
           <MyResultsCarousel ownProps = { ownProps }

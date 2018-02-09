@@ -63,8 +63,7 @@ class MyResultsCarousel extends React.Component {
         break;
       }
     }
-    console.warn("movieId", movieId);
-
+    
     return(
       ownProps.history.push(`/play/${movieId}`)
     );
@@ -77,10 +76,8 @@ toggleAddMovieToList() {
 
   const expandingBlock = document.getElementById(`expanding-block-results`);
   const movieTitle =  $(expandingBlock).find("h2").text();
-  // console.warn(movieTitle);
 
   const currentButtonText = $(".added-or-not").text();
-  // console.warn(currentButtonText);
 
   let movie;
 

@@ -43,7 +43,6 @@ class SearchBar extends React.Component {
 
 
     movies.forEach(movie => {
-      // movieTitle = movie.title.slice(0, this.state.inputVal.length);
       if (movie.title.toLowerCase().includes(this.state.inputVal.toLowerCase())) {
         matches.push(movie);
       }
