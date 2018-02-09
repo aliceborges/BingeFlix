@@ -20,7 +20,7 @@ class MyList extends React.Component {
   }
 
   render() {
-    const { listMovies, moviesLoading, currentUser, createListMovie, myMovies,
+    const { listMovies, moviesLoading, currentUser, createListMovie,
             fetchListMovies, deleteListMovie, ownProps, fetchList } = this.props;
             console.warn(listMovies);
 
@@ -33,13 +33,12 @@ class MyList extends React.Component {
     }
 
     return(
-      <div className="my-list-component inner-page genre-page-setup">
+      <div className="my-list-component genre-page-setup">
         <MyListCarousel ownProps = { ownProps }
                    currentUser = { currentUser }
                    createListMovie = { createListMovie }
                    fetchListMovies = { fetchListMovies }
                    fetchList = { fetchList }
-                   myMovies = { myMovies }
                    listMovies = { listMovies }
                    deleteListMovie = { deleteListMovie }/>
       </div>

@@ -12,6 +12,8 @@ class MyListSlide extends React.Component {
     super(props);
   }
 
+
+
   openExpandingBlock() {
     this.props.fetchListMovies();
     const { movie, specialId } = this.props;

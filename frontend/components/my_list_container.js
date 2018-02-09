@@ -8,11 +8,9 @@ import MyList from './my_list';
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   const listMovies = Object.values(state.entities.list_movies);
-  const myMovies = state.session.list.movies;
   return {
     currentUser,
     listMovies,
-    myMovies,
     moviesLoading: state.ui.loading.moviesLoading,
     ownProps: ownProps
   };

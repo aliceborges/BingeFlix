@@ -13,9 +13,6 @@ import MyListSlide from './my_list_slide';
 class MyListCarousel extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      allMovies: this.props.myMovies
-    };
   }
 
   componentWillMount() {
@@ -24,7 +21,7 @@ class MyListCarousel extends React.Component {
   }
 
   shiftSlide(direction) {
-    const {myMovies} = this.props;
+    const {listMovies} = this.props;
     const slideWidth = 254;
     const carousel = document.getElementById(`carousel_my_list`);
     if(carousel.classList.contains('transition')) return;
@@ -57,15 +54,15 @@ class MyListCarousel extends React.Component {
   }
 
   playMovie() {
-    const { myMovies, ownProps } = this.props;
+    const { listMovies, ownProps } = this.props;
     const expandingBlock = document.getElementById(`expanding-block-my-list`);
     const movieTitle = $(expandingBlock).find("h2").text();
 
     let movieId;
 
-    for(let i=0; i<myMovies.length; i++) {
-      if (myMovies[i].title === movieTitle) {
-        movieId = myMovies[i].id;
+    for(let i=0; i<listMovies.length; i++) {
+      if (listMovies[i].title === movieTitle) {
+        movieId = listMovies[i].id;
         break;
       }
     }
@@ -75,14 +72,14 @@ class MyListCarousel extends React.Component {
 
   }
 
-  refreshPage(){
-    window.location.reload();
-  }
+  // refreshPage(){
+  //   window.location.reload();
+  // }
 
 
   removeMovieFromList() {
-    const { myMovies, deleteListMovie, currentUser } = this.props;
-    const movies = myMovies;
+    const { listMovies, deleteListMovie, currentUser } = this.props;
+    const movies = listMovies;
 
     const expandingBlock = document.getElementById(`expanding-block-my-list`);
     const movieTitle =  $(expandingBlock).find("h2").text();
@@ -90,25 +87,25 @@ class MyListCarousel extends React.Component {
 
     let movie;
 
-    for(let j = 0; j < myMovies.length; j++) {
-      if(myMovies[j].title === movieTitle) {
-        movie = myMovies[j];
+    for(let j = 0; j < listMovies.length; j++) {
+      if(listMovies[j].title === movieTitle) {
+        movie = listMovies[j];
         break;
       }
     }
 
-    deleteListMovie(currentUser.id, movie.id)
+    deleteListMovie(currentUser.id, movie.movie_id)
         .then((response) => {
           console.warn("removed it!");
           this.closeExpandingBlock();
-          this.refreshPage();
+          // this.refreshPage();
         });
   }
 
   render() {
-    const { createListMovie, listMovies, myMovies,
+    const { createListMovie, listMovies,
             fetchListMovies, currentUser } = this.props;
-    if(myMovies.length === 0) {
+    if(listMovies.length === 0) {
       return(
         <div className="carousel-component">
           <h2>My List</h2>
@@ -121,7 +118,6 @@ class MyListCarousel extends React.Component {
     return (
         <div className="carousel-component">
           <h2>My List</h2>
-          <div className="invisible-div">{this.state.changed}</div>
           <div className="wrap">
             <div className="window">
               <span id={ "prev_my_list" }
@@ -129,7 +125,7 @@ class MyListCarousel extends React.Component {
                 <FaAngleLeft className="scroll-arrow"/>
               </span>
               <div id={ "carousel_my_list" }>
-                { this.state.allMovies.map((movie, idx) => (
+                { listMovies.map((movie, idx) => (
                   <MyListSlide key={ AppUtil.uniqueKey(idx) }
                     listId = { currentUser.id }
                     specialId={ AppUtil.uniqueKey(idx) }
