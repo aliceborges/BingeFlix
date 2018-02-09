@@ -1,0 +1,40 @@
+.no-movies-message {
+  font-size: 16px;
+  text-align: left;
+  display: block;
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+
+.wrap-my-list {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  margin: 0 auto;
+}
+
+.wrap-my-list:hover span[id^="prev"]{
+  display: flex;
+}
+
+.wrap-my-list:hover span[id^="next"]{
+  display: flex;
+}
+
+.window-my-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 280px;
+  overflow-x: hidden;
+}
+
+#carousel_my_list {
+  width: 10000px;
+  position: relative;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  height: 250px;
+}

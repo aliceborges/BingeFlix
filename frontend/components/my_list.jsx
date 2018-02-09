@@ -1,19 +1,36 @@
 import React from 'react';
 import MyListCarousel from './my_list_carousel';
+import LoadingIcon from './loading_icon';
 
 
 class MyList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hello: "yup"
+    };
   }
   componentWillMount() {
     this.props.fetchListMovies();
+    this.props.fetchList(this.props.currentUser.id);
+  }
+
+  componentDidMount() {
+    this.setState({hello: "not yet"});
   }
 
   render() {
-    const { listMovies, currentUser, createListMovie, myMovies,
-            fetchListMovies, deleteListMovie, ownProps } = this.props;
+    const { listMovies, moviesLoading, currentUser, createListMovie, myMovies,
+            fetchListMovies, deleteListMovie, ownProps, fetchList } = this.props;
             console.warn(listMovies);
+
+    if(moviesLoading) {
+      return <LoadingIcon />;
+    }
+
+    if(!listMovies) {
+      return null;
+    }
 
     return(
       <div className="my-list-component inner-page genre-page-setup">
@@ -21,6 +38,7 @@ class MyList extends React.Component {
                    currentUser = { currentUser }
                    createListMovie = { createListMovie }
                    fetchListMovies = { fetchListMovies }
+                   fetchList = { fetchList }
                    myMovies = { myMovies }
                    listMovies = { listMovies }
                    deleteListMovie = { deleteListMovie }/>

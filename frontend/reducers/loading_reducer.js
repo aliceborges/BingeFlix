@@ -8,6 +8,9 @@ import { RECEIVE_GENRES,
          START_GENRES_LOADING,
          START_SINGLE_GENRE_LOADING } from '../actions/genre_actions';
 
+import { RECEIVE_LIST_MOVIES,
+         START_LIST_MOVIES_LOADING } from '../actions/list_movie_actions';
+
 const initialState = {
   moviesLoading: false,
   genresLoading: false
@@ -24,6 +27,10 @@ const loadingReducer = (state = initialState, action) => {
       return Object.assign({}, state, {moviesLoading: true});
     case START_SINGLE_MOVIE_LOADING:
       return Object.assign({}, state, {moviesLoading: true});
+    case START_LIST_MOVIES_LOADING:
+      return Object.assign({}, state, {moviesLoading: false});
+    case RECEIVE_LIST_MOVIES:
+      return Object.assign({}, state, {moviesLoading: false});
     case RECEIVE_GENRES:
       return Object.assign({}, state, {genresLoading: false});
     case RECEIVE_GENRE:

@@ -14,15 +14,17 @@ class MyListCarousel extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      changed: "nothing"
+      allMovies: this.props.myMovies
     };
   }
 
   componentWillMount() {
+    this.props.fetchList(this.props.currentUser.id);
     this.props.fetchListMovies();
   }
 
   shiftSlide(direction) {
+    const {myMovies} = this.props;
     const slideWidth = 254;
     const carousel = document.getElementById(`carousel_my_list`);
     if(carousel.classList.contains('transition')) return;
@@ -73,6 +75,11 @@ class MyListCarousel extends React.Component {
 
   }
 
+  refreshPage(){
+    window.location.reload();
+  }
+
+
   removeMovieFromList() {
     const { myMovies, deleteListMovie, currentUser } = this.props;
     const movies = myMovies;
@@ -93,11 +100,8 @@ class MyListCarousel extends React.Component {
     deleteListMovie(currentUser.id, movie.id)
         .then((response) => {
           console.warn("removed it!");
-          if(this.state.changed === "nothing"){
-            this.setState({changed: "something"});
-          } else {
-            this.setState({changed: "nothing"});
-          }
+          this.closeExpandingBlock();
+          this.refreshPage();
         });
   }
 
@@ -109,7 +113,7 @@ class MyListCarousel extends React.Component {
         <div className="carousel-component">
           <h2>My List</h2>
           <span className="no-movies-message">
-            You have not added any movies to your list yet.
+            There are no movies in your list.
           </span>
         </div>
       );
@@ -117,6 +121,7 @@ class MyListCarousel extends React.Component {
     return (
         <div className="carousel-component">
           <h2>My List</h2>
+          <div className="invisible-div">{this.state.changed}</div>
           <div className="wrap">
             <div className="window">
               <span id={ "prev_my_list" }
@@ -124,7 +129,7 @@ class MyListCarousel extends React.Component {
                 <FaAngleLeft className="scroll-arrow"/>
               </span>
               <div id={ "carousel_my_list" }>
-                { myMovies.map((movie, idx) => (
+                { this.state.allMovies.map((movie, idx) => (
                   <MyListSlide key={ AppUtil.uniqueKey(idx) }
                     listId = { currentUser.id }
                     specialId={ AppUtil.uniqueKey(idx) }
