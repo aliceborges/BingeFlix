@@ -7,7 +7,8 @@ class FeaturedMovie extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      buttonSign: "plus"
+      buttonSign: "plus",
+      movieId: 12
     };
   }
 
@@ -22,7 +23,7 @@ class FeaturedMovie extends React.Component {
 
   componentDidMount() {
     const {movies, listMovies} = this.props;
-    const movie = movies[21];
+    const movie = movies[this.state.movieId];
     if(movie) {
       for(let i = 0; i < listMovies.length; i++) {
         if (listMovies[i].movie_id === movie.id) {
@@ -34,7 +35,7 @@ class FeaturedMovie extends React.Component {
 
   toggleAddMovieToList() {
     const { createListMovie, deleteListMovie, movies, currentUser } = this.props;
-    const movie = movies[21];
+    const movie = movies[this.state.movieId];
     if(this.state.buttonSign === "plus") {
       createListMovie({ list_id: currentUser.id, movie_id: movie.id, user_id: currentUser.id })
           .then(({listMovie}) => {
@@ -49,7 +50,7 @@ class FeaturedMovie extends React.Component {
   render() {
     const { movies } = this.props;
     // const idx = this.randomNumFromOneTo();
-    const movie = movies[21];
+    const movie = movies[this.state.movieId];
     return (
       movie ?
         <section className="featured-movie"

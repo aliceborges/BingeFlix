@@ -7,15 +7,12 @@ import { logout } from '../actions/session_actions';
 import { createListMovie, deleteListMovie, fetchListMovies } from '../actions/list_movie_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const currentUserEmail = state.session.currentUser.email.split("@")[0];
   const currentUser = state.session.currentUser;
   const listMovies = Object.values(state.entities.list_movies);
 
   return {
     movies: Object.values(state.entities.movies),
-    genres: Object.values(state.entities.genres),
     moviesLoading: state.ui.loading.moviesLoading,
-    genresLoading: state.ui.loading.genresLoading,
     currentUser,
     listMovies,
     ownProps: ownProps
