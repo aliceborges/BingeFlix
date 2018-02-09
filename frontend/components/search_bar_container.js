@@ -13,8 +13,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  console.warn(ownProps.updateResults);
   return {
-    fetchMovies: () => dispatch(fetchMovies())
+    fetchMovies: () => dispatch(fetchMovies()),
+    updateResults: ownProps.updateResults
   };
 };
 

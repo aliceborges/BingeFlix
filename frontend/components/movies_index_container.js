@@ -6,17 +6,18 @@ import { fetchGenres } from '../actions/genre_actions';
 import { logout } from '../actions/session_actions';
 import { fetchList } from '../actions/list_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   const currentUserEmail = state.session.currentUser.email.split("@")[0];
   const currentUserId = state.session.currentUser.id;
   return {
     currentUserEmail,
-    currentUserId
+    currentUserId,
+    ownProps
   };
 };
 
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     logout: () => dispatch(logout()),
     fetchList: userId => dispatch(fetchList(userId))

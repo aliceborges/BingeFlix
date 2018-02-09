@@ -2,6 +2,7 @@ import React from 'react';
 import LoadingIcon from './loading_icon';
 import FeaturedMovieContainer from './featured_movie_container';
 import Carousel from './carousel';
+import SearchResults from './search_results';
 
 class AllMovies extends React.Component {
   constructor(props) {

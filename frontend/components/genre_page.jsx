@@ -1,5 +1,6 @@
 import React from 'react';
 import GenreListCarousel from './genre_list_carousel';
+import LoadingIcon from './loading_icon';
 
 class GenrePage extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class GenrePage extends React.Component {
 
     return(
       <div className="my-list-component genre-page-setup">
-        { allGenres.map( (genre, idx) => (
+        {/* { //allGenres.map( (genre, idx) => (
           <GenreListCarousel ownProps = { ownProps }
             currentUser = { currentUser }
             allMovies = { allMovies }
@@ -29,7 +30,7 @@ class GenrePage extends React.Component {
             fetchGenres = { fetchGenres }
             allGenres = { allGenres }
             key = {idx}/>
-        ))}
+        ))} */}
       </div>
     );
   }

@@ -32,7 +32,7 @@ class Navbar extends React.Component {
 
           <li className="navbar-right">
             <section>
-              <SearchBarContainer />
+              <SearchBarContainer updateResults={this.props.updateResults}/>
             </section>
 
             <section className="notifications">

@@ -18,6 +18,7 @@ class SearchBar extends React.Component {
     this.props.fetchMovies();
   }
 
+
   toggleHidden() {
     this.setState({
       isHidden: !this.state.isHidden
@@ -28,6 +29,7 @@ class SearchBar extends React.Component {
   updateSearch(e) {
     this.setState({ inputVal: e.target.value });
     this.props.history.push(`/browse/search/${this.state.inputVal}`);
+    this.props.updateResults(this.matches());
   }
 
 
@@ -97,7 +99,6 @@ class SearchBar extends React.Component {
               { inputField }
             </ReactCSSTransitionGroup>
             }
-            <SearchResults results={this.state.results}/>
             <FaSearch onClick={() => this.toggleHidden()} id="search-icon"/>
           </div>
     );
