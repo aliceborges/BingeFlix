@@ -7,57 +7,19 @@ import * as AppUtil from '../util/app_util';
 import FaClose from 'react-icons/lib/fa/close';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 import { Redirect } from 'react-router-dom';
-import FaCheck from 'react-icons/lib/fa/check';
+import LoadingIcon from './loading_icon';
 
 
 class Carousel extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   listMovieId: null
-    // };
   }
 
   componentWillMount() {
     this.props.fetchListMovies();
-  //   // const movie = movies[21];
-  //   // console.warn(movie);
-  //   // const movie - $()
   }
-  //
-  // componentDidMount() {
-  //   const { genre, listMovies, createListMovie,
-  //           deleteListMovie, currentUser, listId } = this.props;
-  //
-  //   $(document).on("click", () => {
-  //     const movies = genre.movies;
-  //
-  //     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
-  //     const movieTitle =  $(expandingBlock).find("h2").text();
-  //     // console.warn(movieTitle);
-  //     if (movieTitle) {
-  //       let movie;
-  //       for(let j = 0; j < genre.movies.length; j++) {
-  //         if(genre.movies[j].title === movieTitle) {
-  //           movie = genre.movies[j];
-  //           break;
-  //         }
-  //       }
-  //       // console.warn(movie);
-  //       console.warn(listMovies);
-  //       if(movie) {
-  //         for(let i = 0; i < listMovies.length; i++) {
-  //           if (listMovies[i].movie_id === movie.id) {
-  //             this.setState({buttonSign: "check", listMovieId: listMovies[i].id});
-  //           }
-  //         }
-  //       }
-  //     }
-  //   });
-  // }
 
   toggleAddMovieToList() {
-    // this.props.fetchListMovies();
     const { genre, createListMovie, deleteListMovie, currentUser } = this.props;
     const movies = genre.movies;
 
@@ -80,17 +42,12 @@ class Carousel extends React.Component {
     let listMovieId;
 
     if(currentButtonText.includes("+")) {
-      // console.warn("hello" + currentUser.id);
         createListMovie({ list_id: currentUser.id, movie_id: movie.id, user_id: currentUser.id })
-            // .then(({listMovie}) => {
-            //   // this.setState({listMovieId: listMovie.id});
-            // } )
+
             .then(res => {
               $(".added-or-not").html(
                 "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
               );
-              // this.setState({buttonSign: "check"});
-              console.warn("added it!");
             }
           );
     } else {
@@ -99,8 +56,6 @@ class Carousel extends React.Component {
               $(".added-or-not").html(
                 "<span class='circle-plus-2'> + </span>&nbsp; MY LIST"
               );
-              // this.setState({buttonSign: "plus"});
-              console.warn("removed it!");
             });
     }
   }
@@ -160,16 +115,12 @@ class Carousel extends React.Component {
 
   render() {
     const { genre, createListMovie, listMovies,
-            fetchListMovies, currentUser } = this.props;
-
-      // let buttonSignProp;
-      // if(this.state.buttonSign === "plus") {
-      //   buttonSignProp = "check";
-      // } else if(this.state.buttonSign === "check") {
-      //   buttonSignProp = "plus";
-      // } else {
-      //   buttonSignProp = "null";
-      // }
+            fetchListMovies, currentUser, moviesLoading } = this.props;
+    if(moviesLoading) {
+      return(
+        <LoadingIcon />
+      );
+    }
 
     return (
       <div className="carousel-component">

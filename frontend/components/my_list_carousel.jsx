@@ -83,7 +83,6 @@ class MyListCarousel extends React.Component {
 
     const expandingBlock = document.getElementById(`expanding-block-my-list`);
     const movieTitle =  $(expandingBlock).find("h2").text();
-    console.warn(movieTitle);
 
     let movie;
 

@@ -38,7 +38,8 @@ class AllMovies extends React.Component {
                          createListMovie = { createListMovie }
                          fetchListMovies = { fetchListMovies }
                          listMovies = { listMovies }
-                         deleteListMovie = { deleteListMovie }/>
+                         deleteListMovie = { deleteListMovie }
+                         moviesLoading = { moviesLoading }/>
           ))
           }
         </div>
