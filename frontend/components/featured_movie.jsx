@@ -40,11 +40,9 @@ class FeaturedMovie extends React.Component {
           .then(({listMovie}) => {
           } );
       this.setState({buttonSign: "check"});
-      console.warn("added it!");
     } else {
       deleteListMovie(currentUser.id, movie.id);
       this.setState({buttonSign: "plus"});
-      console.warn("removed it!");
     }
   }
 

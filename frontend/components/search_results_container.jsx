@@ -4,6 +4,7 @@ import { fetchListMovies, createListMovie,
          deleteListMovie } from '../actions/list_movie_actions';
 import { fetchList } from '../actions/list_actions';
 import SearchResults from './search_results';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
@@ -31,4 +32,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchResults));

@@ -14,19 +14,25 @@ class SearchResults extends React.Component {
             movies, deleteListMovie, listMovies } = this.props;
     if(this.props.results === null) {
       return (
-        <div className = "search-results-component genre_page_setup">
+        <div className = "my-list-component genre-page-setup">
+          <MyResultsCarousel ownProps = { ownProps }
+                     currentUser = { currentUser }
+                     createListMovie = { createListMovie }
+                     fetchListMovies = { fetchListMovies }
+                     deleteListMovie = { deleteListMovie }
+                     matchingMovies = { movies }
+                     listMovies = { listMovies }
+                     ownProps = { ownProps }/>
         </div>
       );
     }
     if(this.props.results[0] === "No matches") {
       return(
-        <div className = "search-results-component genre_page_setup">
+        <div className = "search-results-component genre-page-setup">
           <p>Your search does not match any results</p>
         </div>
       );
     }
-    console.warn("this.props.results = ", this.props.results);
-    // console.warn("this.props = ", this.props);
     return(
       <div className = "my-list-component genre-page-setup">
         <MyResultsCarousel ownProps = { ownProps }
@@ -35,7 +41,8 @@ class SearchResults extends React.Component {
                    fetchListMovies = { fetchListMovies }
                    deleteListMovie = { deleteListMovie }
                    matchingMovies = { this.props.results }
-                   listMovies = { listMovies }/>
+                   listMovies = { listMovies }
+                   ownProps = { ownProps }/>
       </div>
     );
   }

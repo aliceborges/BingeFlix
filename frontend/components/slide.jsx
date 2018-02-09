@@ -38,16 +38,14 @@ class Slide extends React.Component {
 
     const movieInMovies = (movieId, myMovies) => {
       for(let i = 0; i < myMovies.length; i++) {
-        console.warn(myMovies[i].movie_id);
-        console.warn(movieId);
+
         if(myMovies[i].movie_id === movieId) {
-          console.warn("inside the equals!");
           return (
             "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
           );
         }
       }
-      console.warn("inside the unequal!");
+
       return (
         "<span id='check' class='circle-plus'> + </span>&nbsp; MY LIST"
       );

@@ -59,14 +59,12 @@ class MyListCarousel extends React.Component {
     const movieTitle = $(expandingBlock).find("h2").text();
 
     let movieId;
-    console.warn(listMovies);
     for(let i=0; i<listMovies.length; i++) {
       if (listMovies[i].title === movieTitle) {
         movieId = listMovies[i].movie_id;
         break;
       }
     }
-    console.warn(movieId);
     return(
       ownProps.history.push(`/play/${movieId}`)
     );
@@ -93,7 +91,6 @@ class MyListCarousel extends React.Component {
 
     deleteListMovie(currentUser.id, movie.movie_id)
         .then((response) => {
-          console.warn("removed it!");
           this.closeExpandingBlock();
         });
   }

@@ -55,14 +55,16 @@ class MyResultsCarousel extends React.Component {
     const movieTitle = $(expandingBlock).find("h2").text();
 
     let movieId;
-    console.warn(matchingMovies);
+
+
     for(let i=0; i<matchingMovies.length; i++) {
       if (matchingMovies[i].title === movieTitle) {
-        movieId = matchingMovies[i].movie_id;
+        movieId = matchingMovies[i].id;
         break;
       }
     }
-    // console.warn(movieId);
+    console.warn("movieId", movieId);
+
     return(
       ownProps.history.push(`/play/${movieId}`)
     );
@@ -111,7 +113,6 @@ toggleAddMovieToList() {
   render() {
     const { createListMovie, matchingMovies,
             currentUser, listMovies } = this.props;
-
     if(matchingMovies.length === 0) {
       return null;
     }

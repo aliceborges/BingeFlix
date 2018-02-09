@@ -94,7 +94,6 @@ class GenreListCarousel extends React.Component {
 
     deleteListMovie(currentUser.id, movie.movie_id)
         .then((response) => {
-          console.warn("removed it!");
           this.closeExpandingBlock();
           // this.refreshPage();
         });

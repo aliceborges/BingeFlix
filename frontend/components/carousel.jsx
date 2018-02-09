@@ -25,10 +25,8 @@ class Carousel extends React.Component {
 
     const expandingBlock = document.getElementById(`expanding-block-${genre.id}`);
     const movieTitle =  $(expandingBlock).find("h2").text();
-    console.warn(movieTitle);
 
     const currentButtonText = $(".added-or-not").text();
-    console.warn(currentButtonText);
 
     let movie;
 

@@ -53,7 +53,6 @@ class SearchBar extends React.Component {
     if (matches.length === 0) {
       matches.push('No matches');
     }
-    console.warn(matches);
     return matches;
   }
 
@@ -83,7 +82,7 @@ class SearchBar extends React.Component {
                               onFocus = {(e) => this.moveCursorToEnd(e)}
                               id="search-bar"
                               type="text"
-                              onKeyPress= { (e) => this.updateSearch(e)}
+                              onKeyDown= { (e) => this.updateSearch(e)}
                               placeholder= "Search for titles..."
                               onChange={(e) => this.updateSearch(e) }
                               value={ this.state.inputVal }/>;
