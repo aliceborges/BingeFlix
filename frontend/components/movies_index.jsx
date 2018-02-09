@@ -39,10 +39,11 @@ class MoviesIndex extends React.Component {
             <Navbar logout={ logout } updateResults={ this.updateResults }
                     currentUserEmail={ currentUserEmail }/>
           </div>
-          {this.props.ownProps.location.pathname.includes("search") ? (
+          { this.props.ownProps.location.pathname.includes("search") ? (
             <SearchResultsContainer results = {this.state.matchingSearchResults}/>
           ) : (
             <Switch>
+              <Route path="/browse/search/" component={ SearchResultsContainer }/>
               <Route path="/browse/my-list" component={ MyListContainer }/>
               <Route path="/browse/tv" component={ GenrePageContainer }/>
               <Route path="/browse/movies" component={ GenrePageContainer }/>

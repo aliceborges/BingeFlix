@@ -10,22 +10,25 @@ class SearchResults extends React.Component {
 
 
   render() {
+    console.log(this.props.results);
     const { ownProps, currentUser, createListMovie, fetchListMovies,
             movies, deleteListMovie, listMovies } = this.props;
-    if(this.props.results === null) {
+
+    if(this.props.results === null || this.props.results.length === 0 ) {
       return (
         <div className = "my-list-component genre-page-setup">
           <MyResultsCarousel ownProps = { ownProps }
-                     currentUser = { currentUser }
-                     createListMovie = { createListMovie }
-                     fetchListMovies = { fetchListMovies }
-                     deleteListMovie = { deleteListMovie }
-                     matchingMovies = { movies }
-                     listMovies = { listMovies }
-                     ownProps = { ownProps }/>
-        </div>
-      );
-    }
+            currentUser = { currentUser }
+            createListMovie = { createListMovie }
+            fetchListMovies = { fetchListMovies }
+            deleteListMovie = { deleteListMovie }
+            matchingMovies = { movies }
+            listMovies = { listMovies }
+            ownProps = { ownProps }/>
+          </div>
+        );
+      }
+
     if(this.props.results[0] === "No matches") {
       return(
         <div className = "search-results-component genre-page-setup">
@@ -33,6 +36,7 @@ class SearchResults extends React.Component {
         </div>
       );
     }
+
     return(
       <div className = "my-list-component genre-page-setup">
         <MyResultsCarousel ownProps = { ownProps }

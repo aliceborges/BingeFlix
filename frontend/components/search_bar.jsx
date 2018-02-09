@@ -27,9 +27,10 @@ class SearchBar extends React.Component {
 
 
   updateSearch(e) {
-    this.setState({ inputVal: e.target.value });
-    this.props.history.push(`/browse/search/${this.state.inputVal}`);
-    this.props.updateResults(this.matches());
+    this.setState({ inputVal: e.target.value }, () => {
+      this.props.history.push(`/browse/search/${this.state.inputVal}`);
+      this.props.updateResults(this.matches());
+    });
   }
 
 
@@ -40,8 +41,6 @@ class SearchBar extends React.Component {
       return matches;
     }
 
-    // let movieTitle;
-    let genreName;
 
     movies.forEach(movie => {
       // movieTitle = movie.title.slice(0, this.state.inputVal.length);
