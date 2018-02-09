@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###LIVE DEMO(https://bingeflix.herokuapp.com/#/)
 
-Things you may want to cover:
 
-* Ruby version
+##Features
 
-* System dependencies
 
-* Configuration
+### Streaming Videos
 
-* Database creation
 
-* Database initialization
+### Adding Videos to 'My List'
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Instant Update Search
 
-* Deployment instructions
 
-* ...
+Adding images: ![]()

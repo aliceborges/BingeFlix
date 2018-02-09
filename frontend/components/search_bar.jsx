@@ -28,7 +28,9 @@ class SearchBar extends React.Component {
 
   updateSearch(e) {
     this.setState({ inputVal: e.target.value }, () => {
-      this.props.history.push(`/browse/search/${this.state.inputVal}`);
+      if(this.state.inputVal.length > 0 && this.props.ownProps.location.pathname !== "/browse/search") {
+        this.props.history.push(`/browse/search`);
+      }
       this.props.updateResults(this.matches());
     });
   }
