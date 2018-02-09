@@ -45,9 +45,9 @@ class MoviesIndex extends React.Component {
             <Switch>
               <Route path="/browse/search/" component={ SearchResultsContainer }/>
               <Route path="/browse/my-list" component={ MyListContainer }/>
-              <Route path="/browse/tv" component={ GenrePageContainer }/>
+              {/* <Route path="/browse/tv" component={ GenrePageContainer }/>
               <Route path="/browse/movies" component={ GenrePageContainer }/>
-              <Route path="/browse/originals" component={ GenrePageContainer }/>
+              <Route path="/browse/originals" component={ GenrePageContainer }/> */}
               <Route path="/browse" component={ AllMoviesContainer }/>
             </Switch>
           )}
