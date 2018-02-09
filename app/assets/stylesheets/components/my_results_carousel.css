@@ -1,12 +1,4 @@
-.no-movies-message {
-  font-size: 16px;
-  text-align: left;
-  display: block;
-  margin-top: 60px;
-  margin-left: 60px;
-}
-
-.window-my-list {
+.window-results {
   position: relative;
   display: flex;
   align-items: center;
@@ -14,7 +6,7 @@
   overflow-x: hidden;
 }
 
-#carousel_my_list {
+#carousel_results {
   width: 10000px;
   position: relative;
   top: 0; left: 0;

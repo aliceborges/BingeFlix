@@ -17,7 +17,7 @@ class MyResultsCarousel extends React.Component {
 
   shiftSlide(direction) {
     const slideWidth = 254;
-    const carousel = document.getElementById(`carousel_my_list`);
+    const carousel = document.getElementById(`carousel_results`);
     if(carousel.classList.contains('transition')) return;
     carousel.classList.add('transition');
     carousel.style.transform = `translateX(${direction * slideWidth}px)`;
@@ -39,12 +39,14 @@ class MyResultsCarousel extends React.Component {
 
   closeExpandingBlock() {
     const expandingBlock = document.getElementById(`expanding-block-results`);
+    const allSlides = document.getElementsByClassName('slide');
+    $(allSlides).css("border", "none");
     $(expandingBlock).addClass('hide-element').removeClass("display-flex");
     const currentSlide = $(expandingBlock).parent(".carousel-component")
                                           .children(".wrap").children('.window')
                                           .children(`#carousel_results`).children('.slide');
     $(currentSlide).css("border-width", "0");
-    $(currentSlide).find(".white-caret-down").css("display", "none");
+    $(".white-caret-down").css("display", "none");
   }
 
   playMovie() {
@@ -67,29 +69,44 @@ class MyResultsCarousel extends React.Component {
 
   }
 
+toggleAddMovieToList() {
+  const { matchingMovies, createListMovie, deleteListMovie, currentUser } = this.props;
+  const movies = matchingMovies;
 
+  const expandingBlock = document.getElementById(`expanding-block-results`);
+  const movieTitle =  $(expandingBlock).find("h2").text();
+  // console.warn(movieTitle);
 
-  removeMovieFromList() {
-    const { matchingMovies, deleteListMovie, currentUser } = this.props;
+  const currentButtonText = $(".added-or-not").text();
+  // console.warn(currentButtonText);
 
-    const expandingBlock = document.getElementById(`expanding-block-my-list`);
-    const movieTitle =  $(expandingBlock).find("h2").text();
+  let movie;
 
-    let movie;
-
-    for(let j = 0; j < matchingMovies.length; j++) {
-      if(matchingMovies[j].title === movieTitle) {
-        movie = matchingMovies[j];
-        break;
-      }
+  for(let j = 0; j < movies.length; j++) {
+    if(movies[j].title === movieTitle) {
+      movie = movies[j];
+      break;
     }
-
-    deleteListMovie(currentUser.id, movie.movie_id)
-        .then((response) => {
-          console.warn("removed it!");
-          this.closeExpandingBlock();
-        });
   }
+
+  if(currentButtonText.includes("+")) {
+      createListMovie({ list_id: currentUser.id, movie_id: movie.id, user_id: currentUser.id })
+
+          .then(res => {
+            $(".added-or-not").html(
+              "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
+            );
+          }
+        );
+  } else {
+      deleteListMovie(currentUser.id, movie.id)
+          .then((response) => {
+            $(".added-or-not").html(
+              "<span class='circle-plus-2'> + </span>&nbsp; MY LIST"
+            );
+          });
+  }
+}
 
   render() {
     const { createListMovie, matchingMovies,
@@ -102,7 +119,7 @@ class MyResultsCarousel extends React.Component {
         <div className="carousel-component">
           <h2>Search Results</h2>
           <div className="wrap">
-            <div className="window-my-list">
+            <div className="window-results">
               <span id={ "prev_results" }
                 onClick={ () => this.shiftSlide(1) }>
                 <FaAngleLeft className="scroll-arrow"/>
@@ -127,9 +144,8 @@ class MyResultsCarousel extends React.Component {
               <FaClose onClick={ () => this.closeExpandingBlock() } className="window-close-x"/>
               <FaPlayCircleO onClick={ () => this.playMovie() } className="expanding-block-play-btn"/>
               <div className='expanding-block-left'>
-                <span className="circle-check" onClick = {() => this.removeMovieFromList()}>
-                  &#10004; &nbsp; MY LIST
-                </span>
+                <div className = "added-or-not" onClick={() => this.toggleAddMovieToList() }>
+                </div>
               </div>
             </div>
           </div>

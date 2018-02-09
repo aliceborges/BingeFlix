@@ -24,10 +24,6 @@ class MyListSlide extends React.Component {
     $(".expanding-block").removeClass("display-flex").addClass("hide-element");
 
     $(expandingBlock).removeClass('hide-element').addClass("display-flex");
-    $(currentSlide).css({"border-color": "#FFF",
-                         "border-width": "5px",
-                         "border-style": "solid"});
-    $(currentSlide).find(".white-caret-down").css("display", "block");
     $('.expanding-block-left-text').remove();
     $(expandingBlock).css({"background": `linear-gradient(to right,
                             rgba(0,0,0,1), rgba(0,0,0,.8),
@@ -44,6 +40,10 @@ class MyListSlide extends React.Component {
             </div>`
     );
 
+    $(currentSlide).css({"border-color": "#FFF",
+    "border-width": "5px",
+    "border-style": "solid"});
+    $(currentSlide).find(".white-caret-down").css("display", "block");
      $('html, body').animate({
         scrollTop: $(currentSlide).offset().top
     }, 400);

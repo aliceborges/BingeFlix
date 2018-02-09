@@ -40,12 +40,12 @@ class SearchBar extends React.Component {
       return matches;
     }
 
-    let movieTitle;
+    // let movieTitle;
     let genreName;
 
     movies.forEach(movie => {
-      movieTitle = movie.title.slice(0, this.state.inputVal.length);
-      if (movieTitle.toLowerCase() === this.state.inputVal.toLowerCase()) {
+      // movieTitle = movie.title.slice(0, this.state.inputVal.length);
+      if (movie.title.toLowerCase().includes(this.state.inputVal.toLowerCase())) {
         matches.push(movie);
       }
     });
@@ -83,6 +83,7 @@ class SearchBar extends React.Component {
                               onFocus = {(e) => this.moveCursorToEnd(e)}
                               id="search-bar"
                               type="text"
+                              onKeyPress= { (e) => this.updateSearch(e)}
                               placeholder= "Search for titles..."
                               onChange={(e) => this.updateSearch(e) }
                               value={ this.state.inputVal }/>;

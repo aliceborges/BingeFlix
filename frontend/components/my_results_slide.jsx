@@ -33,14 +33,14 @@ class MyResultsSlide extends React.Component {
                             rgba(0,0,0,1), rgba(0,0,0,.8),
                             rgba(0, 0, 0, .1), transparent),
                             url('${movie.image_url}')`,
-                          "background-size": "cover",
-                          "background-position": "left"});
+                            "background-size": "cover",
+                            "background-position": "left"});
 
     const movieInMovies = (movieId, myMovies) => {
       for(let i = 0; i < myMovies.length; i++) {
-        console.warn(myMovies[i].movie_id);
+        console.warn(myMovies[i].id);
         console.warn(movieId);
-        if(myMovies[i].movie_id === movieId) {
+        if(myMovies[i].id === movieId) {
           console.warn("inside the equals!");
           return (
             "<span class='circle-check'> &#10004; </span>&nbsp; MY LIST"
@@ -80,7 +80,7 @@ class MyResultsSlide extends React.Component {
     return (
       <span className="slide" onClick={ () => this.openExpandingBlock()}
             id={"slide-" + specialId} style={ movieBackground }>
-        <Link to={`/play/${movie.movie_id}`}><FaPlay className="slide-play-btn"/></Link>
+        <Link to={`/play/${movie.id}`}><FaPlay className="slide-play-btn"/></Link>
         <h2>{ movie.title }</h2>
         <div className="bottom-of-slide">
           <span className="slide-movie-blurb">{ movie.blurb }</span>

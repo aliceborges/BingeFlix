@@ -9,15 +9,18 @@
 .search-bar-container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 input#search-bar {
   color: white;
   width: 250px;
-  position: relative;
+  position: absolute;
   background: black;
   border: 1px solid white;
   padding: 4px 10px;
+  right: 50px;
+  top: 0;
 }
 
 #search-results {
