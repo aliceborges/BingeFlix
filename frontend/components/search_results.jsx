@@ -13,6 +13,9 @@ class SearchResults extends React.Component {
       <div className = "genre_page_setup">
         Hello there :)
         I don't know ya but I really should
+        <div>
+          {this.props.results}
+        </div>
       </div>
     );
   }

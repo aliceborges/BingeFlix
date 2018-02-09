@@ -10,7 +10,8 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       inputVal: "",
-      isHidden: true
+      isHidden: true,
+      results: null
     };
   }
   componentDidMount() {
@@ -96,7 +97,7 @@ class SearchBar extends React.Component {
               { inputField }
             </ReactCSSTransitionGroup>
             }
-            <SearchResults results={results}/>
+            <SearchResults results={this.state.results}/>
             <FaSearch onClick={() => this.toggleHidden()} id="search-icon"/>
           </div>
     );
