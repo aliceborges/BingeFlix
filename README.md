@@ -6,7 +6,7 @@
 ## Features
 
 ### Expanding Blocks
-![]([Imgur](https://i.imgur.com/4okIOeH.jpg))
+![](https://i.imgur.com/4okIOeH.jpg)
 
 ### Streaming Videos
 
