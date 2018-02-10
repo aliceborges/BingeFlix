@@ -31,7 +31,7 @@ The app's sliding carousel leverages the power and simplicity of jQuery's DOM ma
 <p align="center">
   <img src="https://i.imgur.com/4okIOeH.jpg"/>
 </p>
-When a user clicks on one of the slides in a carousel, a larger block of information appears below that carousel. Though at first it seemed easier for each slide to have its own expanding block, I quickly realized that attaching the expanding block to each slide, in addition to being less performant, compromised the expanding hover effect of each individual slide. For those reasons, I determined that placing a single expanding block below each carousel was the best way to solve these issues and display the necessary information. Each time a slide is clicked, the expanding block is populated with the information for that slide.
+When a user clicks on one of the slides in a carousel, a larger block of information appears below that carousel. Though at first it seemed easier for each slide to have its own expanding block, I quickly realized that attaching the expanding block to each slide, in addition to being slightly less performant, compromised the expanding hover effect of each individual slide. For those reasons, I determined that placing a single expanding block below each carousel was the best way to solve these issues and display the necessary information. Each time a slide is clicked, the expanding block is populated with the information for that slide.
 
 
 ### Streaming Videos
