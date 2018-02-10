@@ -23,20 +23,20 @@ I created the app's sliding carousels by leveraging the power and simplicity of 
 ### Single Expanding Block for Each Carousel
 <p style="text-align: center;" markdown="1">
   <img src="https://i.imgur.com/4okIOeH.jpg"/>
-  ![](https://i.imgur.com/4okIOeH.jpg)
 </p>
 
 
 ### Streaming Videos
-
-![](https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif)
+<p style="text-align: center;" markdown="1">
+  <img src="https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif"/>
+</p>
 
 
 ### Adding Videos to 'My List'
 Each Bingeflix user has a 'My List' to which they can add and from which they can delete videos. Adding videos to one's list is as simple as clicking on the '+' icon on the video's expanding block.
 
 
-
-
 ### Instant Update Search
-![](https://media.giphy.com/media/xThtamghBNxFbwSrRe/giphy.gif)
+<p style="text-align: center;" markdown="1">
+  <img src="https://media.giphy.com/media/xThtamghBNxFbwSrRe/giphy.gif"/>
+</p>
