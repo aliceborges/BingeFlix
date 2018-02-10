@@ -5,6 +5,9 @@
 
 ## Features
 
+### Single Form for Sign Up / Sign In
+![](https://i.imgur.com/Uvy9nZn.png)
+
 ### Expanding Blocks
 ![](https://i.imgur.com/4okIOeH.jpg)
 
