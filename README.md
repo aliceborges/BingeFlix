@@ -10,12 +10,12 @@ Bingeflix is a single-page, video-streaming app that allows users to create acco
 Both signing up and signing in are displayed in a single form handled by the 'SessionForm' component. The SessionFormContainer checks whether the current path is '/login' or '/signup' and passes that information down to the SessionForm.
 
 In the SessionFormContainer file:
-
- `const mapStateToProps = (state, ownProps) => {
+```javascript
+ const mapStateToProps = (state, ownProps) => {
    const formType = ownProps.location.pathname.slice(1);
    ...
-  }`
-
+  }
+```
 The result of `formType` will either be 'login' or 'signup,' and that will determine what is rendered in SessionForm.
 
 
@@ -49,7 +49,7 @@ Each Bingeflix user has a 'My List' to which they can add and from which they ca
 <p align="center">
   <img src="https://media.giphy.com/media/3ohs4p9LMXYBptIapW/giphy.gif"/>
 </p>
-Users can search videos by title and view a live update of matching results with each character that is typed into or deleted from the search bar's input field.
+Users can search videos by title and view a live update of matching results with each character that is typed into, or deleted from, the search bar's input field.
 
 ### Profiles (Future Feature)
-Users will be able to add multiple profiles to their account. Users can delete profiles after adding them, or edit the names of these profiles after naming them the first time they are added.
+A user will be able to add multiple profiles to their account. This feature will also allow the deletion of profiles as well as the editing of the profiles' names after they are added.
