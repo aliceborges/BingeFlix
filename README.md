@@ -1,22 +1,38 @@
 # README
+Bingeflix allows users to create accounts, stream videos, search through available videos, and add videos they would like to watch to their 'My List'. This app was built using a React/Redux front-end and a Rails back-end.
 
 #### [LIVE DEMO](https://bingeflix.herokuapp.com/#/)
 ![](https://i.imgur.com/FUo8WKB.png)
 
-## Features
+## TECHNOLOGIES USED
+ * Front-end
+ ** React/Redux
+ ** Video JS
+ ** jQuery
 
+ * Back-end
+ ** Rails
+
+
+## FEATURES
 ### Single Form for Sign Up / Sign In
-![](https://i.imgur.com/Uvy9nZn.png)
 
-### Expanding Blocks
+### Infinite Sliding Carousels
+I created the app's sliding carousels by leveraging the power and simplicity of jQuery's DOM manipulation.
+
+### Single Expanding Block for Each Carousel
 ![](https://i.imgur.com/4okIOeH.jpg)
 
+
 ### Streaming Videos
+
 ![](https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif)
 
 
 ### Adding Videos to 'My List'
-![](https://media.giphy.com/media/l4pTca9kspzXGtuNi/giphy.gif)
+Each Bingeflix user has a 'My List' to which they can add and from which they can delete videos. Adding videos to one's list is as simple as clicking on the '+' icon on the video's expanding block.
+
+
 
 
 ### Instant Update Search
