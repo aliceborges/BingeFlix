@@ -29,7 +29,7 @@ The app's sliding carousel leverages the power and simplicity of jQuery's DOM ma
 <p align="center">
   <img src="https://i.imgur.com/4okIOeH.jpg"/>
 </p>
-When a user clicks on one of the slides inside each carousel, a larger block of information appears below that carousel. Though at first it seemed easier to include an expanding block for each of the slides inside the carousel, I quickly realized that attaching the expanding block to each slide, in addition to being less performant, compromised the expanding hover effect of each individual slide. For those reasons, I determined that placing a single expanding block below each carousel was the best way to solve these issues and display the necessary information. Each time a slide is clicked, the expanding block is populated with the information for that slide.
+When a user clicks on one of the slides inside each carousel, a larger block of information appears below that carousel. Though at first it seemed easier to include an expanding block for each of the slides inside the carousel, I quickly realized that attaching the expanding block to each slide, in addition to being slightly less performant, compromised the expanding hover effect of each individual slide. For those reasons, I determined that placing a single expanding block below each carousel was the best way to solve these issues and display the necessary information. Each time a slide is clicked, the expanding block is populated with the information for that slide.
 
 
 ### Streaming Videos
@@ -44,5 +44,5 @@ Each Bingeflix user has a 'My List' to which they can add and from which they ca
 
 ### Live Search
 <p align="center">
-  <img src="https://media.giphy.com/media/xThtamghBNxFbwSrRe/giphy.gif"/>
+  <img src="https://media.giphy.com/media/3ohs4nrWQAOtSvWEnK/giphy.gif"/>
 </p>
