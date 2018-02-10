@@ -13,6 +13,6 @@
 
 
 ### Instant Update Search
-![](http://www.giphy.com/gifs/xUOwFRWlSaNhlUfgiY)
+![](https://media.giphy.com/media/xUOwFRWlSaNhlUfgiY/giphy.gif)
 
 Adding images: ![]()
