@@ -18,10 +18,15 @@ Bingeflix allows users to create accounts, stream videos, search through availab
 ### Single Form for Sign Up / Sign In
 
 ### Infinite Sliding Carousels
-I created the app's sliding carousels by leveraging the power and simplicity of jQuery's DOM manipulation.
+<p align="center">
+  <img style="display: inline-block;" src="https://media.giphy.com/media/xTht9ZnURmuoQEGzrW/giphy.gif"/>
+  <img style="display: inline-block;" src="https://media.giphy.com/media/xUOwGjLI9dTuhhT62Q/giphy.gif"/>
+</p>
+The app's sliding carousel leverages the power and simplicity of jQuery's DOM manipulation for its sliding movement. On hover, each of the slides inside the carousel expand to show more information about that slide's video. This expanding effect is achieved through the CSS ':hover' selector.
+
 
 ### Single Expanding Block for Each Carousel
-<p style="text-align: center;" markdown="1">
+<p align="center">
   <img src="https://i.imgur.com/4okIOeH.jpg"/>
 </p>
 
