@@ -27,7 +27,7 @@ I created the app's sliding carousels by leveraging the power and simplicity of 
 
 
 ### Streaming Videos
-<p style="text-align: center;" markdown="1">
+<p align="center">
   <img src="https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif"/>
 </p>
 
@@ -37,6 +37,6 @@ Each Bingeflix user has a 'My List' to which they can add and from which they ca
 
 
 ### Instant Update Search
-<p style="text-align: center;" markdown="1">
+<p align="center">
   <img src="https://media.giphy.com/media/xThtamghBNxFbwSrRe/giphy.gif"/>
 </p>
