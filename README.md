@@ -1,9 +1,9 @@
 # README
 
-###LIVE DEMO(https://bingeflix.herokuapp.com/#/)
+### LIVE DEMO (https://bingeflix.herokuapp.com/#/)
 
 
-##Features
+## Features
 
 
 ### Streaming Videos
