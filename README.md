@@ -44,5 +44,5 @@ Each Bingeflix user has a 'My List' to which they can add and from which they ca
 
 ### Live Search
 <p align="center">
-  <img src="https://media.giphy.com/media/3ohs4nrWQAOtSvWEnK/giphy.gif"/>
+  <img src="https://media.giphy.com/media/3ohs4p9LMXYBptIapW/giphy.gif"/>
 </p>
