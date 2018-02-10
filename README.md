@@ -1,7 +1,7 @@
 # README
 
 #### [LIVE DEMO](https://bingeflix.herokuapp.com/#/)
-
+![](https://i.imgur.com/FUo8WKB.png)
 
 ## Features
 
