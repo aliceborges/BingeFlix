@@ -8,7 +8,7 @@ class FeaturedMovie extends React.Component {
     super(props);
     this.state = {
       buttonSign: "plus",
-      movieId: 12
+      movieId: 19
     };
   }
 
@@ -49,7 +49,6 @@ class FeaturedMovie extends React.Component {
 
   render() {
     const { movies } = this.props;
-    // const idx = this.randomNumFromOneTo();
     const movie = movies[this.state.movieId];
     return (
       movie ?
