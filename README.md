@@ -7,12 +7,16 @@ Bingeflix is a single-page, video-streaming app that allows users to create acco
 
 ## FEATURES
 ### Single Form for Sign Up / Sign In
-Both signing up and signing in are displayed in a single form handled by a single React component. What is displayed on the form is changes based on whether the path at that moment is '/login' or '/signup'.
+Both signing up and signing in are displayed in a single form handled by the 'SessionForm' React component. The SessionFormContainer checks whether the current path is '/login' or '/signup' and passes that information down to the SessionForm.
 
+In session_form_container.js:
 
- `const currentPath = this.props.ownProps.location.pathname;`
-  `const formType = (currentPath === '/login') ? 'login' : 'signup';`
+ `const mapStateToProps = (state, ownProps) => {
+   const formType = ownProps.location.pathname.slice(1);
+   ...
+  }`
 
+The result of formType will either be 'login' or 'signup,' and that will determine what is rendered in SessionForm.
 
 
 ### Infinite Sliding Carousels
@@ -34,6 +38,7 @@ When a user clicks on one of the slides inside each carousel, a larger block of 
 <p align="center">
   <img src="https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif"/>
 </p>
+To stream videos, this app makes use of Video.js's player framework. Custom settings were added to the default Video.js player merely by editing the player's css file.
 
 
 ### Adding Videos to 'My List'

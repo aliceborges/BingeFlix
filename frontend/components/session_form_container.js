@@ -3,8 +3,7 @@ import { login, signup, clearSessionErrors } from '../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
-  const currentPath = ownProps.location.pathname;
-  const formType = (currentPath === '/login') ? 'login' : 'signup';
+  const formType = ownProps.location.pathname.slice(1);
   const errors = state.errors.session;
 
   return {
