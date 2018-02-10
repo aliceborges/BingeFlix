@@ -12,9 +12,10 @@
 ![](https://i.imgur.com/4okIOeH.jpg)
 
 ### Streaming Videos
-
+![](https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif)
 
 ### Adding Videos to 'My List'
+
 
 
 ### Instant Update Search
