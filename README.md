@@ -1,5 +1,5 @@
 # README
-Bingeflix is a single-page, video-streaming app that allows users to create accounts, search through available videos, and add videos to their 'My List'. This app was built with a React/Redux front-end and a Rails back-end.
+Bingeflix is a single-page, video-streaming app inspired by Netflix that allows users to create accounts, search through available videos, stream videos, and add videos to their 'My List'. This app was built with a React/Redux front-end and a Rails back-end.
 
 #### [LIVE DEMO](https://bingeflix.herokuapp.com/#/)
 ![](https://i.imgur.com/FUo8WKB.png)
