@@ -21,8 +21,9 @@ Bingeflix allows users to create accounts, stream videos, search through availab
 I created the app's sliding carousels by leveraging the power and simplicity of jQuery's DOM manipulation.
 
 ### Single Expanding Block for Each Carousel
-<p style="text-align: center">
-![](https://i.imgur.com/4okIOeH.jpg)
+<p style="text-align: center;" markdown="1">
+  <img src="https://i.imgur.com/4okIOeH.jpg"/>
+  ![](https://i.imgur.com/4okIOeH.jpg)
 </p>
 
 
