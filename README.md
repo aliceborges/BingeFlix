@@ -4,18 +4,43 @@ Bingeflix is a single-page, video-streaming app that allows users to create acco
 #### [LIVE DEMO](https://bingeflix.herokuapp.com/#/)
 ![](https://i.imgur.com/FUo8WKB.png)
 
-## TECHNOLOGIES USED
- * Front-end
- ** React/Redux
- ** Video JS
- ** jQuery
-
- * Back-end
- ** Rails
-
 
 ## FEATURES
 ### Single Form for Sign Up / Sign In
+Both signing up and signing in are displayed in a single form handled by a single React component. What is displayed on the form is changes based on whether the path at that moment is '/login' or '/signup'.
+
+  `const currentPath = ownProps.location.pathname;`
+  `const formType = (currentPath === '/login') ? 'login' : 'signup';`
+
+`class SessionForm extends React.Component {
+  ...
+
+  render() {
+    if(currentForm === 'login') {
+      formTitle = 'Sign In';
+      ...
+      } else {
+        formTitle = 'Sign Up';
+        ...
+      }
+
+    return (
+      ...
+      <form className="session-form">
+      <h1>{ formTitle }</h1>
+
+      ...
+
+      <input type="submit"
+      onClick={ (e) => this.handleSubmit(e) }
+      value={ formTitle }/>
+      ...
+      </form>
+      ...
+      );  
+  }`
+
+
 
 ### Infinite Sliding Carousels
 <p align="center">
