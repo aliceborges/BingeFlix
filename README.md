@@ -10,33 +10,8 @@ Bingeflix is a single-page, video-streaming app that allows users to create acco
 Both signing up and signing in are displayed in a single form handled by a single React component. What is displayed on the form is changes based on whether the path at that moment is '/login' or '/signup'.
 
 
-` render() {
-    const currentPath = this.props.ownProps.location.pathname;
-    const formType = (currentPath === '/login') ? 'login' : 'signup';
-
-    if(currentForm === 'login') {
-      formTitle = 'Sign In';
-      ...
-      } else {
-        formTitle = 'Sign Up';
-        ...
-      }
-
-    return (
-      ...
-      <form className="session-form">
-      <h1>{ formTitle }</h1>
-
-      ...
-
-      <input type="submit"
-      onClick={ (e) => this.handleSubmit(e) }
-      value={ formTitle }/>
-      ...
-      </form>
-      ...
-      );  
-  }`
+ `const currentPath = this.props.ownProps.location.pathname;
+  const formType = (currentPath === '/login') ? 'login' : 'signup';`
 
 
 
