@@ -38,14 +38,14 @@ When a user clicks on one of the slides in a carousel, a larger block of informa
 <p align="center">
   <img src="https://media.giphy.com/media/3o7WIQ6CpsslxL4Lq8/giphy.gif"/>
 </p>
-To stream videos, this app makes use of Video.js's player framework. Custom settings were added to the default Video.js player merely by editing the player's CSS file. The result of either action is an Ajax call to the back-end which persists the change to the database.
+To stream videos, this app makes use of Video.js's player framework. Custom settings were added to the default Video.js player merely by editing the player's CSS file.
 
 
 ### Adding Videos to 'My List'
 <p align="center">
 <img src="https://media.giphy.com/media/xThtax25Itb2mixHVK/giphy.gif"/>
 </p>
-Each Bingeflix user has a 'My List' to which they can add and from which they can delete videos. Adding videos to one's list is as simple as clicking on the '+' icon. similarly, removing each video is achieved by clicking the checkmark icon.
+Each Bingeflix user has a 'My List' to which they can add and from which they can delete videos. Adding videos to one's list is as simple as clicking on the '+' icon. similarly, removing each video is achieved by clicking the checkmark icon. The result of either action is an Ajax call to the back-end which persists the change to the database.
 
 
 
