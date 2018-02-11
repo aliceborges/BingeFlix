@@ -45,7 +45,7 @@ To stream videos, this app makes use of Video.js's player framework. Custom sett
 <p align="center">
 <img src="https://media.giphy.com/media/xThtax25Itb2mixHVK/giphy.gif"/>
 </p>
-Each Bingeflix user has a 'My List' to which they can add and from which they can delete videos. Adding videos to one's list is as simple as clicking on the '+' icon. similarly, removing each video is achieved by clicking the checkmark icon. The result of either action is an Ajax call to the back-end which persists the change to the database.
+Each Bingeflix user has a 'My List' to which they can add and from which they can delete videos. Adding videos to one's list is as simple as clicking on the '+' icon. Similarly, removing each video is achieved by clicking the checkmark icon. The result of either action is an Ajax call to the back-end which persists the change to the database.
 
 
 
