@@ -1,10 +1,10 @@
-import React from 'react';
-import SessionFormContainer from './session_form_container';
-import { Switch, HashRouter, Route, Link } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import GreetingContainer from './greeting_container';
-import MoviesIndexContainer from './movies_index_container';
-import MoviePlayContainer from './movie_play_container';
+import React from "react";
+import SessionFormContainer from "./session_form_container";
+import { Switch, HashRouter, Route, Link } from "react-router-dom";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import GreetingContainer from "./greeting_container";
+import MoviesIndexContainer from "./movies_index_container";
+import MoviePlayContainer from "./movie_play_container";
 
 const App = () => (
   <div className="app-component">
