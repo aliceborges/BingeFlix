@@ -1,5 +1,5 @@
 import React from "react";
-import GenreListCarousel from "./genre_list_carousel";
+import GenrePageCarousel from "./genre_page_carousel";
 import LoadingIcon from "./loading_icon";
 
 class GenrePage extends React.Component {
@@ -29,7 +29,7 @@ class GenrePage extends React.Component {
     return (
       <div className="my-list-component genre-page-setup">
         {allGenres.map((genre, idx) => (
-          <GenreListCarousel
+          <GenrePageCarousel
             ownProps={ownProps}
             currentUser={currentUser}
             allMovies={allMovies}

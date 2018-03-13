@@ -1,15 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const NavbarButtons = props => {
-
-  return(
+  return (
     <ul className="navbar-buttons">
       <li>
         <Link to="/browse">Home</Link>
       </li>
 
-      <li>
+      {/* <li>
         <Link to="/browse/tv">TV Shows</Link>
       </li>
 
@@ -20,12 +19,11 @@ const NavbarButtons = props => {
 
       <li>
         <Link to="/browse/originals">Originals</Link>
-      </li>
+      </li> */}
 
       <li>
         <Link to="/browse/my-list">My List</Link>
       </li>
-
     </ul>
   );
 };

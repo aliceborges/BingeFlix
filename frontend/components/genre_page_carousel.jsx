@@ -6,7 +6,7 @@ import * as AppUtil from "../util/app_util";
 import FaClose from "react-icons/lib/fa/close";
 import FaPlayCircleO from "react-icons/lib/fa/play-circle-o";
 import { Redirect } from "react-router-dom";
-import GenreListSlide from "./my_list_slide";
+import GenrePageSlide from "./genre_page_slide";
 
 class GenreListCarousel extends React.Component {
   constructor(props) {
