@@ -6,8 +6,8 @@ var devPlugins = []; // if using any plugins for development
 
 var prodPlugins = [
   new webpack.DefinePlugin({
-    'process.env': {
-      'NODE_ENV': JSON.stringify('production')
+    "process.env": {
+      NODE_ENV: JSON.stringify("production")
     }
   }),
   new webpack.optimize.UglifyJsPlugin({
@@ -18,30 +18,29 @@ var prodPlugins = [
 ];
 
 plugins = plugins.concat(
-  process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
+  process.env.NODE_ENV === "production" ? prodPlugins : devPlugins
 );
 
-
 module.exports = {
-  entry: './frontend/bingeflix.jsx',
+  entry: "./frontend/bingeflix.jsx",
   output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "app", "assets", "javascripts"),
+    filename: "bundle.js"
   },
   module: {
     loaders: [
       {
         test: [/\.jsx?$/],
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['env', 'react']
+          presets: ["env", "react"]
         }
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   }
 };
